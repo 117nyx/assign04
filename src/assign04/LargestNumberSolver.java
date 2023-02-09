@@ -1,3 +1,5 @@
+package assign04;
+
 import java.io.File;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -93,7 +95,8 @@ public class LargestNumberSolver <T> {
      */
     public static BigInteger sum(List<Integer[]> list) {
         //call find largest on each array, add them together
-        ArrayList<Integer[]> listCopy= new ArrayList<>(list);
+        ArrayList<Integer[]> listCopy= new ArrayList<>();
+        for (Integer[] item : list) listCopy.add(item.clone());
         BigInteger big= new BigInteger("0");
         for(Integer[] val: listCopy){
             big=big.add(findLargestNumber(val));

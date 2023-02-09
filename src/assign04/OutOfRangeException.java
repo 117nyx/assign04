@@ -1,3 +1,5 @@
+package assign04;
+
 /**
  * This class represents an exception to the normal flow of a program when a 
  * numerical value is out of range for a data type.

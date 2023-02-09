@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added more tests, moved txt file" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="intial commit 2/9/23">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LargestNumberSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargestNumberSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LargestNumberSolverTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargestNumberSolverTester.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +17,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/LargestNumberSolverTester.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2LW15ckvJXgWWB78OFZ3K9PosRC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -32,9 +36,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/edenharvey/IdeaProjects/assign04/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -46,26 +47,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="LargestNumberSolverTester.testFileRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assign04" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LargestNumberSolverTester" />
-      <option name="METHOD_NAME" value="testFileRead" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.LargestNumberSolverTester.testFileRead" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -76,42 +57,10 @@
       <option name="presentableId" value="Default" />
       <updated>1675971848500</updated>
       <workItem from="1675971849869" duration="51000" />
-      <workItem from="1675976531138" duration="7004000" />
     </task>
-    <task id="LOCAL-00001" summary="Moved text file">
-      <created>1675979213635</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1675979213635</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added more tests, moved txt file">
-      <created>1675983501382</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1675983501382</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Moved text file" />
-    <MESSAGE value="Added more tests, moved txt file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more tests, moved txt file" />
   </component>
 </project>

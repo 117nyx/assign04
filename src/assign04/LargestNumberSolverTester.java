@@ -1,3 +1,5 @@
+package assign04;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -48,7 +50,6 @@ class LargestNumberSolverTester {
     @Test
     public void testFileRead(){
         ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("shortInts.txt");
-
         assertEquals(4,actual.size());
     }
 
@@ -94,9 +95,8 @@ class LargestNumberSolverTester {
     @Test
     public void testKthLargest(){
     //send in small list, get kth largest
-        Integer[] result = new Integer[fiveArray.length];
-        result = LargestNumberSolver.findKthLargest(smallList, 1);
-        assertArrayEquals(fiveArray,result);
+        Integer[] result = LargestNumberSolver.findKthLargest(smallList, 1);
+        assertArrayEquals(result,fiveArray);
     }
 
 
