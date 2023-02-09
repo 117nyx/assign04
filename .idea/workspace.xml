@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assign04.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LargestNumberSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LargestNumberSolverTester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LargestNumberSolverTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OutOfRangeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/integers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/short ints.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assign04.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assign04.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LargestNumberSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargestNumberSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LargestNumberSolverTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargestNumberSolverTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/short ints.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shortInts.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2LW15ckvJXgWWB78OFZ3K9PosRC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,10 +30,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/edenharvey/IdeaProjects/assign04/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -46,6 +53,23 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="LargestNumberSolverTester.testFileRead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assign04" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LargestNumberSolverTester" />
+      <option name="METHOD_NAME" value="testFileRead" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LargestNumberSolverTester.testFileRead" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675971848500</updated>
       <workItem from="1675971849869" duration="51000" />
+      <workItem from="1675976531138" duration="2441000" />
     </task>
     <servers />
   </component>

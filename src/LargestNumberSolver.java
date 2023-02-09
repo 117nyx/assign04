@@ -140,8 +140,8 @@ public class LargestNumberSolver <T> {
      * @return
      */
     public static List<Integer[]> readFile(String filename) {
-        //setup scanner, list
         try {
+            //setup scanner, list, string
             File file = new File(filename);
             Scanner text = new Scanner(file);
 
@@ -149,19 +149,22 @@ public class LargestNumberSolver <T> {
 
             String str = new String("");
 
+            //while there is still inputs remaining, make a string of an entire line, then parse integers out of it
+            // to form integer array
             while(text.hasNext()) {
                 str = text.nextLine();
                 Integer[] intArray = new Integer[str.length()];
                 Scanner stringScan = new Scanner(str);
                 int index = 0;
+                // while string representing line still has inputs, parse ints into int array
                 while(stringScan.hasNext()) {
                     intArray[index]=Integer.parseInt(stringScan.next());
                     index++;
                 }
                 textList.add(intArray);
             }
-            List returnList = new ArrayList<Integer[]>();
-            return returnList;
+            //List returnList = new ArrayList<Integer[]>();
+            return textList;
         }
         catch(Exception e){
             System.out.println("file not found");

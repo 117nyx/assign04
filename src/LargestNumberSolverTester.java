@@ -45,8 +45,9 @@ class LargestNumberSolverTester {
     }
     @Test
     public void testFileRead(){
-        ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("/Users/edenharvey/IdeaProjects/CS 2420 fixed/src/assign04/short ints.txt");
-        assertEquals(3,actual.size());
+        ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("shortInts.txt");
+
+        assertEquals(4,actual.size());
     }
     @Test
     public void testSum(){
@@ -71,6 +72,10 @@ class LargestNumberSolverTester {
 
     }
 
+    @Test
+    public void testLargestLong(){
+
+    }
     @Test
     public void testLargestLongOutOfRange(){
 
