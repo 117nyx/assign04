@@ -1,4 +1,8 @@
 package assign04;
+/**
+ * This class tests the Largest Number Solver class
+ * Authors: Eden Harvey and Jonathan Kerr
+ */
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -95,8 +99,11 @@ class LargestNumberSolverTester {
     @Test
     public void testKthLargest(){
     //send in small list, get kth largest
+        smallList.add(IntArray);
+        smallList.add(fiveArray);
+        smallList.add(intAndLongArr);
         Integer[] result = LargestNumberSolver.findKthLargest(smallList, 1);
-        assertArrayEquals(result,fiveArray);
+        assertArrayEquals(result,IntArray);
     }
 
 
