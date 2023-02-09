@@ -149,7 +149,7 @@ public class LargestNumberSolver <T> {
             File file = new File(filename);
             Scanner text = new Scanner(file);
 
-            List<Integer[]> textList= new ArrayList<>();
+            List<ArrayList> textList= new ArrayList<>();
 
             String str = new String("");
 
@@ -157,18 +157,19 @@ public class LargestNumberSolver <T> {
             // to form integer array
             while(text.hasNext()) {
                 str = text.nextLine();
-                Integer[] intArray = new Integer[str.length()];
+                ArrayList<Integer> intArray = new ArrayList();
                 Scanner stringScan = new Scanner(str);
-                int index = 0;
                 // while string representing line still has inputs, parse ints into int array
                 while(stringScan.hasNext()) {
-                    intArray[index]=Integer.parseInt(stringScan.next());
-                    index++;
+                    intArray.add(Integer.parseInt(stringScan.next()));
                 }
                 textList.add(intArray);
             }
-            //List returnList = new ArrayList<Integer[]>();
-            return textList;
+            ArrayList<Integer[]> returnList = new ArrayList();
+            for(ArrayList val: textList) {
+                returnList.add((Integer[])val.toArray());
+            }
+            return returnList;
         }
         catch(Exception e){
             System.out.println("file not found");
