@@ -11,6 +11,7 @@ class LargestNumberSolverTester {
     Integer[] IntArray = new Integer[]{3,1,2,10,7,0};
     Integer[] fiveArray = new Integer[]{0,9,2,10,7,0};
     Integer[] intAndLongArr = new Integer[]{11,13};
+    Integer[] tooLongForIntAndLong = new Integer[]{10,20,30,40,50,60,70,80,90,100};
     ArrayList smallList = new ArrayList();
 
     @BeforeEach
@@ -18,6 +19,7 @@ class LargestNumberSolverTester {
         Integer[] IntArray = new Integer[]{3,1,2,10,7,0};
         Integer[] fiveArray = new Integer[]{0,9,2,10,7,0};
         Integer[] intAndLongArr = new Integer[]{11,13};
+        Integer[] tooLongForIntAndLong = new Integer[]{10,20,30,40,50,60,70,80,90,100};
         ArrayList smallList = new ArrayList();
         smallList.add(IntArray);
         smallList.add(fiveArray);
@@ -25,7 +27,7 @@ class LargestNumberSolverTester {
     }
 
     @Test
-    public void testInserionSort(){
+    public void testInsertionSort(){
         LargestNumberSolver.insertionSort(IntArray,new comparator());
         for(int i=0;i<IntArray.length;i++)
             System.out.println(IntArray[i]);
@@ -49,6 +51,13 @@ class LargestNumberSolverTester {
 
         assertEquals(4,actual.size());
     }
+
+    @Test
+    public void testFileReadLongFile(){
+        ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("integers.txt");
+
+        assertEquals(903,actual.size());
+    }
     @Test
     public void testSum(){
         ArrayList smallListCopy = new ArrayList();
@@ -65,32 +74,31 @@ class LargestNumberSolverTester {
 
     @Test
     public void testLargestInt(){
-
+        int i = LargestNumberSolver.findLargestInt(intAndLongArr);
+        assertEquals(1311,i);
     }
     @Test
     public void testLargestIntOutOfRange(){
-
+        //2147483647
+        assertThrows(OutOfRangeException.class, () -> { LargestNumberSolver.findLargestInt(tooLongForIntAndLong);});
     }
 
-    @Test
-    public void testLargestLong(){
 
-    }
     @Test
     public void testLargestLongOutOfRange(){
-
+        //9223372036854775807
+        assertThrows(OutOfRangeException.class, () -> { LargestNumberSolver.findLargestLong(tooLongForIntAndLong);});
     }
 
 
     @Test
     public void testKthLargest(){
-
+    //send in small list, get kth largest
+        Integer[] result = new Integer[fiveArray.length];
+        result = LargestNumberSolver.findKthLargest(smallList, 1);
+        assertArrayEquals(fiveArray,result);
     }
 
-    @Test
-    public void testReadFile(){
-
-    }
 
     protected class comparator implements Comparator {
 
