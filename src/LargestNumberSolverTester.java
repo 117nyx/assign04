@@ -76,10 +76,6 @@ class LargestNumberSolverTester {
 
     }
 
-    @Test
-    public void testSum(){
-
-    }
 
     @Test
     public void testKthLargest(){
