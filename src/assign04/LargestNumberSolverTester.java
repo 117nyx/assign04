@@ -56,7 +56,6 @@ class LargestNumberSolverTester {
     @Test
     public void testFileReadLongFile(){
         ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("integers.txt");
-
         assertEquals(903,actual.size());
     }
     @Test
