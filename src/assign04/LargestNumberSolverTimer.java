@@ -19,17 +19,17 @@ public class LargestNumberSolverTimer {
 
         int timesToLoop = 10;
 
-        for (int n = 100; n <= 1000; n += 100) {
-            ArrayList<Integer[]> list = new ArrayList<Integer[]>(n);
+        for (int n = 100; n <= 4000; n += 100) {
 
-            for(int i =0; i < list.size();i++) {
+            ArrayList<Integer[]> list = new ArrayList<Integer[]>();
+
+            for(int i = 0; i < n ;i++) {
                 Integer[] newList = new Integer[10];
                 for(int j = 0; j < newList.length;j++) {
                     Integer randomInt = randomNumberGenerator.nextInt(100);
                     newList[j] = randomInt;
                 }
                 list.add(newList);
-
             }
             long startTime, midpointTime, stopTime;
 
