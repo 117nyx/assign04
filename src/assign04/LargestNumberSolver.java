@@ -170,9 +170,9 @@ public class LargestNumberSolver <T> {
                 }
                 textList.add(intArray);
             }
-            ArrayList returnList = new ArrayList();
+            ArrayList<Integer[]> returnList = new ArrayList<Integer[]>();
             for(ArrayList val: textList) {
-                returnList.add(val.toArray());
+                returnList.add((Integer[]) val.toArray(new Integer[0]));
             }
             return returnList;
         }
