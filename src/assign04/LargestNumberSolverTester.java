@@ -120,8 +120,11 @@ class LargestNumberSolverTester {
         smallList.add(IntArray);
         smallList.add(fiveArray);
         smallList.add(intAndLongArr);
-        Integer[] result = LargestNumberSolver.findKthLargest(smallList, 1);
-        assertArrayEquals(result,IntArray);
+        smallList.add(similarNums);
+        Integer[] largest = LargestNumberSolver.findKthLargest(smallList, 0);
+        Integer[] smallest = LargestNumberSolver.findKthLargest(smallList, 3);
+        assertArrayEquals(largest,fiveArray);
+        assertArrayEquals(smallest,intAndLongArr);
     }
 
 
