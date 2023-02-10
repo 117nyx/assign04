@@ -18,6 +18,7 @@ class LargestNumberSolverTester {
     Integer[] fiveArray = new Integer[]{0,9,2,10,7,0};
     Integer[] intAndLongArr = new Integer[]{11,13};
     Integer[] tooLongForIntAndLong = new Integer[]{10,20,30,40,50,60,70,80,90,100};
+    Integer[] similarNums = new Integer[]{5,0,6,67,69};
     ArrayList smallList = new ArrayList();
 
     @BeforeEach
@@ -25,6 +26,7 @@ class LargestNumberSolverTester {
         Integer[] IntArray = new Integer[]{3,1,2,10,7,0};
         Integer[] fiveArray = new Integer[]{0,9,2,10,7,0};
         Integer[] intAndLongArr = new Integer[]{11,13};
+        Integer[] similarNums = new Integer[]{5,0,6,67,69};
         Integer[] tooLongForIntAndLong = new Integer[]{10,20,30,40,50,60,70,80,90,100};
         ArrayList smallList = new ArrayList();
         smallList.add(IntArray);
@@ -46,6 +48,14 @@ class LargestNumberSolverTester {
         assertEquals(actual,new BigInteger("9721000"));
 
     }
+
+    @Test
+    public void testOrderFindLargestNumberSimilarNums(){
+
+        BigInteger actual=LargestNumberSolver.findLargestNumber(similarNums);
+        assertEquals(actual,new BigInteger("6967650"));
+
+    }
     @Test
     public void findLargestLongTester(){
         long l = LargestNumberSolver.findLargestLong(intAndLongArr);
@@ -54,7 +64,9 @@ class LargestNumberSolverTester {
     @Test
     public void testFileRead(){
         ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("shortInts.txt");
+        Integer[] compare = new Integer[]{1};
         assertEquals(4,actual.size());
+        assertArrayEquals(compare,actual.get(2));
     }
 
     @Test
@@ -62,6 +74,13 @@ class LargestNumberSolverTester {
         ArrayList<Integer[]> actual = (ArrayList<Integer[]>)LargestNumberSolver.readFile("integers.txt");
         assertEquals(903,actual.size());
     }
+
+    @Test
+    public void readFileSizeCheck(){
+        var actual = LargestNumberSolver.readFile("shortInts.txt");
+        assertEquals(10,actual.get(0).length);
+    }
+
     @Test
     public void testSum(){
         ArrayList smallListCopy = new ArrayList();
