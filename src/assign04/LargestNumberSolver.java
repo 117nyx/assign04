@@ -49,7 +49,7 @@ public class LargestNumberSolver <T> {
      */
     public static BigInteger findLargestNumber(Integer[] arr) {
         //This method must not alter the given array and must call your insertionSort method
-        Integer[] arrCopy = arr;
+        Integer[] arrCopy = arr.clone();
         Comparator cmp = new biggestNum();
         // sort array using comparator, make a new string and add values of sorted array to string
         insertionSort(arrCopy,cmp);
@@ -121,23 +121,13 @@ public class LargestNumberSolver <T> {
      * @throws IllegalArgumentException- thrown if k is not a valid position
      */
     public static Integer[] findKthLargest(List<Integer[]> list, int k) throws IllegalArgumentException {
-        ArrayList<BigInteger> numberList = new ArrayList<BigInteger>();
-        // make new list of largest numbers- this is currently in same order as "list"
-        for(Integer[] arr: list){
-            numberList.add(findLargestNumber(arr));
+        if(k>=list.size()||k<0){
+            throw new IllegalArgumentException("provided value k is out of bounds of given list");
         }
-        //convert to array to fit in method
-        Object[] arr = numberList.toArray();
+        Integer[][] intList = (Integer[][]) list.toArray(new Integer[0][0]);
+        LargestNumberSolver.insertionSort(intList,new KComparator());
+        return intList[k];
 
-
-        // sort arr to find kth biggest num
-        insertionSort(arr,new comparator());
-        //for each index in number list, check if kth biggest in arr is equal to numberList[i]
-        for(int i=0;i<arr.length;i++){
-            if(numberList.get(i).equals(arr[arr.length-1-k]))
-                return list.get(i);
-        }
-        return null;
     }
 
     /**
@@ -242,8 +232,8 @@ public class LargestNumberSolver <T> {
 
         @Override
         public int compare(Object o1, Object o2) {
-            if (o1 instanceof Comparable<?> && o2 instanceof Comparable<?>)
-                return ((Comparable) o1).compareTo(o2);
+            if (o1 instanceof Integer[] && o2 instanceof Integer[])
+                return findLargestNumber((Integer[])o2).compareTo(findLargestNumber((Integer[])o1));
             return 0;
         }
     }

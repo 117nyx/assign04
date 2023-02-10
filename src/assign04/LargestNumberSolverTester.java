@@ -20,9 +20,11 @@ class LargestNumberSolverTester {
     Integer[] tooLongForIntAndLong = new Integer[]{10,20,30,40,50,60,70,80,90,100};
     Integer[] similarNums = new Integer[]{5,0,6,67,69};
     ArrayList smallList = new ArrayList();
+    ArrayList tinyList = new ArrayList();
 
     @BeforeEach
     void setup(){
+
         Integer[] IntArray = new Integer[]{3,1,2,10,7,0};
         Integer[] fiveArray = new Integer[]{0,9,2,10,7,0};
         Integer[] intAndLongArr = new Integer[]{11,13};
@@ -32,6 +34,10 @@ class LargestNumberSolverTester {
         smallList.add(IntArray);
         smallList.add(fiveArray);
         smallList.add(intAndLongArr);
+        tinyList.add(new Integer[]{2});
+        tinyList.add(new Integer[]{1});
+        tinyList.add(new Integer[]{3});
+
     }
 
     @Test
@@ -126,7 +132,11 @@ class LargestNumberSolverTester {
         assertArrayEquals(largest,fiveArray);
         assertArrayEquals(smallest,intAndLongArr);
     }
-
+    @Test
+    public void testKTinyData(){
+        Integer[] largest=LargestNumberSolver.findKthLargest(tinyList,0);
+        assertArrayEquals(largest,new Integer[]{3});
+    }
 
     protected class comparator implements Comparator {
 
@@ -139,3 +149,4 @@ class LargestNumberSolverTester {
         }
 
     }
+
