@@ -53,10 +53,10 @@ public class LargestNumberSolver <T> {
         Comparator cmp = new biggestNum();
         // sort array using comparator, make a new string and add values of sorted array to string
         insertionSort(arrCopy,cmp);
-        String returnVal=new String("");
+        StringBuilder returnVal=new StringBuilder();
         for(Integer val: arrCopy)
-            returnVal=returnVal+val;
-        return new BigInteger(returnVal);
+            returnVal.append(val);
+        return new BigInteger(returnVal.toString());
 
     }
 
