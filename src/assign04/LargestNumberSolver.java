@@ -1,4 +1,9 @@
 package assign04;
+/**
+ * This class represents a largest number solver that allows users to find the largest number made
+ * out of arranging the integers in an array and combining them into one big integer,int, or long
+ * Authors: Jonathan Kerr and Eden Harvey
+ */
 
 import java.io.File;
 import java.math.BigInteger;
@@ -129,7 +134,7 @@ public class LargestNumberSolver <T> {
         insertionSort(arr,new comparator());
         //for each index in number list, check if kth biggest in arr is equal to numberList[i]
         for(int i=0;i<arr.length;i++){
-            if(numberList.get(i).equals(arr[k]))
+            if(numberList.get(i).equals(arr[arr.length-1-k]))
                 return list.get(i);
         }
         return null;
