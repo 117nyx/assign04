@@ -13,6 +13,9 @@ import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * tests LargestNumberSolver program
+ */
 class LargestNumberSolverTester {
     Integer[] IntArray = new Integer[]{3,1,2,10,7,0};
     Integer[] fiveArray = new Integer[]{0,9,2,10,7,0};

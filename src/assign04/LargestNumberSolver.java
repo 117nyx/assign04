@@ -7,10 +7,7 @@ package assign04;
 
 import java.io.File;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -25,7 +22,7 @@ public class LargestNumberSolver <T> {
      * @param arr- array to be sorted
      * @param <T>- generic type
      */
-    public static <T> void insertionSort(T[] arr, Comparator<? super T> cmp) {
+    public static <T> void insertionSort(T[] arr, Comparator<? super T> cmp) {  //O(n^2)
 
         // for each index, compare to other indexes and switch values as needed
         for (int i = 1; i < arr.length; ++i) {
@@ -122,9 +119,9 @@ public class LargestNumberSolver <T> {
      */
     public static Integer[] findKthLargest(List<Integer[]> list, int k) throws IllegalArgumentException {
         if(k>=list.size()||k<0){
-            throw new IllegalArgumentException("provided value k is out of bounds of given list");
+            throw new IllegalArgumentException("provided value k is out of bounds of given list"); //O(1)
         }
-        Integer[][] intList = (Integer[][]) list.toArray(new Integer[0][0]);
+        Integer[][] intList = (Integer[][]) list.toArray(new Integer[0][0]); //O(N)
         LargestNumberSolver.insertionSort(intList,new KComparator());
         return intList[k];
 
