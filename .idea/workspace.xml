@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added custom comparator, added KTinyData test, &#10;modified to correctly clone">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="-added beginning logic for mergesort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675999223223</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-added beginning logic for mergesort">
+      <created>1676352310604</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676352310604</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +125,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intial commit 2/9/23" />
     <MESSAGE value="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
+    <MESSAGE value="-added beginning logic for mergesort" />
+    <option name="LAST_COMMIT_MESSAGE" value="-added beginning logic for mergesort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -146,6 +155,11 @@
           <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTimer.java</url>
           <line>25</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

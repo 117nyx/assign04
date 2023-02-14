@@ -2,6 +2,7 @@ package assign05;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This class implements two different sorting algorithms for arraylists
@@ -14,10 +15,10 @@ public static int sizeToSwitch = 4;
         mergeLists.add(arr);
 
         while(mergeLists.get(0).size()>sizeToSwitch){
-            ArrayList<ArrayList<T>> clone = (ArrayList<ArrayList<T>>)mergeLists.clone();
-            for(int j=0;j<=;j++){
-                clone.add((ArrayList<T>) mergeLists.get(j).subList(0,mergeLists.get(j).size()/2));
-                clone.add((ArrayList<T>) mergeLists.get(j).subList(mergeLists.get(j).size()/2+1,mergeLists.get(j).size()));
+            ArrayList<List<T>> clone = new ArrayList<>();
+            for(int j=0;j<mergeLists.size();j++){
+                clone.add(mergeLists.get(j).subList(0,mergeLists.get(j).size()/2));
+                clone.add(mergeLists.get(j).subList(mergeLists.get(j).size()/2,mergeLists.get(j).size()));
             }
         }
 
