@@ -8,8 +8,18 @@ import java.util.Collections;
  * Authors: Jonathan Kerr and Eden Harvey
  */
 public class ArrayListSorter {
-
+public static int sizeToSwitch = 4;
     public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr){
+        ArrayList<ArrayList<T>> mergeLists = new ArrayList<>();
+        mergeLists.add(arr);
+
+        while(mergeLists.get(0).size()>sizeToSwitch){
+            ArrayList<ArrayList<T>> clone = (ArrayList<ArrayList<T>>)mergeLists.clone();
+            for(int j=0;j<=;j++){
+                clone.add((ArrayList<T>) mergeLists.get(j).subList(0,mergeLists.get(j).size()/2));
+                clone.add((ArrayList<T>) mergeLists.get(j).subList(mergeLists.get(j).size()/2+1,mergeLists.get(j).size()));
+            }
+        }
 
     }
 
@@ -38,4 +48,5 @@ public class ArrayListSorter {
             arr.add(i);
         return arr;
     }
+
 }
