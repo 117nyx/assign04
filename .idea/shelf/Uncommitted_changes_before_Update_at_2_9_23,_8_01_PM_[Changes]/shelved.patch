@@ -1,0 +1,49 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"bd81f9cb-a46a-404c-b6d7-50c7278bb79b\" name=\"Changes\" comment=\"intial commit 2/9/23\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/assign04/LargestNumberSolver.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/assign04/LargestNumberSolver.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"5ae4e07c-8701-4380-8d01-6bb42cbe90b3\" />\n        <option name=\"url\" value=\"https://github.com/117nyx/assign04.git\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java\" root0=\"SKIP_HIGHLIGHTING\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2LW15ckvJXgWWB78OFZ3K9PosRC\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/edenharvey/IdeaProjects/assign04/src&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"bd81f9cb-a46a-404c-b6d7-50c7278bb79b\" name=\"Changes\" comment=\"\" />\n      <created>1675971848500</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1675971848500</updated>\n      <workItem from=\"1675971849869\" duration=\"51000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"intial commit 2/9/23\">\n      <created>1675984623537</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675984623537</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"intial commit 2/9/23\">\n      <created>1675985561111</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1675985561111</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"intial commit 2/9/23\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"intial commit 2/9/23\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java</url>\n          <line>57</line>\n          <option name=\"timeStamp\" value=\"2\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java</url>\n          <line>136</line>\n          <option name=\"timeStamp\" value=\"11\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 499e2a46f4bd1dbb9f7603fc3db4700fef552b82)
++++ b/.idea/workspace.xml	(date 1675997981292)
+@@ -4,11 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="intial commit 2/9/23">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/assign04/LargestNumberSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign04/LargestNumberSolver.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java" afterDir="false" />
+-    </list>
++    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -85,7 +81,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1675985561111</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Added custom comparator, added KTinyData test, &#10;modified to correctly clone">
++      <created>1675993262487</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1675993262487</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -93,7 +96,8 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="intial commit 2/9/23" />
+-    <option name="LAST_COMMIT_MESSAGE" value="intial commit 2/9/23" />
++    <MESSAGE value="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>

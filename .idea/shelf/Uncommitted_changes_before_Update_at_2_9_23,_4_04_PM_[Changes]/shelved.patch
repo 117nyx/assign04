@@ -1,0 +1,167 @@
+Index: assign04.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"JAVA_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\n    <exclude-output />\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\n    </content>\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/assign04.iml b/assign04.iml
+--- a/assign04.iml	(revision cfa85f761efb52900283bcdbc1d361a6cbf3c2ff)
++++ b/assign04.iml	(date 1675972544064)
+@@ -7,5 +7,31 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library">
++      <library name="JUnit4">
++        <CLASSES>
++          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library">
++      <library name="JUnit5.8.1">
++        <CLASSES>
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: src/LargestNumberSolver.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.File;\nimport java.math.BigInteger;\nimport java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.List;\nimport java.util.Scanner;\n\n/**\n *\n * @param <T>\n */\npublic class LargestNumberSolver <T> {\n    //variable\n\n    /**\n     * sorts input array using insertion sort ad input Comparator object\n     *\n     * @param arr- array to be sorted\n     * @param <T>- generic type\n     */\n    public static <T> void insertionSort(T[] arr, Comparator<? super T> cmp) {\n\n        // for each index, compare to other indexes and switch values as needed\n        for (int i = 1; i < arr.length; ++i) {\n            T val = arr[i];\n            int j = i - 1;\n            // while arr[j] is greater than arr[i] move arr[j] toward beginning\n            while (j >= 0 && cmp.compare(arr[j], val) > 0) {\n                arr[j + 1] = arr[j];\n                j--;\n            }\n            arr[j + 1] = val;\n        }\n    }\n\n    /**\n     * returns the largest number that can be formed by arranging the integers of the given array, in any order.\n     * If the array is empty, the largest number that can be formed is 0.\n     *\n     * @param arr- input array\n     * @return\n     */\n    public static BigInteger findLargestNumber(Integer[] arr) {\n        //This method must not alter the given array and must call your insertionSort method\n        Integer[] arrCopy = arr;\n        Comparator cmp = new biggestNum();\n        // sort array using comparator, make a new string and add values of sorted array to string\n        insertionSort(arrCopy,cmp);\n        String returnVal=new String(\"\");\n        for(Integer val: arrCopy)\n            returnVal=returnVal+val;\n        return new BigInteger(returnVal);\n\n    }\n\n\n    /**\n     * Returns largest int value that can be formed by arranging integers of the given array\n     * in any order\n     *\n     * @param arr\n     * @return\n     * @throws OutOfRangeException- thrown if largest number is too large for int data type\n     */\n    public static int findLargestInt(Integer[] arr) throws OutOfRangeException {\n        // call find largest, check for out of bounds, convert to int\n        BigInteger tempInt = findLargestNumber(arr);\n        if(tempInt.compareTo(new BigInteger(\"2147483647\"))>0)\n            throw new OutOfRangeException(\"returned result is too large for int datatype\");\n        return tempInt.intValue();\n    }\n\n    /**\n     * Same behavior as previous method, but for long data type\n     *\n     * @param arr\n     * @return\n     * @throws OutOfRangeException-thrown if largest number is too large for long data type\n     */\n    public static long findLargestLong(Integer[] arr) throws OutOfRangeException {\n        //call find largest, check for out of bounds, convert to long\n        BigInteger tempInt = findLargestNumber(arr);\n        if(tempInt.compareTo(new BigInteger(\"9223372036854775807\"))>0)\n            throw new OutOfRangeException(\"returned result is too large for long datatype\");\n        return tempInt.longValue();\n    }\n\n    /**\n     * sums largest numbers that can be formed b each array in the given list, does not alter given list\n     *\n     * @param list\n     * @return\n     */\n    public static BigInteger sum(List<Integer[]> list) {\n        //call find largest on each array, add them together\n        ArrayList<Integer[]> listCopy= new ArrayList<>(list);\n        BigInteger big= new BigInteger(\"0\");\n        for(Integer[] val: listCopy){\n            big=big.add(findLargestNumber(val));\n        }\n        return big;\n    }\n\n    /**\n     * This method determines the kth largest number that can be formed by each array in the given list.\n     * E.g., if k=0 returns the largest overall, if k=list.size()-1 returns the smallest overall.\n     * This method returns the original array that represents the kth largest number,\n     * not the kth largest number itself.\n     *\n     * @param list\n     * @param k\n     * @return\n     * @throws IllegalArgumentException- thrown if k is not a valid position\n     */\n    public static Integer[] findKthLargest(List<Integer[]> list, int k) throws IllegalArgumentException {\n        ArrayList<BigInteger> numberList = new ArrayList<BigInteger>();\n        // make new list of largest numbers- this is currently in same order as \"list\"\n        for(Integer[] arr: list){\n            numberList.add(findLargestNumber(arr));\n        }\n        //convert to array to fit in method\n        Object[] arr = numberList.toArray();\n\n        // sort arr to find kth biggest num\n        insertionSort(arr,new comparator());\n        //for each index in number list, check if kth biggest in arr is equal to numberList[i]\n        for(int i=0;i<arr.length;i++){\n            if(numberList.get(i).equals(arr[k]))\n                return list.get(i);\n        }\n        return null;\n    }\n\n    /**\n     * generates list of integer arrays from an input file,\n     * such that each line corresponds to one array of integers separated by blank spaces\n     * returns empty list if file does not exist\n     *\n     * @param filename\n     * @return\n     */\n    public static List<Integer[]> readFile(String filename) {\n        //setup scanner, list\n        try {\n            File file = new File(filename);\n            Scanner text = new Scanner(file);\n\n            List<Integer[]> textList= new ArrayList<>();\n\n            String str = new String(\"\");\n\n            while(text.hasNext()) {\n                str = text.nextLine();\n                Integer[] intArray = new Integer[str.length()];\n                Scanner stringScan = new Scanner(str);\n                int index = 0;\n                while(stringScan.hasNext()) {\n                    intArray[index]=Integer.parseInt(stringScan.next());\n                    index++;\n                }\n                textList.add(intArray);\n            }\n            List returnList = new ArrayList<Integer[]>();\n            return returnList;\n        }\n        catch(Exception e){\n            System.out.println(\"file not found\");\n            return null;\n        }\n\n\n    }\n\n    /**\n     *\n     */\n    protected static class biggestNum implements Comparator {\n\n\n        public int compare(Object o1, Object o2){\n            if(!(o1 instanceof Integer && o2 instanceof Integer)) {\n                throw new IllegalArgumentException(\"one or both inputs are not of type Integer\");\n            }\n            if(o1.equals(o2))\n                return 0;\n            return compareCalc(o1,o2);\n        }\n        public int compareCalc(Object o1, Object o2) {\n\n            String o1String = o1.toString();\n            String o2String = o2.toString();\n            //compare first digit\n            if(o1String.charAt(0)>o2String.charAt(0)){ //o1 has larger first digit\n                return -1;\n            } else if(o1String.charAt(0)<o2String.charAt(0)){ //o2 has larger first digit\n                return 1;\n            } else { //both have same first digit\n                if(o1String.length()<o2String.length()) {//length of o1 is smaller than o2\n                    if (o2String.charAt(1) > o1String.charAt(0))\n                        return 1;\n                    return -1;\n                }\n                if(o1String.length()>o2String.length()) { //length of o2 is smaller than o1\n                    if (o1String.charAt(1) > o2String.charAt(0))\n                        return -1;\n                    return 1;\n                }\n                if(o1String.length()==o2String.length()){ //remove the first index of the int and go through process once more for the second digit\n                    o1String=o1String.substring(1,o1String.length());\n                    o2String=o2String.substring(1,o2String.length());\n                    return compareCalc(Integer.parseInt(o1String),Integer.parseInt(o2String));\n                }\n            }\n            return 0;\n        }\n\n    }\n    protected static class comparator implements Comparator {\n\n        @Override\n        public int compare(Object o1, Object o2) {\n            if (o1 instanceof Comparable<?> && o2 instanceof Comparable<?>)\n                return ((Comparable) o1).compareTo(o2);\n            return 0;\n        }\n    }\n}\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/LargestNumberSolver.java b/src/LargestNumberSolver.java
+--- a/src/LargestNumberSolver.java	(revision cfa85f761efb52900283bcdbc1d361a6cbf3c2ff)
++++ b/src/LargestNumberSolver.java	(date 1675983771634)
+@@ -93,7 +93,8 @@
+      */
+     public static BigInteger sum(List<Integer[]> list) {
+         //call find largest on each array, add them together
+-        ArrayList<Integer[]> listCopy= new ArrayList<>(list);
++        ArrayList<Integer[]> listCopy= new ArrayList<>();
++        for (Integer[] item : list) listCopy.add(item.clone());
+         BigInteger big= new BigInteger("0");
+         for(Integer[] val: listCopy){
+             big=big.add(findLargestNumber(val));
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"bd81f9cb-a46a-404c-b6d7-50c7278bb79b\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/assign04.iml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/LargestNumberSolver.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/LargestNumberSolverTester.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/LargestNumberSolverTimer.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/OutOfRangeException.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/integers.txt\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/short ints.txt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2LW15ckvJXgWWB78OFZ3K9PosRC\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_opened_file_path\": \"/Users/edenharvey/IdeaProjects/assign04/src\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.0\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"bd81f9cb-a46a-404c-b6d7-50c7278bb79b\" name=\"Changes\" comment=\"\" />\n      <created>1675971848500</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1675971848500</updated>\n      <workItem from=\"1675971849869\" duration=\"51000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cfa85f761efb52900283bcdbc1d361a6cbf3c2ff)
++++ b/.idea/workspace.xml	(date 1675983575471)
+@@ -1,19 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/assign04.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/LargestNumberSolver.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/LargestNumberSolverTester.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/LargestNumberSolverTimer.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/OutOfRangeException.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/integers.txt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/short ints.txt" afterDir="false" />
++    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="intial commit 2/9/23">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/assign04.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assign04.iml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,6 +16,9 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
+   <component name="ProjectId" id="2LW15ckvJXgWWB78OFZ3K9PosRC" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+@@ -31,13 +27,21 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "Downloaded.Files.Path.Enabled": "false",
++    "Repository.Attach.Annotations": "false",
++    "Repository.Attach.JavaDocs": "false",
++    "Repository.Attach.Sources": "false",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+     "last_opened_file_path": "/Users/edenharvey/IdeaProjects/assign04/src",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+@@ -54,11 +58,30 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1675971848500</updated>
+-      <workItem from="1675971849869" duration="51000" />
++      <workItem from="1675971849869" duration="1516000" />
+     </task>
++    <task id="LOCAL-00001" summary="intial commit 2/9/23">
++      <created>1675972000893</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1675972000893</updated>
++    </task>
++    <task id="LOCAL-00002" summary="intial commit 2/9/23">
++      <created>1675972554040</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1675972554040</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="intial commit 2/9/23" />
++    <option name="LAST_COMMIT_MESSAGE" value="intial commit 2/9/23" />
++  </component>
+ </project>
+\ No newline at end of file
