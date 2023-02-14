@@ -13,15 +13,9 @@ public static int sizeToSwitch = 4;
     public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr){
         ArrayList<ArrayList<T>> mergeLists = new ArrayList<>();
         mergeLists.add(arr);
-
         while(mergeLists.get(0).size()>sizeToSwitch){
-            ArrayList<List<T>> clone = new ArrayList<>();
-            for(int j=0;j<mergeLists.size();j++){
-                clone.add(mergeLists.get(j).subList(0,mergeLists.get(j).size()/2));
-                clone.add(mergeLists.get(j).subList(mergeLists.get(j).size()/2,mergeLists.get(j).size()));
-            }
+            mergeLists = mergeSplit(mergeLists);
         }
-
     }
 
     public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr){
@@ -48,6 +42,14 @@ public static int sizeToSwitch = 4;
         for (int i = size; i >0; i--)
             arr.add(i);
         return arr;
+    }
+    private static <T> ArrayList<ArrayList<T>> mergeSplit(ArrayList<ArrayList<T>> arr){
+        ArrayList<ArrayList<T>> outList= new ArrayList<>();
+        for(int i = 0;i<arr.size();i++){
+            outList.add(new ArrayList<>(arr.get(i).subList(0,arr.get(i).size()/2)));
+            outList.add(new ArrayList<>(arr.get(i).subList(arr.get(i).size()/2,arr.get(i).size())));
+        }
+        return outList;
     }
 
 }
