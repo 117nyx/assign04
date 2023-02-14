@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="-added beginning logic for mergesort&#10;-splits arr in 1/2">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added helper method to for mergesort to split the dataset into smaller pieces">
+      <change afterPath="$PROJECT_DIR$/src/assign05/InsertionSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,7 +84,7 @@
       <updated>1675971848500</updated>
       <workItem from="1675971849869" duration="51000" />
       <workItem from="1676341066760" duration="945000" />
-      <workItem from="1676408439139" duration="2733000" />
+      <workItem from="1676408439139" duration="5190000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -112,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676401658494</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added helper method to for mergesort to split the dataset into smaller pieces">
+      <created>1676411692481</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676411692481</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +150,8 @@
     <MESSAGE value="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
     <MESSAGE value="-added beginning logic for mergesort" />
     <MESSAGE value="-added beginning logic for mergesort&#10;-splits arr in 1/2" />
-    <option name="LAST_COMMIT_MESSAGE" value="-added beginning logic for mergesort&#10;-splits arr in 1/2" />
+    <MESSAGE value="added helper method to for mergesort to split the dataset into smaller pieces" />
+    <option name="LAST_COMMIT_MESSAGE" value="added helper method to for mergesort to split the dataset into smaller pieces" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -165,9 +182,14 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign05/InsertionSort.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

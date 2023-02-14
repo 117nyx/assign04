@@ -16,6 +16,10 @@ public static int sizeToSwitch = 4;
         while(mergeLists.get(0).size()>sizeToSwitch){
             mergeLists = mergeSplit(mergeLists);
         }
+        for(ArrayList<T> obj: mergeLists){
+            InsertionSort.sort(obj);
+        }
+
     }
 
     public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr){

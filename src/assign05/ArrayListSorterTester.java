@@ -9,7 +9,7 @@ public class ArrayListSorterTester {
     ArrayList<Integer> list16 = new ArrayList();
     @BeforeEach
     public void setUp(){
-        list16 = ArrayListSorter.generateAscending(16);
+        list16 = ArrayListSorter.generatePermuted(16);
     }
     @Test
     public void mergesortTest(){
