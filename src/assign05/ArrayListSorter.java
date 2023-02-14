@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * This class implements two different g
+ * This class implements two different sorting algorithms for arraylists
+ * Authors: Jonathan Kerr and Eden Harvey
  */
 public class ArrayListSorter {
 
-    public static <T extends Comparable<? super T>> void mergesort(ArrayList<T>){
+    public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr){
 
     }
 
-    public static <T extends Comparable<? super T>> void quicksort(ArrayList<T>){
+    public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr){
 
     }
 
