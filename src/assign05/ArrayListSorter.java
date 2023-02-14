@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * This class implements two different
+ * This class implements two different g
  */
 public class ArrayListSorter {
 
