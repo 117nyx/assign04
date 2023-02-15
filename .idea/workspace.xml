@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added InsertionSort class, which sorts comparable objects">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Logic done for mergesort, need to implement driver methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <updated>1675971848500</updated>
       <workItem from="1675971849869" duration="51000" />
       <workItem from="1676341066760" duration="945000" />
-      <workItem from="1676408439139" duration="12464000" />
+      <workItem from="1676408439139" duration="15479000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -146,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676414118171</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Logic done for mergesort, need to implement driver methods">
+      <created>1676423833146</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676423833146</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +176,8 @@
     <MESSAGE value="-added beginning logic for mergesort&#10;-splits arr in 1/2" />
     <MESSAGE value="added helper method to for mergesort to split the dataset into smaller pieces" />
     <MESSAGE value="Added InsertionSort class, which sorts comparable objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added InsertionSort class, which sorts comparable objects" />
+    <MESSAGE value="Logic done for mergesort, need to implement driver methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logic done for mergesort, need to implement driver methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -207,7 +214,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
-          <line>31</line>
+          <line>13</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -11,25 +11,7 @@ import java.util.List;
 public class ArrayListSorter {
 public static int sizeToSwitch = 4;
     public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr){
-        //init arraylist of arraylists
-        ArrayList<ArrayList<T>> mergeLists = new ArrayList<>();
-        mergeLists.add(arr);
-        //divide until subarrays reach desired size
-        while(mergeLists.get(0).size()>sizeToSwitch){
-            mergeLists = mergeSplit(mergeLists);
-        }
-        //sort small sub arrays
-        for(ArrayList<T> obj: mergeLists){
-            InsertionSort.sort(obj);
-        }
-
-        while(mergeLists.size()!=1){
-            ArrayList<ArrayList<T>> temp = new ArrayList<>();
-            for(int i=0;i<mergeLists.size()-1;i+=2)
-                temp.add(merge(mergeLists.get(i),mergeLists.get(i+1)));
-            mergeLists = temp;
-        }
-        arr=mergeLists.get(0);
+        mergeStart(arr);
     }
 
     public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr){
@@ -56,6 +38,28 @@ public static int sizeToSwitch = 4;
         for (int i = size; i >0; i--)
             arr.add(i);
         return arr;
+    }
+    private static <T extends Comparable<? super T>> void mergeStart(ArrayList<T> arr){
+        //init arraylist of arraylists
+        ArrayList<ArrayList<T>> mergeLists = new ArrayList<>(arr.size()/sizeToSwitch);
+        mergeLists.add(arr);
+        //divide until subarrays reach desired size
+        while(mergeLists.get(0).size()>sizeToSwitch){
+            mergeLists = mergeSplit(mergeLists);
+        }
+        //sort small sub arrays
+        for(ArrayList<T> obj: mergeLists){
+            InsertionSort.sort(obj);
+        }
+
+        while(mergeLists.size()!=1){
+            ArrayList<ArrayList<T>> temp = new ArrayList<>();
+            for(int i=0;i<mergeLists.size()-1;i+=2)
+                temp.add(merge(mergeLists.get(i),mergeLists.get(i+1)));
+            mergeLists = temp;
+        }
+        arr.clear();
+        arr.addAll(mergeLists.get(0));
     }
     private static <T extends Comparable<?super T>> ArrayList<ArrayList<T>> mergeSplit(ArrayList<ArrayList<T>> arr){
         ArrayList<ArrayList<T>> outList= new ArrayList<>();
