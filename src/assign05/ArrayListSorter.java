@@ -9,8 +9,11 @@ import java.util.List;
  * Authors: Jonathan Kerr and Eden Harvey
  */
 public class ArrayListSorter {
-public static int sizeToSwitch = 4;
+public static int sizeToSwitch = 1;
     public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr){
+        //sort into small sub arrays
+        sortEvery(arr,sizeToSwitch);
+
         mergeStart(arr);
     }
 
@@ -39,66 +42,67 @@ public static int sizeToSwitch = 4;
             arr.add(i);
         return arr;
     }
+    private static <T extends Comparable<? super T>> void sortEvery(ArrayList<T> arr, int step){
+        for(int i = 0;i<arr.size();i+=step){
+            InsertionSort.sort(arr,i,i+step);
+        }
+    }
     private static <T extends Comparable<? super T>> void mergeStart(ArrayList<T> arr){
-        //init arraylist of arraylists
-        ArrayList<ArrayList<T>> mergeLists = new ArrayList<>(arr.size()/sizeToSwitch);
-        mergeLists.add(arr);
-        //divide until subarrays reach desired size
-        while(mergeLists.get(0).size()>sizeToSwitch){
-            mergeLists = mergeSplit(mergeLists);
-        }
-        //sort small sub arrays
-        for(ArrayList<T> obj: mergeLists){
-            InsertionSort.sort(obj);
-        }
 
-        while(mergeLists.size()!=1){
-            ArrayList<ArrayList<T>> temp = new ArrayList<>();
-            for(int i=0;i<mergeLists.size()-1;i+=2)
-                temp.add(merge(mergeLists.get(i),mergeLists.get(i+1)));
-            mergeLists = temp;
-        }
-        arr.clear();
-        arr.addAll(mergeLists.get(0));
+//        //init arraylist of arraylists
+//        ArrayList<T> mergeLists = new ArrayList<>(arr.size());
+//        //divide until subarrays reach desired size
+//        while(mergeLists.get(0).size()>sizeToSwitch){
+//            mergeLists = mergeSplit(mergeLists);
+//        }
+//
+//
+//        while(mergeLists.size()!=1){
+//            ArrayList<ArrayList<T>> temp = new ArrayList<>();
+//            for(int i=0;i<mergeLists.size()-1;i+=2)
+//                temp.add(merge(mergeLists.get(i),mergeLists.get(i+1)));
+//            mergeLists = temp;
+//        }
+//        arr.clear();
+//        arr.addAll(mergeLists.get(0));
     }
-    private static <T extends Comparable<?super T>> ArrayList<ArrayList<T>> mergeSplit(ArrayList<ArrayList<T>> arr){
-        ArrayList<ArrayList<T>> outList= new ArrayList<>();
-        for(int i = 0;i<arr.size();i++){
-            outList.add(new ArrayList<>(arr.get(i).subList(0,arr.get(i).size()/2)));
-            outList.add(new ArrayList<>(arr.get(i).subList(arr.get(i).size()/2,arr.get(i).size())));
-        }
-        return outList;
-    }
-    private static <T extends Comparable<?super T>> ArrayList<T> merge(ArrayList<T> arrLeft,ArrayList<T> arrRight){
-        ArrayList<T> returnList = new ArrayList<T>();
-        int j=0;
-        int i=0;
-        while(i<arrLeft.size()&&j<arrRight.size()){
-                if(arrLeft.get(i).compareTo(arrRight.get(j))<0){
-                    returnList.add(arrLeft.get(i));
-                    i++;
-                } else if(arrLeft.get(i).compareTo(arrRight.get(j))>0) {
-                    returnList.add(arrRight.get(j));
+
+    public static <T extends Comparable<?super T>> void merge(ArrayList<T> arr){
+
+        int subSize = sizeToSwitch;
+        while(subSize<arr.size()) {
+            ArrayList<T> returnList = new ArrayList<>();
+            for (int hop = 0; hop < arr.size(); hop += subSize * 2) {
+                int j = 0;
+                int i = 0;
+
+                while (i < subSize && j < subSize) {
+                    if (arr.get(i + hop).compareTo(arr.get(j + hop + subSize)) < 0) {
+                        returnList.add(arr.get(i + hop));
+                        i++;
+                    } else if (arr.get(i + hop).compareTo(arr.get(j + hop + subSize)) > 0) {
+                        returnList.add(arr.get(j + hop + subSize));
+                        j++;
+                    } else if (arr.get(i + hop).compareTo(arr.get(j + hop + subSize)) == 0) {
+                        returnList.add(arr.get(i + hop));
+                        returnList.add(arr.get(j + hop + subSize));
+                        j++;
+                        i++;
+                    }
+
+                }
+                while (j < subSize) {
+                    returnList.add(arr.get(j + hop + subSize));
                     j++;
-                } else if(arrLeft.get(i).compareTo(arrRight.get(j))==0){
-                    returnList.add(arrLeft.get(i));
-                    returnList.add(arrRight.get(j));
-                    j++;
+                }
+                while (i < subSize) {
+                    returnList.add(arr.get(i + hop));
                     i++;
                 }
-
             }
-        while(j<arrRight.size()){
-            returnList.add(arrRight.get(j));
-            j++;
+            subSize *= 2;
+            arr=returnList;
         }
-        while(i<arrLeft.size()){
-            returnList.add(arrLeft.get(i));
-            i++;
-        }
-
-
-        return returnList;
     }
 
 }

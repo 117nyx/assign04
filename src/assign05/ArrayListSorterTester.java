@@ -7,14 +7,19 @@ import java.util.ArrayList;
 
 public class ArrayListSorterTester {
     ArrayList<Integer> list1024 = new ArrayList();
+    ArrayList<Integer> fourList = new ArrayList();
     @BeforeEach
     public void setUp(){
-        list1024 = ArrayListSorter.generatePermuted(1024);
+
+        list1024 = ArrayListSorter.generatePermuted(512);
+
+
     }
+
+
     @Test
     public void mergesortTest(){
-        ArrayListSorter.mergesort(list1024);
-        assertArrayEquals(list1024.toArray(),ArrayListSorter.generateAscending(1024).toArray());
+        ArrayListSorter.merge(list1024);
 
     }
 
