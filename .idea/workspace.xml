@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Changed to only use temp array and standard array, still need to implement driver/passenger methods">
+      <change afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
@@ -39,6 +40,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="InstancesTracker">
+    <option name="classes">
+      <map>
+        <entry key="java.util.ArrayList" value="CREATION" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -117,7 +125,7 @@
       <workItem from="1675971849869" duration="51000" />
       <workItem from="1676341066760" duration="945000" />
       <workItem from="1676408439139" duration="16690000" />
-      <workItem from="1676498701244" duration="10317000" />
+      <workItem from="1676498701244" duration="20503000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -196,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676510632673</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changed to only use temp array and standard array, still need to implement driver/passenger methods">
+      <created>1676518480577</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676518480577</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,16 +275,26 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="30" />
+          <line>21</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="33" />
+          <line>17</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="assign05.ArrayListSorterTester" memberName="list1024" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

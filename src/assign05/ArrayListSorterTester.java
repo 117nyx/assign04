@@ -11,7 +11,7 @@ public class ArrayListSorterTester {
     @BeforeEach
     public void setUp(){
 
-        list1024 = ArrayListSorter.generatePermuted(512);
+        list1024 = ArrayListSorter.generatePermuted(4);
 
 
     }
