@@ -9,14 +9,15 @@ import java.util.List;
  * Authors: Jonathan Kerr and Eden Harvey
  */
 public class ArrayListSorter {
-public static int sizeToSwitch = 1;
+private static int sizeToSwitch = 4;
     public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr){
-        //sort into small sub arrays
         sortEvery(arr,sizeToSwitch);
-
-        mergeStart(arr);
+        mergePass(arr);
     }
 
+    public static void setSizeToSwitch(int val){
+        sizeToSwitch = val;
+    }
     public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr){
 
     }
@@ -47,27 +48,13 @@ public static int sizeToSwitch = 1;
             InsertionSort.sort(arr,i,i+step);
         }
     }
-    private static <T extends Comparable<? super T>> void mergeStart(ArrayList<T> arr){
+    private static <T extends Comparable<? super T>> ArrayList<T> mergePass(ArrayList<T> arr){
+        arr=merge(arr);
+        return arr;
 
-//        //init arraylist of arraylists
-//        ArrayList<T> mergeLists = new ArrayList<>(arr.size());
-//        //divide until subarrays reach desired size
-//        while(mergeLists.get(0).size()>sizeToSwitch){
-//            mergeLists = mergeSplit(mergeLists);
-//        }
-//
-//
-//        while(mergeLists.size()!=1){
-//            ArrayList<ArrayList<T>> temp = new ArrayList<>();
-//            for(int i=0;i<mergeLists.size()-1;i+=2)
-//                temp.add(merge(mergeLists.get(i),mergeLists.get(i+1)));
-//            mergeLists = temp;
-//        }
-//        arr.clear();
-//        arr.addAll(mergeLists.get(0));
     }
 
-    public static <T extends Comparable<?super T>> void merge(ArrayList<T> arr){
+    public static <T extends Comparable<?super T>> ArrayList<T> merge(ArrayList<T> arr){
 
         int subSize = sizeToSwitch;
         while(subSize<arr.size()) {
@@ -103,6 +90,7 @@ public static int sizeToSwitch = 1;
             subSize *= 2;
             arr=returnList;
         }
+        return arr;
     }
 
 }

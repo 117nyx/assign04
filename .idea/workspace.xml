@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Splitting mergesort into driver and passenger methods">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Changed to only use temp array and standard array, still need to implement driver/passenger methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign05/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/InsertionSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,7 @@
       <workItem from="1675971849869" duration="51000" />
       <workItem from="1676341066760" duration="945000" />
       <workItem from="1676408439139" duration="16690000" />
-      <workItem from="1676498701244" duration="7171000" />
+      <workItem from="1676498701244" duration="10317000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -190,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676487907259</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changed to only use temp array and standard array, still need to implement driver/passenger methods">
+      <created>1676510632673</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676510632673</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +223,8 @@
     <MESSAGE value="Logic done for mergesort, need to implement driver methods" />
     <MESSAGE value="Mergesort working with arrayList of ArrayLists, need to adjust to not use 2d arrayList" />
     <MESSAGE value="Splitting mergesort into driver and passenger methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Splitting mergesort into driver and passenger methods" />
+    <MESSAGE value="Changed to only use temp array and standard array, still need to implement driver/passenger methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed to only use temp array and standard array, still need to implement driver/passenger methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -254,13 +261,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>
-          <line>26</line>
+          <line>22</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="32" />
+          <line>27</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

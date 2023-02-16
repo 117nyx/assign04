@@ -19,8 +19,7 @@ public class ArrayListSorterTester {
 
     @Test
     public void mergesortTest(){
-        ArrayListSorter.merge(list1024);
-
+        ArrayListSorter.mergesort(list1024);
     }
 
     @Test
