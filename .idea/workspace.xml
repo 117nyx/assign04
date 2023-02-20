@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Changed to only use temp array and standard array, still need to implement driver/passenger methods">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTimer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayTester">
+  <component name="RunManager">
     <configuration name="ArrayListSorterTester.mergesortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CS2420Shared" />
       <extension name="coverage">
@@ -124,7 +123,7 @@
       <workItem from="1675971849869" duration="51000" />
       <workItem from="1676341066760" duration="945000" />
       <workItem from="1676408439139" duration="16690000" />
-      <workItem from="1676498701244" duration="26111000" />
+      <workItem from="1676498701244" duration="29370000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676588825903</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort">
+      <created>1676597487008</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676597487008</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +251,8 @@
     <MESSAGE value="Mergesort working with arrayList of ArrayLists, need to adjust to not use 2d arrayList" />
     <MESSAGE value="Splitting mergesort into driver and passenger methods" />
     <MESSAGE value="Changed to only use temp array and standard array, still need to implement driver/passenger methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed to only use temp array and standard array, still need to implement driver/passenger methods" />
+    <MESSAGE value="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort" />
+    <option name="LAST_COMMIT_MESSAGE" value="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
