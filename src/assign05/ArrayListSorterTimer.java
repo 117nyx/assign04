@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ArrayListSorterTimer {
 
     public static void main(String args[]){
-        int timesToLoop=25;
+        int timesToLoop=10000;
         ArrayList ints = new ArrayList();
         for (int n = 1; n <= 131072; n*=2) {
             ints=ArrayListSorter.generateDescending(131072);
