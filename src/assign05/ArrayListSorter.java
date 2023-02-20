@@ -13,20 +13,26 @@ public class ArrayListSorter {
 
     public static <T extends Comparable<? super T>> void mergesort(ArrayList<T> arr) {
         ArrayList<T> temp = new ArrayList<>(arr.size());
-        for(int i=0;i<arr.size();i++)
+        for (int i = 0; i < arr.size(); i++)
             temp.add(null);
-        split(arr,temp,0,arr.size()-1);
+        split(arr, temp, 0, arr.size() - 1);
     }
 
     public static void setSizeToSwitch(int val) {
         sizeToSwitch = val;
     }
-    public static int getSizeToSwitch(){
+
+    public static int getSizeToSwitch() {
         return sizeToSwitch;
     }
 
-    public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr) {
+    public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr, int low, int high, String type) {
+        if(low < high){
+            int pivot = partition(arr,low,high,type);
 
+            quicksort(arr,low,pivot-1,type);
+            quicksort(arr,pivot+1,high,type);
+        }
     }
 
     public static ArrayList<Integer> generateAscending(int size) {
@@ -61,12 +67,12 @@ public class ArrayListSorter {
         if (left + sizeToSwitch < right) {
             int mid = (left + (right)) / 2;
             split(arr, temp, left, mid);
-            split(arr, temp, mid+1, right);
+            split(arr, temp, mid + 1, right);
 
             merge(arr, temp, left, right);
         }
-        if(left+sizeToSwitch>=right){
-            InsertionSort.sort(arr,left,right+1);
+        if (left + sizeToSwitch >= right) {
+            InsertionSort.sort(arr, left, right + 1);
         }
     }
 
@@ -77,16 +83,16 @@ public class ArrayListSorter {
         int i = 0;
         int place = left;
 
-        while (i + left <= mid && j + mid +1 <= right) {
-            if (arr.get(i + left).compareTo(arr.get(j + mid +1)) < 0) {
+        while (i + left <= mid && j + mid + 1 <= right) {
+            if (arr.get(i + left).compareTo(arr.get(j + mid + 1)) < 0) {
                 temp.set(place, (arr.get(i)));
                 i++;
                 place++;
-            } else if (arr.get(i + left).compareTo(arr.get(j + mid +1)) > 0) {
-                temp.set(place, arr.get(j + mid+1));
+            } else if (arr.get(i + left).compareTo(arr.get(j + mid + 1)) > 0) {
+                temp.set(place, arr.get(j + mid + 1));
                 j++;
                 place++;
-            } else if (arr.get(i + left).compareTo(arr.get(j + mid+1)) == 0) {
+            } else if (arr.get(i + left).compareTo(arr.get(j + mid + 1)) == 0) {
                 temp.set(place, arr.get(i + left));
                 i++;
                 place++;
@@ -94,7 +100,7 @@ public class ArrayListSorter {
 
         }
         while (j + mid < right) {
-            temp.set(place, arr.get(j + mid+1));
+            temp.set(place, arr.get(j + mid + 1));
             j++;
             place++;
         }
@@ -103,8 +109,65 @@ public class ArrayListSorter {
             i++;
             place++;
         }
-        for(int k=left;k<=right;k++){
-            arr.set(k,temp.get(k));
+        for (int k = left; k <= right; k++) {
+            arr.set(k, temp.get(k));
         }
     }
+
+    public static <T extends Comparable<? super T>> int partition(ArrayList<T> arr, int low, int high, String type) {
+        if (type.equals("last")) {
+            //get last element as pivot,
+            T pivot = arr.get(high);
+            int index = low - 1;
+            for (int i = low; i < high; i++)
+                if (arr.get(i).compareTo(pivot) < 0) {
+                    index++;
+                    T temp = arr.get(i);
+                    arr.set(i,arr.get(index));
+                    arr.set(index, temp);
+                }
+
+            T temp = arr.get(index+1);
+            arr.set(index,arr.get(high));
+            arr.set(index+1,temp);
+            return(index + 1);
+        }
+        if (type.equals("random")) {
+            T pivot = arr.get((int) (Math.random()* arr.size() +low));
+            int index = low - 1;
+            for (int i = low; i < high; i++)
+                if (arr.get(i).compareTo(pivot) < 0) {
+                    index++;
+                    T temp = arr.get(i);
+                    arr.set(i,arr.get(index));
+                    arr.set(index,temp);
+                }
+
+            T temp = arr.get(index+1);
+            arr.set(index,arr.get(high));
+            arr.set(index+1,temp);
+            return(index + 1);
+        }
+
+        if (type.equals("middle")) {
+                T pivot = arr.get((high + low)/2);
+                int index = low - 1;
+                for (int i = low; i < high; i++)
+                    if (arr.get(i).compareTo(pivot) < 0) {
+                        index++;
+                        T temp = arr.get(i);
+                        arr.set(i,arr.get(index));
+                        arr.set(index,temp);
+                    }
+
+                T temp = arr.get(index+1);
+                arr.set(index,arr.get(high));
+                arr.set(index+1,temp);
+                return(index + 1);
+                }
+
+            throw new IllegalArgumentException("incorrect string input");
+
+    }
+
 }
