@@ -37,9 +37,18 @@ public class ArrayListSorterTester {
 
     @Test
     public void quicksortTest() {
-        ArrayListSorter.quicksort(list1024,0,list1024.size(),"last");
+        ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"last");
         assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list 1024 works properly");
     }
+@Test
+    public void partitionTest(){
+        ArrayList<Integer> partTest = ArrayListSorter.generateDescending(10);
+        ArrayList<Integer> check = ArrayListSorter.generateAscending(10);
+        ArrayListSorter.partition(partTest,0,partTest.size()-1,"last");
+
+        assertArrayEquals(check.toArray(), partTest.toArray());
+
+}
 
 
 }

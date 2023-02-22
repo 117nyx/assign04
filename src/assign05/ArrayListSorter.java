@@ -28,10 +28,10 @@ public class ArrayListSorter {
 
     public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr, int low, int high, String type) {
         if(low < high){
-            int pivot = partition(arr,low,high,type);
+            int partPoint = partition(arr,low,high,type);
 
-            quicksort(arr,low,pivot-1,type);
-            quicksort(arr,pivot+1,high,type);
+            quicksort(arr,low,partPoint,type);
+            quicksort(arr,partPoint,high,type);
         }
     }
 
@@ -114,60 +114,57 @@ public class ArrayListSorter {
         }
     }
 
-    public static <T extends Comparable<? super T>> int partition(ArrayList<T> arr, int low, int high, String type) {
+    public static <T extends Comparable<? super T>> int partition(ArrayList<T> arr, int left, int right, String type) {
         if (type.equals("last")) {
             //get last element as pivot,
-            T pivot = arr.get(high);
-            int index = low - 1;
-            for (int i = low; i < high; i++)
-                if (arr.get(i).compareTo(pivot) < 0) {
-                    index++;
-                    T temp = arr.get(i);
-                    arr.set(i,arr.get(index));
-                    arr.set(index, temp);
-                }
+            int pivotStorage = right;
+            T pivot = arr.get(pivotStorage);
+            return partitionLoop(arr,right,left,pivot,pivotStorage);
 
-            T temp = arr.get(index+1);
-            arr.set(index,arr.get(high));
-            arr.set(index+1,temp);
-            return(index + 1);
         }
         if (type.equals("random")) {
-            T pivot = arr.get((int) (Math.random()* arr.size() +low));
-            int index = low - 1;
-            for (int i = low; i < high; i++)
-                if (arr.get(i).compareTo(pivot) < 0) {
-                    index++;
-                    T temp = arr.get(i);
-                    arr.set(i,arr.get(index));
-                    arr.set(index,temp);
-                }
+            //get random element
+            int pivotStorage = (int) (Math.random() * arr.size() + left);
+            T pivot = arr.get(pivotStorage);
+            return partitionLoop(arr,right,left,pivot,pivotStorage);
 
-            T temp = arr.get(index+1);
-            arr.set(index,arr.get(high));
-            arr.set(index+1,temp);
-            return(index + 1);
         }
 
         if (type.equals("middle")) {
-                T pivot = arr.get((high + low)/2);
-                int index = low - 1;
-                for (int i = low; i < high; i++)
-                    if (arr.get(i).compareTo(pivot) < 0) {
-                        index++;
-                        T temp = arr.get(i);
-                        arr.set(i,arr.get(index));
-                        arr.set(index,temp);
-                    }
+            //get middle element
+                int pivotStorage = (right + left)/2;
+                T pivot = arr.get(pivotStorage);
+                return partitionLoop(arr,right,left,pivot,pivotStorage);
 
-                T temp = arr.get(index+1);
-                arr.set(index,arr.get(high));
-                arr.set(index+1,temp);
-                return(index + 1);
                 }
 
             throw new IllegalArgumentException("incorrect string input");
 
+    }
+    private static <T extends Comparable<? super T>> int partitionLoop(ArrayList<T> arr, int right, int left, T pivot, int pivotStorage){
+       //swap pivot element with last element
+        T temp = arr.get(right);
+        arr.set(right,arr.get(pivotStorage));
+        arr.set(pivotStorage,temp);
+        while(left < right){
+            //move left and right over any correct elements
+            while (arr.get(left).compareTo(pivot) < 0)
+                left++;
+            while(arr.get(right).compareTo(pivot) > 0)
+                right--;
+            //swap left and right elements that are in wrong place(now on correct side of pivot)
+            T temp2 = arr.get(left);
+            arr.set(left,arr.get(right));
+            arr.set(right,temp2);
+            // move again for next loop
+            left++;
+            right--;
+        }
+        //swap left and pivot since it is now in right place
+        T temp3 = arr.get(left);
+        arr.set(left,arr.get(pivotStorage));
+        arr.set(pivotStorage,temp3);
+        return arr.indexOf(temp3);
     }
 
 }
