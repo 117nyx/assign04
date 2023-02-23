@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * This class implements two different sorting algorithms for arraylists
+ * This class implements two different sorting algorithms for arraylists- merge sort and quicksort
  * Authors: Jonathan Kerr and Eden Harvey
  */
 public class ArrayListSorter {
@@ -26,14 +26,6 @@ public class ArrayListSorter {
         return sizeToSwitch;
     }
 
-    public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr, int low, int high, String type) {
-        if(low < high){
-            int partPoint = partition(arr,low,high,type);
-
-            quicksort(arr,low,partPoint,type);
-            quicksort(arr,partPoint,high,type);
-        }
-    }
 
     public static ArrayList<Integer> generateAscending(int size) {
         ArrayList<Integer> arr = new ArrayList<Integer>(size);
@@ -113,6 +105,17 @@ public class ArrayListSorter {
             arr.set(k, temp.get(k));
         }
     }
+    public static <T extends Comparable<? super T>> void quicksort(ArrayList<T> arr, int left, int right, String type) {
+        if(left + sizeToSwitch < right){
+            int partPoint = partition(arr,left,right,type);
+
+            quicksort(arr,left,partPoint,type);
+            quicksort(arr,partPoint,right,type);
+        }
+        else {
+            InsertionSort.sort(arr, left, right + 1);
+        }
+    }
 
     public static <T extends Comparable<? super T>> int partition(ArrayList<T> arr, int left, int right, String type) {
         if (type.equals("last")) {
@@ -124,7 +127,8 @@ public class ArrayListSorter {
         }
         if (type.equals("random")) {
             //get random element
-            int pivotStorage = (int) (Math.random() * arr.size() + left);
+            int range = (right-left);
+            int pivotStorage = (int) (Math.random() * range + left);
             T pivot = arr.get(pivotStorage);
             return partitionLoop(arr,right,left,pivot,pivotStorage);
 
@@ -146,25 +150,38 @@ public class ArrayListSorter {
         T temp = arr.get(right);
         arr.set(right,arr.get(pivotStorage));
         arr.set(pivotStorage,temp);
+        pivotStorage = right;
+        //make sure right ignores pivot
+        right--;
+
         while(left < right){
             //move left and right over any correct elements
             while (arr.get(left).compareTo(pivot) < 0)
                 left++;
             while(arr.get(right).compareTo(pivot) > 0)
                 right--;
-            //swap left and right elements that are in wrong place(now on correct side of pivot)
-            T temp2 = arr.get(left);
-            arr.set(left,arr.get(right));
-            arr.set(right,temp2);
-            // move again for next loop
-            left++;
-            right--;
+
+            if(left < right) {
+                //swap left and right elements that are in wrong place(now on correct side of pivot)
+                T temp2 = arr.get(left);
+                arr.set(left, arr.get(right));
+                arr.set(right, temp2);
+                left++;
+                right--;
+            }
+
         }
+        //check to see if left moved through every element(pivot == greatest value)
+        if(left == pivotStorage)
+            return left;
+        //move left one more time
+        if(arr.get(left).compareTo(pivot) <= 0)
+            left++;
         //swap left and pivot since it is now in right place
         T temp3 = arr.get(left);
         arr.set(left,arr.get(pivotStorage));
         arr.set(pivotStorage,temp3);
-        return arr.indexOf(temp3);
+        return left;
     }
-
 }
+
