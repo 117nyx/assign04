@@ -2,6 +2,7 @@ package assign05;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 /**
  * This class implements two different sorting algorithms for arraylists- merge sort and quicksort
@@ -34,11 +35,12 @@ public class ArrayListSorter {
         return arr;
     }
 
-    public static ArrayList<Integer> generatePermuted(int size) {
+    public static ArrayList<Integer> generatePermuted(int size, long seed) {
+        Random rnd = new Random(seed);
         ArrayList<Integer> arr = new ArrayList<Integer>(size);
         for (int i = 0; i < size; i++)
             arr.add(i + 1);
-        Collections.shuffle(arr);
+        Collections.shuffle(arr,rnd);
         return arr;
     }
 

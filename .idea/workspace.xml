@@ -82,7 +82,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayTester">
+  <component name="RunManager">
     <configuration name="ArrayListSorterTester.mergesortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CS2420Shared" />
       <extension name="coverage">
@@ -265,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677134032297</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added array generation tests">
+      <created>1677174815473</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1677174815473</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,17 +340,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
-          <line>14</line>
+          <line>15</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

@@ -10,7 +10,7 @@ public class ArrayListSorterTimer {
         int timesToLoop=1000;
         ArrayList ints = new ArrayList();
         for (int n = 1; n <= 131072; n*=2) {
-            ints=ArrayListSorter.generatePermuted(131072);
+            ints=ArrayListSorter.generatePermuted(131072,n);
             ArrayListSorter.setSizeToSwitch(n);
 
             long startTime, midpointTime, stopTime;

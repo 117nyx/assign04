@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ArrayListSorterTester {
     ArrayList<Integer> list1024 = new ArrayList();
@@ -43,7 +44,7 @@ public class ArrayListSorterTester {
     public void generatePermutedTrueRandom(){
         ArrayList<ArrayList<Integer>> arrayListList=new ArrayList<>();
         for(int i=0;i<1000;i++){
-            arrayListList.add(ArrayListSorter.generatePermuted(100000));
+            arrayListList.add(ArrayListSorter.generatePermuted(100000,17));
         }
         for(int i=0;i<arrayListList.size();i++){
             for(int j=arrayListList.size()-1;j>i;j--){
@@ -66,7 +67,7 @@ public class ArrayListSorterTester {
         ArrayListSorter.setSizeToSwitch(1);
         ArrayList temp = new ArrayList();
         for(int i=0;i<1000;i++){
-            temp=ArrayListSorter.generatePermuted(1000);
+            temp=ArrayListSorter.generatePermuted(1000,17);
             ArrayListSorter.mergesort(temp);
             assertArrayEquals(temp.toArray(),ArrayListSorter.generateAscending(1000).toArray());
         }
