@@ -119,6 +119,7 @@ public class ArrayListSorter {
         }
     }
 
+
     public static <T extends Comparable<? super T>> int partition(ArrayList<T> arr, int left, int right, String type) {
         if (type.equals("last")) {
             //get last element as pivot,
@@ -160,8 +161,13 @@ public class ArrayListSorter {
             //move left and right over any correct elements
             while (arr.get(left).compareTo(pivot) < 0)
                 left++;
-            while(arr.get(right).compareTo(pivot) > 0)
-                right--;
+            while(arr.get(right).compareTo(pivot) > 0) {
+                if (right != 0)
+                    right--;
+                else
+                    break;
+            }
+
 
             if(left < right) {
                 //swap left and right elements that are in wrong place(now on correct side of pivot)
@@ -176,7 +182,7 @@ public class ArrayListSorter {
         //check to see if left moved through every element(pivot == greatest value)
         if(left == pivotStorage)
             return left;
-        //move left one more time
+        //move left one more time if needed
         if(arr.get(left).compareTo(pivot) <= 0)
             left++;
         //swap left and pivot since it is now in right place
