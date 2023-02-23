@@ -33,17 +33,44 @@ public class ArrayListSorterTester {
     }
     @Test
     public void generateAscendingTest(){
-        assertArrayEquals(ArrayListSorter.generateAscending(5).toArray(),new Integer[]{1,2,3,4,5});
+        assertArrayEquals(ArrayListSorter.generateAscending(5).toArray(), new Integer[]{1,2,3,4,5});
     }
     @Test
     public void generateAscendingArraySizeZero(){
         assertArrayEquals(ArrayListSorter.generateAscending(0).toArray(),new Integer[]{});
+    }
+    @Test
+    public void generatePermutedTrueRandom(){
+        ArrayList<ArrayList<Integer>> arrayListList=new ArrayList<>();
+        for(int i=0;i<1000;i++){
+            arrayListList.add(ArrayListSorter.generatePermuted(100000));
+        }
+        for(int i=0;i<arrayListList.size();i++){
+            for(int j=arrayListList.size()-1;j>i;j--){
+               assertFalse(arrayListList.get(i).equals(arrayListList.get(j)));
+            }
+        }
+    }
+    @Test
+    public void generateDescendingTest(){
+        assertArrayEquals(ArrayListSorter.generateDescending(5).toArray(), new Integer[]{5,4,3,2,1});
     }
 
     @Test
     public void mergesortTest() {
         ArrayListSorter.mergesort(list1024);
         assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "mergeSort for list 1024 works properly");
+    }
+    @Test
+    public void mergesortLargeSample(){
+        ArrayListSorter.setSizeToSwitch(1);
+        ArrayList temp = new ArrayList();
+        for(int i=0;i<1000;i++){
+            temp=ArrayListSorter.generatePermuted(1000);
+            ArrayListSorter.mergesort(temp);
+            assertArrayEquals(temp.toArray(),ArrayListSorter.generateAscending(1000).toArray());
+        }
+
     }
 
     @Test
@@ -103,6 +130,7 @@ public class ArrayListSorterTester {
         assertArrayEquals(check.toArray(), partTest.toArray());
         assertEquals(6,partPoint);
     }
+
 
 
 

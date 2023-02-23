@@ -63,9 +63,9 @@ public class ArrayListSorter {
 
             merge(arr, temp, left, right);
         }
-        if (left + sizeToSwitch >= right) {
-            InsertionSort.sort(arr, left, right + 1);
-        }
+       if (left + sizeToSwitch >= right) {
+           InsertionSort.sort(arr, left, right + 1);
+       }
     }
 
 
@@ -77,7 +77,7 @@ public class ArrayListSorter {
 
         while (i + left <= mid && j + mid + 1 <= right) {
             if (arr.get(i + left).compareTo(arr.get(j + mid + 1)) < 0) {
-                temp.set(place, (arr.get(i)));
+                temp.set(place, (arr.get(left+i)));
                 i++;
                 place++;
             } else if (arr.get(i + left).compareTo(arr.get(j + mid + 1)) > 0) {
