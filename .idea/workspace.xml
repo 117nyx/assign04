@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added array generation tests">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign05/InsertionSortTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/InsertionSortTimer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -23,15 +23,18 @@ public class InsertionSortTimer {
 
             startTime = System.nanoTime();
 
-            for (int i = 0; i < timesToLoop; i++)
-                ArrayListSorter.quicksort(ints,0,ints.size()-1,"random");
+            for (int i = 0; i < timesToLoop; i++){
+                ints = ArrayListSorter.generatePermuted(10000,n);
+                ArrayListSorter.quicksort(ints,0,ints.size()-1,"last");
+            }
+
 
             midpointTime = System.nanoTime();
 
             // Run an empty loop to capture the cost of running the loop.
 
             for (int i = 0; i < timesToLoop; i++) { // empty block
-
+                ints = ArrayListSorter.generatePermuted(10000,n);
             }
 
             stopTime = System.nanoTime();

@@ -123,7 +123,7 @@ public class ArrayListSorter {
     public static <T extends Comparable<? super T>> int partition(ArrayList<T> arr, int left, int right, String type) {
         if (type.equals("last")) {
             //get last element as pivot,
-            int pivotStorage = right;
+            int pivotStorage = right-1;
             T pivot = arr.get(pivotStorage);
             return partitionLoop(arr,right,left,pivot,pivotStorage);
 
