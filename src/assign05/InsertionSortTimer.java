@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class InsertionSortTimer {
     public static void main(String args[]) {
-        int timesToLoop = 1000;
+        int timesToLoop = 100;
         ArrayList ints = new ArrayList();
         for(int n=0;n<timesToLoop;n++){
             ints = ArrayListSorter.generatePermuted(10000,n);
@@ -24,7 +24,7 @@ public class InsertionSortTimer {
             startTime = System.nanoTime();
 
             for (int i = 0; i < timesToLoop; i++)
-                ArrayListSorter.quicksort(ints,0,ints.size()-1,"middle");
+                ArrayListSorter.quicksort(ints,0,ints.size()-1,"random");
 
             midpointTime = System.nanoTime();
 
