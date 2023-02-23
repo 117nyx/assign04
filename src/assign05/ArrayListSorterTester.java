@@ -31,6 +31,14 @@ public class ArrayListSorterTester {
         ArrayListSorter.setSizeToSwitch(8);
         assertEquals(ArrayListSorter.getSizeToSwitch(),8);
     }
+    @Test
+    public void generateAscendingTest(){
+        assertArrayEquals(ArrayListSorter.generateAscending(5).toArray(),new Integer[]{1,2,3,4,5});
+    }
+    @Test
+    public void generateAscendingArraySizeZero(){
+        assertArrayEquals(ArrayListSorter.generateAscending(0).toArray(),new Integer[]{});
+    }
 
     @Test
     public void mergesortTest() {
