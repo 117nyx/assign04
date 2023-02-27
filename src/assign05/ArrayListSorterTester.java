@@ -80,8 +80,18 @@ public class ArrayListSorterTester {
         assertArrayEquals(fiveList.toArray(), ArrayListSorter.generateAscending(5).toArray(), "quicksort for fiveList works properly");
     }
     @Test
-    public void quicksortTestLong() {
+    public void quicksortTestLongMiddle() {
         ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"middle");
+        assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list1024 works properly");
+    }
+    @Test
+    public void quicksortTestLongLast() {
+        ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"last");
+        assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list1024 works properly");
+    }
+    @Test
+    public void quicksortTestLongRand() {
+        ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"random");
         assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list1024 works properly");
     }
 @Test

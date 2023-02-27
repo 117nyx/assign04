@@ -1,0 +1,160 @@
+Index: src/assign05/ArrayListSorterTester.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assign05;\r\n\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class ArrayListSorterTester {\r\n    ArrayList<Integer> list1024 = new ArrayList();\r\n    ArrayList<Integer> fiveList = new ArrayList();\r\n\r\n    @BeforeEach\r\n    public void setUp() {\r\n\r\n        list1024 = ArrayListSorter.generateDescending(1024);\r\n        fiveList.add(1);\r\n        fiveList.add(3);\r\n        fiveList.add(4);\r\n        fiveList.add(2);\r\n        fiveList.add(5);\r\n    }\r\n\r\n    @Test\r\n    public void getSwitchValueTest() {\r\n        assertEquals(ArrayListSorter.getSizeToSwitch(),4);\r\n    }\r\n    @Test\r\n    public void mutateSwitchValueTest(){\r\n        ArrayListSorter.setSizeToSwitch(8);\r\n        assertEquals(ArrayListSorter.getSizeToSwitch(),8);\r\n    }\r\n    @Test\r\n    public void generateAscendingTest(){\r\n        assertArrayEquals(ArrayListSorter.generateAscending(5).toArray(),new Integer[]{1,2,3,4,5});\r\n    }\r\n    @Test\r\n    public void generateAscendingArraySizeZero(){\r\n        assertArrayEquals(ArrayListSorter.generateAscending(0).toArray(),new Integer[]{});\r\n    }\r\n\r\n    @Test\r\n    public void mergesortTest() {\r\n        ArrayListSorter.mergesort(list1024);\r\n        assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), \"mergeSort for list 1024 works properly\");\r\n    }\r\n\r\n    @Test\r\n    public void quicksortTestShort() {\r\n        ArrayListSorter.quicksort(fiveList,0,fiveList.size()-1,\"middle\");\r\n        assertArrayEquals(fiveList.toArray(), ArrayListSorter.generateAscending(5).toArray(), \"quicksort for fiveList works properly\");\r\n    }\r\n    @Test\r\n    public void quicksortTestLong() {\r\n        ArrayListSorter.quicksort(list1024,0,list1024.size()-1,\"middle\");\r\n        assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), \"quicksort for list1024 works properly\");\r\n    }\r\n@Test\r\n    public void partitionTestLast() {\r\n    ArrayList<Integer> partTest = new ArrayList<>();\r\n    partTest.add(20);\r\n    partTest.add(10);\r\n    partTest.add(14);\r\n    partTest.add(37);\r\n    partTest.add(14);\r\n    partTest.add(8);\r\n    partTest.add(29);\r\n    ArrayList<Integer> check = new ArrayList<>();\r\n    check.add(20);\r\n    check.add(10);\r\n    check.add(14);\r\n    check.add(8);\r\n    check.add(14);\r\n    check.add(29);\r\n    check.add(37);\r\n    int partPoint = ArrayListSorter.partition(partTest, 0, partTest.size() - 1, \"last\");\r\n\r\n    assertArrayEquals(check.toArray(), partTest.toArray());\r\n    assertEquals(5,partPoint);\r\n}\r\n\r\n    @Test\r\n    public void partitionTestMiddle(){\r\n        ArrayList<Integer> partTest = new ArrayList<>();\r\n        partTest.add(20);\r\n        partTest.add(10);\r\n        partTest.add(14);\r\n        partTest.add(37);\r\n        partTest.add(14);\r\n        partTest.add(8);\r\n        partTest.add(29);\r\n        ArrayList<Integer> check = new ArrayList<>();\r\n        check.add(20);\r\n        check.add(10);\r\n        check.add(14);\r\n        check.add(29);\r\n        check.add(14);\r\n        check.add(8);\r\n        check.add(37);\r\n        int partPoint = ArrayListSorter.partition(partTest,0,partTest.size()-1,\"middle\");\r\n\r\n        assertArrayEquals(check.toArray(), partTest.toArray());\r\n        assertEquals(6,partPoint);\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/assign05/ArrayListSorterTester.java b/src/assign05/ArrayListSorterTester.java
+--- a/src/assign05/ArrayListSorterTester.java	(revision 29fe395087b0660e0db44be3a65b7492110da270)
++++ b/src/assign05/ArrayListSorterTester.java	(date 1677137822238)
+@@ -52,9 +52,19 @@
+         assertArrayEquals(fiveList.toArray(), ArrayListSorter.generateAscending(5).toArray(), "quicksort for fiveList works properly");
+     }
+     @Test
+-    public void quicksortTestLong() {
++    public void quicksortTestLongMiddle() {
+         ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"middle");
+         assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list1024 works properly");
++    }
++    @Test
++    public void quicksortTestLongLast() {
++        ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"last");
++        assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list1024 works properly");
++    }
++    @Test
++    public void quicksortTestLongRand() {
++        ArrayListSorter.quicksort(list1024,0,list1024.size()-1,"random");
++        assertArrayEquals(list1024.toArray(), ArrayListSorter.generateAscending(1024).toArray(), "quicksort for list1024 works properly");
+     }
+ @Test
+     public void partitionTestLast() {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"bd81f9cb-a46a-404c-b6d7-50c7278bb79b\" name=\"Changes\" comment=\"updated quicksort- still doesnt  work tho\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/assign05/ArrayListSorter.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/assign05/ArrayListSorter.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"5ae4e07c-8701-4380-8d01-6bb42cbe90b3\" />\r\n        <option name=\"url\" value=\"https://github.com/117nyx/assign04.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java\" root0=\"SKIP_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"InstancesTracker\">\r\n    <option name=\"classes\">\r\n      <map>\r\n        <entry key=\"java.util.ArrayList\" value=\"CREATION\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2LW15ckvJXgWWB78OFZ3K9PosRC\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"/Users/edenharvey/IdeaProjects/assign04/src\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.ArrayTester\">\r\n    <configuration name=\"ArrayListSorterTester.mergesortTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"CS2420Shared\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"assign05.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"assign05\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"assign05.ArrayListSorterTester\" />\r\n      <option name=\"METHOD_NAME\" value=\"mergesortTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ArrayListSorterTester.quicksortTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"CS2420Shared\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"assign05.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"assign05\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"assign05.ArrayListSorterTester\" />\r\n      <option name=\"METHOD_NAME\" value=\"quicksortTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ArrayTester\" type=\"JUnit\" factoryName=\"JUnit\">\r\n      <module name=\"CS2420Shared\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"assign05\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"assign05.ArrayListSorterTester\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.ArrayListSorterTester.quicksortTest\" />\r\n        <item itemvalue=\"JUnit.ArrayListSorterTester.mergesortTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"bd81f9cb-a46a-404c-b6d7-50c7278bb79b\" name=\"Changes\" comment=\"\" />\r\n      <created>1675971848500</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1675971848500</updated>\r\n      <workItem from=\"1675971849869\" duration=\"51000\" />\r\n      <workItem from=\"1676341066760\" duration=\"945000\" />\r\n      <workItem from=\"1676408439139\" duration=\"16690000\" />\r\n      <workItem from=\"1676498701244\" duration=\"30337000\" />\r\n      <workItem from=\"1676941285797\" duration=\"18658000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"intial commit 2/9/23\">\r\n      <created>1675984623537</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675984623537</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"intial commit 2/9/23\">\r\n      <created>1675985561111</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675985561111</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Added custom comparator, added KTinyData test, &#10;modified to correctly clone\">\r\n      <created>1675999223223</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1675999223223</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"-added beginning logic for mergesort\">\r\n      <created>1676352310604</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676352310604</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"-added beginning logic for mergesort&#10;-splits arr in 1/2\">\r\n      <created>1676401658494</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676401658494</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"added helper method to for mergesort to split the dataset into smaller pieces\">\r\n      <created>1676411692481</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676411692481</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Added InsertionSort class, which sorts comparable objects\">\r\n      <created>1676414118171</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676414118171</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Logic done for mergesort, need to implement driver methods\">\r\n      <created>1676423833146</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676423833146</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Mergesort working with arrayList of ArrayLists, need to adjust to not use 2d arrayList\">\r\n      <created>1676485751816</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676485751816</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Splitting mergesort into driver and passenger methods\">\r\n      <created>1676487907259</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676487907259</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Changed to only use temp array and standard array, still need to implement driver/passenger methods\">\r\n      <created>1676510632673</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676510632673</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Changed to only use temp array and standard array, still need to implement driver/passenger methods\">\r\n      <created>1676518480577</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676518480577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Changed to only use temp array and standard array, still need to implement driver/passenger methods\">\r\n      <created>1676588825903</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676588825903</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort\">\r\n      <created>1676597487008</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676597487008</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort\">\r\n      <created>1676930292908</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1676930292909</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"updated quicksort- still doesnt  work tho\">\r\n      <created>1677054301289</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1677054301289</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"17\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"intial commit 2/9/23\" />\r\n    <MESSAGE value=\"Added custom comparator, added KTinyData test, &#10;modified to correctly clone\" />\r\n    <MESSAGE value=\"-added beginning logic for mergesort\" />\r\n    <MESSAGE value=\"-added beginning logic for mergesort&#10;-splits arr in 1/2\" />\r\n    <MESSAGE value=\"added helper method to for mergesort to split the dataset into smaller pieces\" />\r\n    <MESSAGE value=\"Added InsertionSort class, which sorts comparable objects\" />\r\n    <MESSAGE value=\"Logic done for mergesort, need to implement driver methods\" />\r\n    <MESSAGE value=\"Mergesort working with arrayList of ArrayLists, need to adjust to not use 2d arrayList\" />\r\n    <MESSAGE value=\"Splitting mergesort into driver and passenger methods\" />\r\n    <MESSAGE value=\"Changed to only use temp array and standard array, still need to implement driver/passenger methods\" />\r\n    <MESSAGE value=\"MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort\" />\r\n    <MESSAGE value=\"updated quicksort- still doesnt  work tho\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"updated quicksort- still doesnt  work tho\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java</url>\r\n          <line>60</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTester.java</url>\r\n          <line>139</line>\r\n          <option name=\"timeStamp\" value=\"11\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTimer.java</url>\r\n          <line>47</line>\r\n          <option name=\"timeStamp\" value=\"12\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTimer.java</url>\r\n          <line>31</line>\r\n          <option name=\"timeStamp\" value=\"13\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign04/LargestNumberSolverTimer.java</url>\r\n          <line>25</line>\r\n          <option name=\"timeStamp\" value=\"16\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign05/InsertionSort.java</url>\r\n          <line>17</line>\r\n          <option name=\"timeStamp\" value=\"22\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>\r\n          <line>72</line>\r\n          <option name=\"timeStamp\" value=\"39\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>\r\n          <line>103</line>\r\n          <option name=\"timeStamp\" value=\"40\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>\r\n          <line>17</line>\r\n          <option name=\"timeStamp\" value=\"44\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>\r\n          <line>42</line>\r\n          <option name=\"timeStamp\" value=\"47\" />\r\n        </line-breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.StackOverflowError\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"48\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n    <pin-to-top-manager>\r\n      <pinned-members>\r\n        <PinnedItemInfo parentTag=\"assign05.ArrayListSorterTester\" memberName=\"list1024\" />\r\n      </pinned-members>\r\n    </pin-to-top-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 29fe395087b0660e0db44be3a65b7492110da270)
++++ b/.idea/workspace.xml	(date 1677266905057)
+@@ -4,9 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="updated quicksort- still doesnt  work tho">
++    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="FINALLY- it works :)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorter.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -56,26 +55,26 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Downloaded.Files.Path.Enabled": "false",
+-    "Repository.Attach.Annotations": "false",
+-    "Repository.Attach.JavaDocs": "false",
+-    "Repository.Attach.Sources": "false",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "/Users/edenharvey/IdeaProjects/assign04/src",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "preferences.pluginManager",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/Users/edenharvey/IdeaProjects/assign04/src&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/src" />
+@@ -143,7 +142,7 @@
+       <workItem from="1676341066760" duration="945000" />
+       <workItem from="1676408439139" duration="16690000" />
+       <workItem from="1676498701244" duration="30337000" />
+-      <workItem from="1676941285797" duration="18658000" />
++      <workItem from="1676941285797" duration="21119000" />
+     </task>
+     <task id="LOCAL-00001" summary="intial commit 2/9/23">
+       <created>1675984623537</created>
+@@ -257,7 +256,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1677054301289</updated>
+     </task>
+-    <option name="localTasksCounter" value="17" />
++    <task id="LOCAL-00017" summary="FINALLY- it works :)">
++      <created>1677133191657</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1677133191657</updated>
++    </task>
++    <option name="localTasksCounter" value="18" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -287,7 +293,8 @@
+     <MESSAGE value="Changed to only use temp array and standard array, still need to implement driver/passenger methods" />
+     <MESSAGE value="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort" />
+     <MESSAGE value="updated quicksort- still doesnt  work tho" />
+-    <option name="LAST_COMMIT_MESSAGE" value="updated quicksort- still doesnt  work tho" />
++    <MESSAGE value="FINALLY- it works :)" />
++    <option name="LAST_COMMIT_MESSAGE" value="FINALLY- it works :)" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -323,24 +330,9 @@
+           <option name="timeStamp" value="22" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
+-          <line>72</line>
+-          <option name="timeStamp" value="39" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
+-          <line>103</line>
+-          <option name="timeStamp" value="40" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorter.java</url>
+-          <line>17</line>
+-          <option name="timeStamp" value="44" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+           <url>file://$PROJECT_DIR$/src/assign05/ArrayListSorterTester.java</url>
+-          <line>42</line>
+-          <option name="timeStamp" value="47" />
++          <line>60</line>
++          <option name="timeStamp" value="49" />
+         </line-breakpoint>
+         <breakpoint enabled="true" type="java-exception">
+           <properties class="java.lang.StackOverflowError" package="java.lang" />
