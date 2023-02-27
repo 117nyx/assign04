@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  * This class represents a stack object backed by a linked List that can be iterated over
  * Authors: Jonathan Kerr and Eden Harvey
  */
-public class LinkedListStack implements Stack{
+public class LinkedListStack <T> implements Stack{
     private SinglyLinkedList list;
 
     public LinkedListStack(){

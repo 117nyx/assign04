@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="FINALLY- it works :)">
-      <change afterPath="$PROJECT_DIR$/src/assign06/LinkedListStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign06/List.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign06/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign06/WebBrowser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="new assignment start">
+      <change beforePath="$PROJECT_DIR$/src/assign06/LinkedListStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/LinkedListStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign06/WebBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/WebBrowser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +162,7 @@
       <workItem from="1676498701244" duration="30337000" />
       <workItem from="1676941285797" duration="18658000" />
       <workItem from="1677267051244" duration="38000" />
-      <workItem from="1677525286990" duration="1977000" />
+      <workItem from="1677525286990" duration="2368000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -293,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677174815473</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="new assignment start">
+      <created>1677527510938</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1677527510938</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +328,8 @@
     <MESSAGE value="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort" />
     <MESSAGE value="updated quicksort- still doesnt  work tho" />
     <MESSAGE value="added array generation tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added array generation tests" />
+    <MESSAGE value="new assignment start" />
+    <option name="LAST_COMMIT_MESSAGE" value="new assignment start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

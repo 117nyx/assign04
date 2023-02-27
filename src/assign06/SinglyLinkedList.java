@@ -7,9 +7,9 @@ import java.util.NoSuchElementException;
  * This class represents a singly linked list object that can be iterated over
  * Authors: Jonathan Kerr and Eden Harvey
  */
-public class SinglyLinkedList  implements List{
+public class SinglyLinkedList <T>implements List{
 
-    public <T extends Comparable<? super T>>  SinglyLinkedList(){
+    public SinglyLinkedList(){
 
     }
 

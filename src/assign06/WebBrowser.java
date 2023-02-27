@@ -47,7 +47,7 @@ public class WebBrowser {
      * @throws NoSuchElementException
      */
     public URL back() throws NoSuchElementException {
-
+        return null;
     }
 
     /**
@@ -57,7 +57,7 @@ public class WebBrowser {
      * @throws NoSuchElementException
      */
     public URL forward() throws NoSuchElementException{
-
+        return null;
     }
 
     /**
@@ -68,6 +68,6 @@ public class WebBrowser {
      * @return
      */
     public SinglyLinkedList<URL> history(){
-
+        return null;
     }
 }
