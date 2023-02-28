@@ -1,6 +1,7 @@
 package assign06;
 
 import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
 /**
@@ -45,17 +46,25 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public T getFirst() throws NoSuchElementException {
-        return null;
+        return head.data;
     }
 
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
+        ListIterator<T> iter = new ListIterator<T>();
+        while(iter.hasNext()){
+           // if()
+
+
+        }
         return null;
     }
 
     @Override
     public T deleteFirst() throws NoSuchElementException {
-        return null;
+        T rtn = head.data;
+        head = head.next;
+        return rtn;
     }
 
     @Override
@@ -91,7 +100,7 @@ public class SinglyLinkedList <T>implements List<T>{
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<T> iterator() {
         return new ListIterator();
     }
 
@@ -106,7 +115,7 @@ public class SinglyLinkedList <T>implements List<T>{
 
     }
 
-    private class ListIterator implements Iterator<T> {
+    private class ListIterator<E> implements Iterator<T> {
 
         private int nextIndex;
         private boolean canRemove;

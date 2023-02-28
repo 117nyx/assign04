@@ -8,9 +8,11 @@ import java.util.NoSuchElementException;
  * two stacks backed by linked list and a list.
  * Authors: Jonathan Kerr and Eden Harvey
  */
-public class WebBrowser {
-    private LinkedListStack next;
-    private LinkedListStack previous;
+public class WebBrowser<T> {
+    private LinkedListStack<T> next;
+    private LinkedListStack<T> previous;
+
+    private T current;
 
     /**
      *This constructor creates a new web browser

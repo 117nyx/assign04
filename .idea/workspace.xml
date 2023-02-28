@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Node class, iterator started" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="stack class should be done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign06/WebBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/WebBrowser.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +162,7 @@
       <workItem from="1676498701244" duration="30337000" />
       <workItem from="1676941285797" duration="18658000" />
       <workItem from="1677267051244" duration="38000" />
-      <workItem from="1677525286990" duration="9031000" />
+      <workItem from="1677525286990" duration="10193000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -307,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677560622534</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="stack class should be done">
+      <created>1677563039853</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677563039853</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +352,8 @@
     <MESSAGE value="new assignment start" />
     <MESSAGE value="new assignment start- cont." />
     <MESSAGE value="Node class, iterator started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Node class, iterator started" />
+    <MESSAGE value="stack class should be done" />
+    <option name="LAST_COMMIT_MESSAGE" value="stack class should be done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
