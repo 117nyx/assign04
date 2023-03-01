@@ -10,6 +10,7 @@ public class LinkedListStack <T> implements Stack<T>{
     private SinglyLinkedList<T> list;
 
     public LinkedListStack(){
+        list = new SinglyLinkedList<>();
 
     }
     @Override
