@@ -14,7 +14,7 @@ public class SinglyLinkedList <T>implements List<T>{
     private Node<T> head;
     private Node<T> tail;
 
-    private SinglyLinkedList<T> list = new SinglyLinkedList<T>();
+
     public SinglyLinkedList(){
         size = 0;
         head = null;
@@ -32,7 +32,7 @@ public class SinglyLinkedList <T>implements List<T>{
 
         }
         else{
-            //maybe works?
+
             head = newNode;
 
         }
@@ -41,6 +41,17 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public void insert(int index, T element) throws IndexOutOfBoundsException {
+        // use iterator to traverse through list until nextIndex == index, then adjust nodes to insert
+        ListIterator<T> iter = new ListIterator<T>();
+        // traverse list until nextIndex == index, return data of element at index
+        while(iter.hasNext()){
+            if(iter.nextIndex == index)
+            {
+                //Node<T> n = new Node<T>(element,iter.next().next)
+            }
+            iter.next();
+
+        }
 
     }
 
@@ -52,9 +63,11 @@ public class SinglyLinkedList <T>implements List<T>{
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
         ListIterator<T> iter = new ListIterator<T>();
+        // traverse list until nextIndex == index, return data of element at index
         while(iter.hasNext()){
-           // if()
-
+           if(iter.nextIndex == index)
+               return iter.next();
+            iter.next();
 
         }
         return null;
@@ -69,12 +82,32 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public T delete(int index) throws IndexOutOfBoundsException {
+        if(index > size)
+            throw new IndexOutOfBoundsException();
+        ListIterator<T> iter = new ListIterator<T>();
+        // traverse list until nextIndex == index, return data of element at index,remove element
+        while(iter.hasNext()){
+            if(iter.nextIndex == index) {
+                T rtn = iter.next();
+                iter.remove();
+                return rtn;
+            }
+            iter.next();
+
+        }
         return null;
     }
 
     @Override
     public int indexOf(T element) {
-        return 0;
+        //traverse list until element.equals list item at that index, return nextIndex
+        ListIterator<T> iter = new ListIterator<T>();
+        while(iter.hasNext()) {
+
+
+
+        }
+        return -1;
     }
 
     @Override
@@ -84,19 +117,25 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public boolean isEmpty() {
-        if(!iterator().hasNext())
-            return true;
-        return false;
+        return !iterator().hasNext();
     }
 
     @Override
     public void clear() {
-        list = null;
+
     }
 
     @Override
     public T[] toArray() {
-        return null;
+        //traverse list, for each node, print out data and index
+        ListIterator<T> iter = new ListIterator<>();
+        T[] arr = new T[size + 1];
+        for( int i = 0; i <= size; i++) {
+            T element = iter.next();
+            arr[i] = element;
+        }
+
+        return arr;
     }
 
     @Override
@@ -134,7 +173,7 @@ public class SinglyLinkedList <T>implements List<T>{
         public T next() {
             if(!hasNext())
                 throw new NoSuchElementException();
-            T nextElement = (T)list.get(nextIndex);
+            T nextElement = get(nextIndex);
             nextIndex++;
             canRemove = true;
             return nextElement;
