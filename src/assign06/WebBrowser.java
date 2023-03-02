@@ -1,6 +1,7 @@
 package assign06;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 /**
@@ -8,18 +9,19 @@ import java.util.NoSuchElementException;
  * two stacks backed by linked list and a list.
  * Authors: Jonathan Kerr and Eden Harvey
  */
-public class WebBrowser<T> {
-    private LinkedListStack<T> next;
-    private LinkedListStack<T> previous;
+public class WebBrowser<URL> {
+    private LinkedListStack<URL> back;
+    private LinkedListStack<URL> forward;
 
-    private T current;
+    private URL current;
 
     /**
      *This constructor creates a new web browser
      * with no previously-visited webpages and no webpages to visit next.
      */
     public WebBrowser(){
-
+        back = new LinkedListStack<URL>();
+        forward = new LinkedListStack<URL>();
     }
 
     /**
@@ -29,7 +31,12 @@ public class WebBrowser<T> {
      * @param history
      */
     public WebBrowser(SinglyLinkedList<URL> history){
-
+        back = new LinkedListStack<>();
+        current = history.getFirst();
+        for(int i=history.size();i>=0;i--){
+            back.push(history.get(i));
+        }
+        forward = new LinkedListStack<URL>();
     }
 
     /**
@@ -39,7 +46,9 @@ public class WebBrowser<T> {
      * @param webpage
      */
     public void visit(URL webpage){
-
+        forward.clear();
+        back.push(current);
+        current=webpage;
     }
 
     /**
@@ -49,7 +58,12 @@ public class WebBrowser<T> {
      * @throws NoSuchElementException
      */
     public URL back() throws NoSuchElementException {
-        return null;
+        if(back.isEmpty()){
+            throw new NoSuchElementException();
+        }
+        forward.push(current);
+        current=back.pop();
+        return current;
     }
 
     /**
@@ -59,7 +73,12 @@ public class WebBrowser<T> {
      * @throws NoSuchElementException
      */
     public URL forward() throws NoSuchElementException{
-        return null;
+        if(forward.isEmpty()){
+            throw new NoSuchElementException();
+        }
+        back.push(current);
+        current=forward.pop();
+        return current;
     }
 
     /**
@@ -70,6 +89,15 @@ public class WebBrowser<T> {
      * @return
      */
     public SinglyLinkedList<URL> history(){
-        return null;
+        SinglyLinkedList hist = new SinglyLinkedList();
+        hist.insertFirst(current);
+        ArrayList<URL> temp = new ArrayList<URL>();
+        while(!back.isEmpty())
+            temp.add(back.pop());
+        for(int i= temp.size() - 1;i>=0;i++){
+            hist.insert(i,temp.get(i-1));
+            back.push(temp.get(temp.size()-i));
+        }
+        return hist;
     }
 }

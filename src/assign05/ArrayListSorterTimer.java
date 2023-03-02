@@ -7,12 +7,10 @@ import java.util.ArrayList;
 public class ArrayListSorterTimer {
 
     public static void main(String args[]){
-        int timesToLoop=1000;
+        int timesToLoop=10;
         ArrayList ints = new ArrayList();
-        for (int n = 1; n <= 131072; n*=2) {
-            ints=ArrayListSorter.generatePermuted(131072,n);
-            ArrayListSorter.setSizeToSwitch(n);
-
+        for (int n = 100000; n <= 1000000; n+=100000) {
+            ArrayListSorter.setSizeToSwitch(64);
             long startTime, midpointTime, stopTime;
 
 
@@ -26,14 +24,17 @@ public class ArrayListSorterTimer {
 
             startTime = System.nanoTime();
 
-            for (int i = 0; i < timesToLoop; i++)
-                ArrayListSorter.mergesort(ints);
+            for (int i = 0; i < timesToLoop; i++) {
+                ints=ArrayListSorter.generatePermuted(n,i);
+                ArrayListSorter.quicksort(ints,0,ints.size()-1,"middle");
+            }
 
             midpointTime = System.nanoTime();
 
             // Run an empty loop to capture the cost of running the loop.
 
             for (int i = 0; i < timesToLoop; i++) { // empty block
+                ArrayListSorter.generatePermuted(n,15);
             }
 
             stopTime = System.nanoTime();

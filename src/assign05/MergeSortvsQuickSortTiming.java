@@ -2,13 +2,12 @@ package assign05;
 
 import java.util.ArrayList;
 
-public class InsertionSortTimer {
-    public static void main(String args[]) {
-        int timesToLoop = 100;
+public class MergeSortvsQuickSortTiming {
+    public static void main(String args[]){
+        int timesToLoop=100;
         ArrayList ints = new ArrayList();
-        for(int n=0;n<timesToLoop;n++){
-            ints = ArrayListSorter.generatePermuted(10000,n);
 
+            ArrayListSorter.setSizeToSwitch(16);
             long startTime, midpointTime, stopTime;
 
 
@@ -18,23 +17,21 @@ public class InsertionSortTimer {
 
             startTime = System.nanoTime();
             while (System.nanoTime() - startTime < 1000000000) { // empty block
-
             }
 
             startTime = System.nanoTime();
 
-            for (int i = 0; i < timesToLoop; i++){
-                ints = ArrayListSorter.generatePermuted(10000,n);
-                ArrayListSorter.quicksort(ints,0,ints.size()-1,"middle");
+            for (int i = 0; i < timesToLoop; i++) {
+                ints=ArrayListSorter.generateAscending(1_000_000);
+                ArrayListSorter.mergesort(ints);
             }
-
 
             midpointTime = System.nanoTime();
 
             // Run an empty loop to capture the cost of running the loop.
 
             for (int i = 0; i < timesToLoop; i++) { // empty block
-                ints = ArrayListSorter.generatePermuted(10000,n);
+                ArrayListSorter.generateAscending(1_000_000);
             }
 
             stopTime = System.nanoTime();
@@ -46,7 +43,7 @@ public class InsertionSortTimer {
             double averageTime = ((midpointTime - startTime) - (stopTime - midpointTime)) /
                     (double) timesToLoop;
 
-            System.out.println(n + "\t" + averageTime);
-        }
+            System.out.println(1_000_000 + "\t" + averageTime);
+
     }
 }

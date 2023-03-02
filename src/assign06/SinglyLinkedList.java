@@ -13,6 +13,7 @@ public class SinglyLinkedList <T>implements List<T>{
     private int size;
     private Node<T> head;
     private Node<T> tail;
+    private Node<T> current;
 
 
     public SinglyLinkedList(){
@@ -47,7 +48,7 @@ public class SinglyLinkedList <T>implements List<T>{
         while(iter.hasNext()){
             if(iter.nextIndex == index)
             {
-                //Node<T> n = new Node<T>(element,iter.next().next)
+                Node<T> n = new Node<>(element,current.next);
             }
             iter.next();
 
@@ -102,10 +103,12 @@ public class SinglyLinkedList <T>implements List<T>{
     public int indexOf(T element) {
         //traverse list until element.equals list item at that index, return nextIndex
         ListIterator<T> iter = new ListIterator<T>();
+        int val =0;
         while(iter.hasNext()) {
-
-
-
+            if(iter.next().equals(element)){
+                return val;
+            }
+        val++;
         }
         return -1;
     }
@@ -122,20 +125,20 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public void clear() {
-
+        this.head=null;
     }
 
     @Override
     public T[] toArray() {
         //traverse list, for each node, print out data and index
         ListIterator<T> iter = new ListIterator<>();
-        T[] arr = new T[size + 1];
+        Object[] arr = new Object[size + 1];
         for( int i = 0; i <= size; i++) {
             T element = iter.next();
             arr[i] = element;
         }
 
-        return arr;
+        return (T[])arr;
     }
 
     @Override
@@ -162,6 +165,7 @@ public class SinglyLinkedList <T>implements List<T>{
         public ListIterator(){
             nextIndex = 0;
             canRemove = false;
+
         }
 
         @Override
@@ -173,7 +177,7 @@ public class SinglyLinkedList <T>implements List<T>{
         public T next() {
             if(!hasNext())
                 throw new NoSuchElementException();
-            T nextElement = get(nextIndex);
+            T nextElement = current.data;
             nextIndex++;
             canRemove = true;
             return nextElement;
