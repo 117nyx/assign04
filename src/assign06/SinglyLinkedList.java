@@ -31,9 +31,9 @@ public class SinglyLinkedList <T>implements List<T>{
             head = newNode;
             tail = newNode;
 
+
         }
         else{
-
             head = newNode;
 
         }
@@ -45,7 +45,7 @@ public class SinglyLinkedList <T>implements List<T>{
         if(index > size)
             throw new IndexOutOfBoundsException();
         if(isEmpty())
-            head = new Node<>(element,tail);
+            head = new Node<>(element,head);
         // use iterator to traverse through list until nextIndex == index, then adjust nodes to insert
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index
@@ -137,6 +137,7 @@ public class SinglyLinkedList <T>implements List<T>{
     @Override
     public void clear() {
         head=null;
+        size = 0;
     }
 
     @Override
