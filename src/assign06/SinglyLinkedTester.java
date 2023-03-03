@@ -25,8 +25,8 @@ public class SinglyLinkedTester {
     @Test
     public void insertFirstThenInsert(){
         list.insertFirst(1);
-        list.insert(0,2);
-        assertEquals(list.getFirst(),2);
+        list.insert(1,2);
+        assertEquals(list.getFirst(),1);
     }
 
     @Test
@@ -37,10 +37,12 @@ public class SinglyLinkedTester {
     }
     @Test
     public void insertMultiple(){
+        list.insertFirst(3);
         list.insert(0,1);
         list.insert(1,2);
-        assertEquals(list.getFirst(),1);
-        assertEquals(list.get(1),2);
+        assertEquals(list.getFirst(),3);
+        assertEquals(list.get(1),1);
+        assertEquals(list.get(2),2);
 
     }
     @Test
@@ -54,24 +56,22 @@ public class SinglyLinkedTester {
     @Test
     public void deleteFirst(){
         list.insertFirst(1);
-        list.insertFirst(2);
+        list.insert(0,2);
         list.deleteFirst();
-        assertEquals(list.getFirst(),1);
+        assertEquals(list.getFirst(),2);
     }
     @Test
     public void delete(){
         list.insertFirst(1);
-        list.insertFirst(2);
-        list.delete(0);
-        assertEquals(list.getFirst(),1);
-
-
+        list.insert(1,2);
+        list.delete(1);
+        assertEquals(list.get(1),null);
     }
     @Test
     public void indexOf(){
         list.insertFirst(1);
-        list.insertFirst(2);
-        assertEquals(list.indexOf(1),1);
+        list.insert(0,2);
+        assertEquals(list.indexOf(2),1);
 
 
     }

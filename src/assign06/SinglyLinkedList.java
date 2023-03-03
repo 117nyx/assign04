@@ -12,29 +12,29 @@ public class SinglyLinkedList <T>implements List<T>{
 
     private int size;
     private Node<T> head;
-    private Node<T> tail;
+
 
 
     public SinglyLinkedList(){
         size = 0;
         head = null;
-        tail = null;
+
     }
 
 
 
     @Override
     public void insertFirst(T element) {
-        Node<T> newNode = new Node<T>(element,head);
+        Node<T> newNode = new Node<T>(element);
         if(head == null) {
             head = newNode;
-            tail = newNode;
+
 
 
         }
         else{
+            head.next = head;
             head = newNode;
-
         }
         size++;
     }
@@ -43,15 +43,18 @@ public class SinglyLinkedList <T>implements List<T>{
     public void insert(int index, T element) throws IndexOutOfBoundsException {
         if(index > size)
             throw new IndexOutOfBoundsException();
-        if(isEmpty())
-            head = new Node<>(element,head);
+        if(isEmpty()) {
+            head = new Node<>(element);
+            head.next = null;
+        }
         // use iterator to traverse through list until nextIndex == index, then adjust nodes to insert
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index
         while(iter.hasNext()){
             if(iter.nextIndex == index)
             {
-                Node<T> n = new Node<>(element,iter.current.next);
+                Node<T> n = new Node<>(element);
+                iter.current.next=n;
             }
             iter.next();
 
@@ -115,9 +118,11 @@ public class SinglyLinkedList <T>implements List<T>{
         ListIterator<T> iter = new ListIterator<T>();
         int val =0;
         while(iter.hasNext()) {
-            if(iter.next().equals(element)){
+            if(iter.current.data.equals(element)){
+
                 return val;
             }
+            iter.next();
         val++;
         }
         return -1;
@@ -162,9 +167,9 @@ public class SinglyLinkedList <T>implements List<T>{
         public T data;
         public Node<T>  next;
 
-        public Node(T data, Node<T> next){
+        public Node(T data){
             this.data = data;
-            this.next = next;
+            this.next = null;
         }
 
     }
@@ -178,7 +183,7 @@ public class SinglyLinkedList <T>implements List<T>{
         public ListIterator(){
             canRemove = false;
             current=head;
-            nextIndex = 0;
+            nextIndex = 1;
 
         }
 
@@ -208,10 +213,10 @@ public class SinglyLinkedList <T>implements List<T>{
             if(current==head)
             {
                 head = head.next;
+            } else {
+                current.next = current.next.next;
+                size--;
             }
-            current = current.next;
-            size--;
-
         }
     }
 }
