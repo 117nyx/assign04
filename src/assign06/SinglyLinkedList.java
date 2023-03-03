@@ -44,6 +44,8 @@ public class SinglyLinkedList <T>implements List<T>{
     public void insert(int index, T element) throws IndexOutOfBoundsException {
         if(index > size)
             throw new IndexOutOfBoundsException();
+        if(isEmpty())
+            head = new Node<>(element,tail);
         // use iterator to traverse through list until nextIndex == index, then adjust nodes to insert
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index
@@ -55,6 +57,7 @@ public class SinglyLinkedList <T>implements List<T>{
             iter.next();
 
         }
+        size++;
 
     }
 
@@ -92,8 +95,6 @@ public class SinglyLinkedList <T>implements List<T>{
     @Override
     public T delete(int index) throws IndexOutOfBoundsException {
         if(index>size)
-            throw new IndexOutOfBoundsException();
-        if(index > size)
             throw new IndexOutOfBoundsException();
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index,remove element
@@ -153,7 +154,7 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public Iterator<T> iterator() {
-        current=head;
+
         return new ListIterator();
     }
 
@@ -176,6 +177,8 @@ public class SinglyLinkedList <T>implements List<T>{
         public ListIterator(){
             nextIndex = 0;
             canRemove = false;
+            if(head!=null)
+                current=head;
 
         }
 
