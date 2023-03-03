@@ -42,6 +42,8 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public void insert(int index, T element) throws IndexOutOfBoundsException {
+        if(index > size)
+            throw new IndexOutOfBoundsException();
         // use iterator to traverse through list until nextIndex == index, then adjust nodes to insert
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index
@@ -58,11 +60,15 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public T getFirst() throws NoSuchElementException {
+        if(head == null)
+            throw new NoSuchElementException();
         return head.data;
     }
 
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
+        if(index > size)
+            throw new IndexOutOfBoundsException();
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index
         while(iter.hasNext()){
@@ -76,6 +82,8 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public T deleteFirst() throws NoSuchElementException {
+        if(head == null)
+            throw new NoSuchElementException();
         T rtn = head.data;
         head = head.next;
         return rtn;
@@ -83,6 +91,8 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public T delete(int index) throws IndexOutOfBoundsException {
+        if(index>size)
+            throw new IndexOutOfBoundsException();
         if(index > size)
             throw new IndexOutOfBoundsException();
         ListIterator<T> iter = new ListIterator<T>();
@@ -125,7 +135,7 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public void clear() {
-        this.head=null;
+        head=null;
     }
 
     @Override
@@ -143,6 +153,7 @@ public class SinglyLinkedList <T>implements List<T>{
 
     @Override
     public Iterator<T> iterator() {
+        current=head;
         return new ListIterator();
     }
 
@@ -180,17 +191,18 @@ public class SinglyLinkedList <T>implements List<T>{
             T nextElement = current.data;
             nextIndex++;
             canRemove = true;
+            current=current.next;
             return nextElement;
         }
 
-        public void remove(Node<T> n) {
+        public void remove() {
             if(!canRemove)
                 throw new IllegalStateException();
             canRemove = false;
             //adjust nodes
             // node before now points to node (@ nextIndex).next
             //again this might work?
-            n.next = n.next.next;
+            current=current.next;
             size--;
         }
     }
