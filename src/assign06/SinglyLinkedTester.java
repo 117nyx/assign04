@@ -79,7 +79,7 @@ public class SinglyLinkedTester {
     public void size(){
         list.insert(0,1);
         list.insert(1,2);
-        assertEquals(list.size(),1);
+        assertEquals(list.size(),2);
 
 
     }

@@ -13,7 +13,6 @@ public class SinglyLinkedList <T>implements List<T>{
     private int size;
     private Node<T> head;
     private Node<T> tail;
-    private Node<T> current;
 
 
     public SinglyLinkedList(){
@@ -52,7 +51,7 @@ public class SinglyLinkedList <T>implements List<T>{
         while(iter.hasNext()){
             if(iter.nextIndex == index)
             {
-                Node<T> n = new Node<>(element,current.next);
+                Node<T> n = new Node<>(element,iter.current.next);
             }
             iter.next();
 
@@ -172,20 +171,20 @@ public class SinglyLinkedList <T>implements List<T>{
 
     private class ListIterator<E> implements Iterator<T> {
 
-        private int nextIndex;
         private boolean canRemove;
+        private Node<T> current;
+        private int nextIndex;
 
         public ListIterator(){
-            nextIndex = 0;
             canRemove = false;
-            if(head!=null)
-                current=head;
+            current=head;
+            nextIndex = 0;
 
         }
 
         @Override
         public boolean hasNext() {
-            return nextIndex < size;
+            return current!=null;
         }
 
         @Override
@@ -193,9 +192,9 @@ public class SinglyLinkedList <T>implements List<T>{
             if(!hasNext())
                 throw new NoSuchElementException();
             T nextElement = current.data;
-            nextIndex++;
             canRemove = true;
             current=current.next;
+            nextIndex++;
             return nextElement;
         }
 
@@ -206,8 +205,13 @@ public class SinglyLinkedList <T>implements List<T>{
             //adjust nodes
             // node before now points to node (@ nextIndex).next
             //again this might work?
-            current=current.next;
+            if(current==head)
+            {
+                head = head.next;
+            }
+            current = current.next;
             size--;
+
         }
     }
 }
