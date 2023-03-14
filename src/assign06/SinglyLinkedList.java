@@ -51,7 +51,7 @@ public class SinglyLinkedList <T>implements List<T>{
         ListIterator<T> iter = new ListIterator<T>();
         // traverse list until nextIndex == index, return data of element at index
         while(iter.hasNext()){
-            if(iter.nextIndex == index)
+            if(iter.nextIndex+1 == index)
             {
                 Node<T> n = new Node<>(element);
                 iter.current.next=n;

@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @author Erin Parker
  * @version March 3, 2022
  */
-public class Vertex<T> {
+public class Vertex <T> {
 
 	// used to id the Vertex
 	private T name;
@@ -31,8 +31,8 @@ public class Vertex<T> {
 	/**
 	 * @return the string used to identify this Vertex
 	 */
-	public T getName() {
-		return name;
+	public String getName() {
+		return name.toString();
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class Vertex<T> {
 	 * Generates and returns a textual representation of this Vertex.
 	 */
 	public String toString() {
-		String s = "Vertex " + name + " adjacent to vertices ";
+		String s = "Vertex " + this.getName() + " adjacent to vertices ";
 		Iterator<Edge> itr = adj.iterator();
 		while(itr.hasNext())
 			s += itr.next() + "  ";
