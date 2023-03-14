@@ -10,16 +10,16 @@ import java.util.Iterator;
  * @author Erin Parker
  * @version March 3, 2022
  */
-public class Graph {
+public class Graph<T> {
 
 	// the graph -- a set of vertices (String name mapped to Vertex instance)
-	private HashMap<String, Vertex> vertices;
+	private HashMap<T, Vertex> vertices;
 
 	/**
 	 * Constructs an empty graph.
 	 */
 	public Graph() {
-		vertices = new HashMap<String, Vertex>();
+		vertices = new HashMap<T, Vertex>();
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class Graph {
 	 * @param name1 - string name for source vertex
 	 * @param name2 - string name for destination vertex
 	 */
-	public void addEdge(String name1, String name2) {
+	public void addEdge(T name1, T name2) {
 		Vertex vertex1;
 		// if vertex already exists in graph, get its object
 		if(vertices.containsKey(name1))
