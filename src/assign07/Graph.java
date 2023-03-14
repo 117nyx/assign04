@@ -2,6 +2,7 @@ package assign07;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Represents a sparse, unweighted, directed graph (a set of vertices and a set of edges). 
@@ -82,5 +83,18 @@ public class Graph<T> {
 			result.append(v + "\n");
 		
 		return result.toString();
+	}
+
+	public static boolean DFS(List<Vertex> nodes,List<Edge> edges,Vertex start,Vertex target) {
+		start.visited = true;
+		if(start.getName().equals(target.getName()))
+			return true;
+		while(start.edges().hasNext()) {
+			if (!((Edge) start.edges().next()).getOtherVertex().visited) {
+				  return DFS(nodes, edges,((Edge) start.edges().next()).getOtherVertex() , target);
+
+			}
+		}
+		return false;
 	}
 }

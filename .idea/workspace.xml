@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="timer">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_24_2023_12_28_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_24_2023_12_28_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/SinglyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign06/SinglyLinkedTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign06/SinglyLinkedTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign07/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign07/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Vertex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677819392509</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="timer">
+      <created>1678764132865</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1678764132865</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
