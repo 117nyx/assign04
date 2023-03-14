@@ -17,6 +17,7 @@ public class Vertex <T> {
 
 	// adjacency list
 	public boolean visited;
+	public Vertex cameFrom;
 	private LinkedList<Edge> adj;
 
 	/**

@@ -1,8 +1,7 @@
 package assign07;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.sql.Array;
+import java.util.*;
 
 /**
  * Represents a sparse, unweighted, directed graph (a set of vertices and a set of edges). 
@@ -96,5 +95,43 @@ public class Graph<T> {
 			}
 		}
 		return false;
+	}
+	public static List<Vertex> BFS(List<Vertex> nodes,List<Edge> edges,Vertex start,Vertex target){
+		Queue<Vertex> nodesToVisit = new LinkedList();
+		for(Vertex v:nodes){
+			v.visited=false;
+			v.cameFrom=null;
+			nodesToVisit.offer(v);
+		}
+		Vertex n;
+		while(!nodesToVisit.isEmpty()){
+			n=nodesToVisit.poll();
+			n.visited=true;
+			if(n.equals(target)){
+				return reconstructPath(start,target);
+			}
+			while(n.edges().hasNext()){
+				Vertex neighbor=((Edge)n.edges().next()).getOtherVertex();
+				if(neighbor.visited=false){
+					neighbor.cameFrom=n;
+					neighbor.visited=true;
+					nodesToVisit.offer(neighbor);
+
+				}
+			}
+		}
+		return null;
+	}
+	private static List<Vertex> reconstructPath(Vertex start, Vertex target){
+		Stack path = new Stack();
+		for(Vertex node=target;node!=start;node=node.cameFrom){
+			path.push(node);
+		}
+		path.add(start);
+		ArrayList ret = new ArrayList();
+		while(!path.isEmpty()){
+			ret.add(path.pop());
+		}
+		return ret;
 	}
 }
