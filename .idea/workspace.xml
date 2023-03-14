@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_2_23__7_25_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign07/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign07/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Vertex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +170,7 @@
       <workItem from="1676941285797" duration="18658000" />
       <workItem from="1677267051244" duration="38000" />
       <workItem from="1677525286990" duration="2368000" />
-      <workItem from="1678762050548" duration="783000" />
+      <workItem from="1678762050548" duration="1593000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -332,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677819392509</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="timer">
+      <created>1678764111961</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1678764111961</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

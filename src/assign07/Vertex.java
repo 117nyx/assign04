@@ -10,10 +10,10 @@ import java.util.Iterator;
  * @author Erin Parker
  * @version March 3, 2022
  */
-public class Vertex {
+public class Vertex<T> {
 
 	// used to id the Vertex
-	private String name;
+	private T name;
 
 	// adjacency list
 	private LinkedList<Edge> adj;
@@ -23,7 +23,7 @@ public class Vertex {
 	 * 
 	 * @param name - string used to identify this Vertex
 	 */
-	public Vertex(String name) {
+	public Vertex(T name) {
 		this.name = name;
 		this.adj = new LinkedList<Edge>();
 	}
@@ -31,7 +31,7 @@ public class Vertex {
 	/**
 	 * @return the string used to identify this Vertex
 	 */
-	public String getName() {
+	public T getName() {
 		return name;
 	}
 

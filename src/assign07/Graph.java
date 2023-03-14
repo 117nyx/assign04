@@ -13,13 +13,13 @@ import java.util.Iterator;
 public class Graph<T> {
 
 	// the graph -- a set of vertices (String name mapped to Vertex instance)
-	private HashMap<T, Vertex> vertices;
+	private HashMap<T, Vertex<T>> vertices;
 
 	/**
 	 * Constructs an empty graph.
 	 */
 	public Graph() {
-		vertices = new HashMap<T, Vertex>();
+		vertices = new HashMap<T, Vertex<T>>();
 	}
 
 	/**
@@ -31,21 +31,21 @@ public class Graph<T> {
 	 * @param name2 - string name for destination vertex
 	 */
 	public void addEdge(T name1, T name2) {
-		Vertex vertex1;
+		Vertex<T> vertex1;
 		// if vertex already exists in graph, get its object
 		if(vertices.containsKey(name1))
 			vertex1 = vertices.get(name1);
 		// else, create a new object and add to graph
 		else {
-			vertex1 = new Vertex(name1);
+			vertex1 = new Vertex<T>(name1);
 			vertices.put(name1, vertex1);
 		}
 
-		Vertex vertex2;
+		Vertex<T> vertex2;
 		if(vertices.containsKey(name2))
 			vertex2 = vertices.get(name2);
 		else {
-			vertex2 = new Vertex(name2);
+			vertex2 = new Vertex<T>(name2);
 			vertices.put(name2, vertex2);
 		}
 
@@ -61,7 +61,7 @@ public class Graph<T> {
 		StringBuilder dot = new StringBuilder("digraph d {\n");
 		
 		// for every vertex 
-		for(Vertex v : vertices.values()) {
+		for(Vertex<T> v : vertices.values()) {
 			// for every edge
 			Iterator<Edge> edges = v.edges();
 			while(edges.hasNext()) 
@@ -78,7 +78,7 @@ public class Graph<T> {
 	public String toString() {
 		StringBuilder result = new StringBuilder();
 		
-		for(Vertex v : vertices.values()) 
+		for(Vertex<T> v : vertices.values())
 			result.append(v + "\n");
 		
 		return result.toString();
