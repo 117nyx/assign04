@@ -36,6 +36,6 @@ public class Edge<T> {
 	 * Returns the name of the destination Vertex as a textual representation of this Edge.
 	 */
 	public String toString() {
-		return this.dst.getName();
+		return this.dst.getName().toString();
 	}
 }

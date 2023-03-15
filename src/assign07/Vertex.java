@@ -34,8 +34,8 @@ public class Vertex <T> {
 	/**
 	 * @return the string used to identify this Vertex
 	 */
-	public String getName() {
-		return name.toString();
+	public T getName() {
+		return name;
 	}
 
 	/**
@@ -65,7 +65,8 @@ public class Vertex <T> {
 		return s;
 	}
 
-	private void setInDegree(int i){
-		inDegree = i;
+	public void decrementInDegree(){
+		inDegree--;
 	}
+	public int getInDegree(){return inDegree;}
 }

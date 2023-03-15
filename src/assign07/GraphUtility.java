@@ -29,8 +29,29 @@ public class GraphUtility {
 	 */
 	public static <Type> boolean areConnected(List<Type> sources, List<Type> destinations, Type srcData, Type dstData)
 			throws IllegalArgumentException {
-		// FILL IN + ADD METHOD COMMENT
-		return false;
+		boolean srcExists=false;
+		boolean dstExists=false;
+		if(sources.size()!=destinations.size()){
+			throw new IllegalArgumentException();
+		}
+		for(int i=0;i<sources.size();i++){
+			if(srcData.equals(sources.get(i))){
+				srcExists=true;
+			}
+		}
+		for(int i=0;i<destinations.size();i++){
+			if(dstData.equals(destinations.get(i))){
+				dstExists=true;
+			}
+		}
+		if(!dstExists||!srcExists){
+			throw new IllegalArgumentException();
+		}
+
+		Graph g = new Graph(sources,destinations);
+
+		return g.DFS(srcData,dstData);
+
 	}
 
 	/**
@@ -49,8 +70,28 @@ public class GraphUtility {
 	 */
 	public static <Type> List<Type> shortestPath(List<Type> sources, List<Type> destinations, Type srcData, Type dstData)
 			throws IllegalArgumentException {
-		// FILL IN + ADD METHOD COMMENT
-		return null;
+		{
+			boolean srcExists = false;
+			boolean dstExists = false;
+			if (sources.size() != destinations.size()) {
+				throw new IllegalArgumentException();
+			}
+			for (int i = 0; i < sources.size(); i++) {
+				if (srcData.equals(sources.get(i))) {
+					srcExists = true;
+				}
+			}
+			for (int i = 0; i < destinations.size(); i++) {
+				if (dstData.equals(destinations.get(i))) {
+					dstExists = true;
+				}
+			}
+			if (!dstExists || !srcExists) {
+				throw new IllegalArgumentException();
+			}
+		} //exception checks
+		Graph g = new Graph(sources,destinations);
+		return g.BFS(srcData,dstData);
 	}
 
 	/**
@@ -65,8 +106,9 @@ public class GraphUtility {
 	 * @throws IllegalArgumentException
 	 */
 	public static <Type> List<Type> sort(List<Type> sources, List<Type> destinations) throws IllegalArgumentException {
-		// FILL IN + ADD METHOD COMMENT
-		return null;
+		//TODO check for cycle
+		Graph g = new Graph(sources,destinations);
+		return g.topoSort();
 	}
 
 	/**

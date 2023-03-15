@@ -21,6 +21,12 @@ public class Graph<T> {
 	public Graph() {
 		vertices = new HashMap<T, Vertex<T>>();
 	}
+	public Graph(List<T> sources,List<T> destinations) {
+		vertices = new HashMap<T, Vertex<T>>();
+		for(int i=0;i<sources.size();i++){
+			addEdge(sources.get(i),destinations.get(i));
+		}
+	}
 
 	/**
 	 * Adds to the graph a directed edge from the vertex with name "name1" 
@@ -84,26 +90,29 @@ public class Graph<T> {
 		return result.toString();
 	}
 
-	public static boolean DFS(List<Vertex<String>> nodes,List<Edge> edges,Vertex<String> start,Vertex<String> target) {
-		start.visited = true;
-		if(start.getName().equals(target.getName()))
+	public boolean DFS(T start,T target) {
+		Vertex startVert =  vertices.get(start);
+		Vertex tarVert = vertices.get(target);
+		startVert.visited = true;
+		if(startVert.getName().equals(tarVert.getName()))
 			return true;
-		while(start.edges().hasNext()) {
-			if (!((Edge) start.edges().next()).getOtherVertex().visited) {
-				  return DFS(nodes, edges,((Edge) start.edges().next()).getOtherVertex() , target);
+		while(startVert.edges().hasNext()) {
+			if (!((Edge) startVert.edges().next()).getOtherVertex().visited) {
+				  return DFS((T)((Edge) startVert.edges().next()).getOtherVertex().getName(), target);
 
 			}
 		}
 		return false;
 	}
-	public static List<Vertex<String>> BFS(List<Vertex<String>> nodes,List<Edge> edges,Vertex<String> start,Vertex<String> target){
-		Queue<Vertex<String>> nodesToVisit = new LinkedList<Vertex<String>>();
-		for(Vertex<String> v:nodes){
-			v.visited=false;
-			v.cameFrom=null;
+	public List<Vertex<T>> BFS(T start,T target){
+		Queue<Vertex<T>> nodesToVisit = new LinkedList<>();
+		for(Vertex<T> v: vertices.values()) {
+			v.visited = false;
+			v.cameFrom = null;
 			nodesToVisit.offer(v);
+
 		}
-		Vertex<String> n;
+		Vertex<T> n;
 		while(!nodesToVisit.isEmpty()){
 			n=nodesToVisit.poll();
 			n.visited=true;
@@ -111,7 +120,7 @@ public class Graph<T> {
 				return reconstructPath(start,target);
 			}
 			while(n.edges().hasNext()){
-				Vertex<String> neighbor=((Edge)n.edges().next()).getOtherVertex();
+				Vertex<T> neighbor=((Edge)n.edges().next()).getOtherVertex();
 				if(!neighbor.visited){
 					neighbor.cameFrom=n;
 					neighbor.visited=true;
@@ -122,16 +131,39 @@ public class Graph<T> {
 		}
 		return null;
 	}
-	private static List<Vertex<String>> reconstructPath(Vertex<String> start, Vertex<String> target){
-		Stack<Vertex<String>> path = new Stack<Vertex<String>>();
-		for(Vertex<String> node=target;node!=start;node=node.cameFrom){
+	private List<Vertex<T>> reconstructPath(T start, T target){
+		Stack<Vertex<T>> path = new Stack<>();
+		Vertex<T> startVert = vertices.get(start);
+		Vertex<T> tarVert = vertices.get(target);
+		for(Vertex<T> node=tarVert;node!=startVert;node=node.cameFrom){
 			path.push(node);
 		}
-		path.add(start);
-		ArrayList<Vertex<String>> ret = new ArrayList<Vertex<String>>();
+		path.add(startVert);
+		ArrayList<Vertex<T>> ret = new ArrayList<>();
 		while(!path.isEmpty()){
 			ret.add(path.pop());
 		}
 		return ret;
+	}
+
+	public List<Vertex<T>> topoSort(){
+		Queue<Vertex<T>> doableTasks = new LinkedList<>();
+		List<Vertex<T>> output = new ArrayList<>();
+		for(Vertex<T> task: vertices.values()){
+			if(task.getInDegree()==0)
+				doableTasks.offer(task);
+		}
+		while(!doableTasks.isEmpty()){
+			var task = doableTasks.poll();
+			output.add(task);
+			while(task.edges().hasNext()){
+				Edge temp = task.edges().next();
+				var neighbor = temp.getOtherVertex();
+				neighbor.decrementInDegree();
+				if(neighbor.getInDegree()==0)
+					doableTasks.offer(neighbor);
+			}
+		}
+		return output;
 	}
 }

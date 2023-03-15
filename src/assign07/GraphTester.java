@@ -22,6 +22,6 @@ List<Vertex> vertices = new ArrayList<Vertex>();
     }
     @Test
     public void DFSTestSmallGraphTrue(){
-        //assertTrue(Graph.DFS());
+        assertTrue(sample.DFS());
     }
 }
