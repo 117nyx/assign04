@@ -84,7 +84,7 @@ public class Graph<T> {
 		return result.toString();
 	}
 
-	public static boolean DFS(List<Vertex> nodes,List<Edge> edges,Vertex start,Vertex target) {
+	public static boolean DFS(List<Vertex<String>> nodes,List<Edge> edges,Vertex<String> start,Vertex<String> target) {
 		start.visited = true;
 		if(start.getName().equals(target.getName()))
 			return true;
@@ -96,14 +96,14 @@ public class Graph<T> {
 		}
 		return false;
 	}
-	public static List<Vertex> BFS(List<Vertex> nodes,List<Edge> edges,Vertex start,Vertex target){
-		Queue<Vertex> nodesToVisit = new LinkedList();
-		for(Vertex v:nodes){
+	public static List<Vertex<String>> BFS(List<Vertex<String>> nodes,List<Edge> edges,Vertex<String> start,Vertex<String> target){
+		Queue<Vertex<String>> nodesToVisit = new LinkedList<Vertex<String>>();
+		for(Vertex<String> v:nodes){
 			v.visited=false;
 			v.cameFrom=null;
 			nodesToVisit.offer(v);
 		}
-		Vertex n;
+		Vertex<String> n;
 		while(!nodesToVisit.isEmpty()){
 			n=nodesToVisit.poll();
 			n.visited=true;
@@ -111,8 +111,8 @@ public class Graph<T> {
 				return reconstructPath(start,target);
 			}
 			while(n.edges().hasNext()){
-				Vertex neighbor=((Edge)n.edges().next()).getOtherVertex();
-				if(neighbor.visited=false){
+				Vertex<String> neighbor=((Edge)n.edges().next()).getOtherVertex();
+				if(!neighbor.visited){
 					neighbor.cameFrom=n;
 					neighbor.visited=true;
 					nodesToVisit.offer(neighbor);
@@ -122,13 +122,13 @@ public class Graph<T> {
 		}
 		return null;
 	}
-	private static List<Vertex> reconstructPath(Vertex start, Vertex target){
-		Stack path = new Stack();
-		for(Vertex node=target;node!=start;node=node.cameFrom){
+	private static List<Vertex<String>> reconstructPath(Vertex<String> start, Vertex<String> target){
+		Stack<Vertex<String>> path = new Stack<Vertex<String>>();
+		for(Vertex<String> node=target;node!=start;node=node.cameFrom){
 			path.push(node);
 		}
 		path.add(start);
-		ArrayList ret = new ArrayList();
+		ArrayList<Vertex<String>> ret = new ArrayList<Vertex<String>>();
 		while(!path.isEmpty()){
 			ret.add(path.pop());
 		}

@@ -10,10 +10,10 @@ package assign07;
  * @author Erin Parker
  * @version March 3, 2022
  */
-public class Edge {
+public class Edge<T> {
 
 	// destination of this directed edge
-	private Vertex dst;
+	private Vertex<T> dst;
 
 	/**
 	 * Creates an Edge object, given the Vertex that is the destination.
@@ -21,14 +21,14 @@ public class Edge {
 	 * 
 	 * @param dst - the destination Vertex
 	 */
-	public Edge(Vertex dst) {
+	public Edge(Vertex<T> dst) {
 		this.dst = dst;
 	}
 
 	/**
 	 * @return the destination Vertex of this Edge
 	 */
-	public Vertex getOtherVertex() {
+	public Vertex<T> getOtherVertex() {
 		return this.dst;
 	}
 

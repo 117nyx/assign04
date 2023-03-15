@@ -16,8 +16,9 @@ public class Vertex <T> {
 	private T name;
 
 	// adjacency list
-	public boolean visited;
-	public Vertex cameFrom;
+	protected boolean visited;
+	protected Vertex<T> cameFrom;
+	protected int inDegree;
 	private LinkedList<Edge> adj;
 
 	/**
@@ -42,12 +43,12 @@ public class Vertex <T> {
 	 * 
 	 * @param otherVertex - the Vertex object that is the destination of the edge
 	 */
-	public void addEdge(Vertex otherVertex) {
+	public void addEdge(Vertex<T> otherVertex) {
 		adj.add(new Edge(otherVertex));
 	}
 
 	/**
-	 * @return a iterator for accessing the edges for which this Vertex is the source
+	 * @return an iterator for accessing the edges for which this Vertex is the source
 	 */
 	public Iterator<Edge> edges() {
 		return adj.iterator();
@@ -62,5 +63,9 @@ public class Vertex <T> {
 		while(itr.hasNext())
 			s += itr.next() + "  ";
 		return s;
+	}
+
+	private void setInDegree(int i){
+		inDegree = i;
 	}
 }

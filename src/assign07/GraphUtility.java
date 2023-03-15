@@ -14,18 +14,56 @@ import java.util.Scanner;
  */
 public class GraphUtility {
 
+	/**
+	 * This method uses the recursive depth-first search algorithm to determine
+	 * whether there is a path from the vertex with srcData to the vertex with dstData in the graph.
+	 * Throws an IllegalArgumentException if there does not exist a vertex in the graph with srcData,
+	 * and likewise for dstData.
+	 * @param sources
+	 * @param destinations
+	 * @param srcData
+	 * @param dstData
+	 * @return
+	 * @param <Type>
+	 * @throws IllegalArgumentException
+	 */
 	public static <Type> boolean areConnected(List<Type> sources, List<Type> destinations, Type srcData, Type dstData)
 			throws IllegalArgumentException {
 		// FILL IN + ADD METHOD COMMENT
 		return false;
 	}
 
+	/**
+	 * This method uses the breadth-first search algorithm to find the shortest path
+	 * from the vertex with srcData to the vertex with dstData in the graph.
+	 * Throws an IllegalArgumentException if there does not exist a vertex in the graph with srcData,
+	 * and likewise for dstData.
+	 * Also, throws an IllegalArgumentException if there does not exist a path between the two vertices.
+	 * @param sources
+	 * @param destinations
+	 * @param srcData
+	 * @param dstData
+	 * @return
+	 * @param <Type>
+	 * @throws IllegalArgumentException
+	 */
 	public static <Type> List<Type> shortestPath(List<Type> sources, List<Type> destinations, Type srcData, Type dstData)
 			throws IllegalArgumentException {
 		// FILL IN + ADD METHOD COMMENT
 		return null;
 	}
-	
+
+	/**
+	 * This method uses the topological sort algorithm to generate a sorted ordering
+	 * of the vertices in the graph. Note that a graph may have more than one valid ordering,
+	 * and any such ordering is accepted.
+	 * Throws an IllegalArgumentException if the graph contains a cycle.
+	 * @param sources
+	 * @param destinations
+	 * @return
+	 * @param <Type>
+	 * @throws IllegalArgumentException
+	 */
 	public static <Type> List<Type> sort(List<Type> sources, List<Type> destinations) throws IllegalArgumentException {
 		// FILL IN + ADD METHOD COMMENT
 		return null;

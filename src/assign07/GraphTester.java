@@ -2,9 +2,14 @@ package assign07;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 public class GraphTester {
-
+Graph sample;
+List<Vertex> vertices = new ArrayList<Vertex>();
 
     @BeforeEach
     public void before(){
@@ -17,6 +22,6 @@ public class GraphTester {
     }
     @Test
     public void DFSTestSmallGraphTrue(){
-        assertTrue(Graph.DFS())
+        //assertTrue(Graph.DFS());
     }
 }
