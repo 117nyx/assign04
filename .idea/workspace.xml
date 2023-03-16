@@ -90,7 +90,7 @@
       <recent name="C:\Users\jkerr\Documents\GitHub\assign04\src\assign06" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Unnamed">
+  <component name="RunManager">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -466,6 +466,11 @@
           <url>file://$PROJECT_DIR$/src/assign07/GraphTester.java</url>
           <line>71</line>
           <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign07/GraphTester.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />

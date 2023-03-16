@@ -118,9 +118,8 @@ public class Graph<T> {
 		for(Vertex<T> v: vertices.values()) {
 			v.visited = false;
 			v.cameFrom = null;
-			nodesToVisit.offer(v);
-
 		}
+		nodesToVisit.offer(vertices.get(start));
 		Vertex<T> n;
 		while(!nodesToVisit.isEmpty()){
 			n=nodesToVisit.poll();
