@@ -39,8 +39,9 @@ public class Graph<T> {
 	public void addEdge(T name1, T name2) {
 		Vertex<T> vertex1;
 		// if vertex already exists in graph, get its object
-		if(vertices.containsKey(name1))
+		if(vertices.containsKey(name1)) {
 			vertex1 = vertices.get(name1);
+		}
 		// else, create a new object and add to graph
 		else {
 			vertex1 = new Vertex<T>(name1);
@@ -48,10 +49,13 @@ public class Graph<T> {
 		}
 
 		Vertex<T> vertex2;
-		if(vertices.containsKey(name2))
+		if(vertices.containsKey(name2)) {
 			vertex2 = vertices.get(name2);
+			vertex2.inDegree++;
+		}
 		else {
 			vertex2 = new Vertex<T>(name2);
+			vertex2.inDegree++;
 			vertices.put(name2, vertex2);
 		}
 
@@ -108,7 +112,7 @@ public class Graph<T> {
 		}
 		return false;
 	}
-	public List<Vertex<T>> BFS(T start,T target){
+	public List<T> BFS(T start,T target){
 		Queue<Vertex<T>> nodesToVisit = new LinkedList<>();
 		for(Vertex<T> v: vertices.values()) {
 			v.visited = false;
@@ -126,7 +130,7 @@ public class Graph<T> {
 			}
 			while(itr.hasNext()){
 				Edge<T> temp = itr.next();
-				Vertex<T> neighbor=(temp.getOtherVertex());
+				Vertex<T> neighbor=temp.getOtherVertex();
 				if(!neighbor.visited){
 					neighbor.cameFrom=n;
 					neighbor.visited=true;
@@ -136,15 +140,15 @@ public class Graph<T> {
 		}
 		return null;
 	}
-	private List<Vertex<T>> reconstructPath(T start, T target){
-		Stack<Vertex<T>> path = new Stack<>();
+	private List<T> reconstructPath(T start, T target){
+		Stack<T> path = new Stack<>();
 		Vertex<T> startVert = vertices.get(start);
 		Vertex<T> tarVert = vertices.get(target);
 		for(Vertex<T> node=tarVert;node!=startVert;node=node.cameFrom){
-			path.push(node);
+			path.push(node.getName());
 		}
-		path.add(startVert);
-		ArrayList<Vertex<T>> ret = new ArrayList<>();
+		path.push(startVert.getName());
+		List<T> ret = new ArrayList<>();
 		while(!path.isEmpty()){
 			ret.add(path.pop());
 		}
@@ -161,8 +165,9 @@ public class Graph<T> {
 		while(!doableTasks.isEmpty()){
 			var task = doableTasks.poll();
 			output.add(task);
-			while(task.edges().hasNext()){
-				Edge temp = task.edges().next();
+			Iterator<Edge> itr= task.edges();
+			while(itr.hasNext()){
+				Edge temp = itr.next();
 				var neighbor = temp.getOtherVertex();
 				neighbor.decrementInDegree();
 				if(neighbor.getInDegree()==0)

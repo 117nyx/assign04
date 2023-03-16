@@ -30,6 +30,7 @@ public class Vertex <T> {
 		this.name = name;
 		this.adj = new LinkedList<Edge>();
 		visited = false;
+		inDegree = 0;
 	}
 
 	/**
