@@ -29,6 +29,7 @@ public class Vertex <T> {
 	public Vertex(T name) {
 		this.name = name;
 		this.adj = new LinkedList<Edge>();
+		visited = false;
 	}
 
 	/**

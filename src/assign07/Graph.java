@@ -91,8 +91,12 @@ public class Graph<T> {
 	}
 
 	public boolean DFS(T start,T target) {
-		Vertex startVert =  vertices.get(start);
-		Vertex tarVert = vertices.get(target);
+		for(Vertex<T> v: vertices.values()){
+			v.visited = false;
+			v.cameFrom = null;
+		}
+		Vertex<T> startVert =  vertices.get(start);
+		Vertex<T> tarVert = vertices.get(target);
 		startVert.visited = true;
 		if(startVert.getName().equals(tarVert.getName()))
 			return true;
@@ -116,16 +120,17 @@ public class Graph<T> {
 		while(!nodesToVisit.isEmpty()){
 			n=nodesToVisit.poll();
 			n.visited=true;
-			if(n.equals(target)){
+			Iterator<Edge> itr = n.edges();
+			if(n.equals(vertices.get(target))){
 				return reconstructPath(start,target);
 			}
-			while(n.edges().hasNext()){
-				Vertex<T> neighbor=((Edge)n.edges().next()).getOtherVertex();
+			while(itr.hasNext()){
+				Edge<T> temp = itr.next();
+				Vertex<T> neighbor=(temp.getOtherVertex());
 				if(!neighbor.visited){
 					neighbor.cameFrom=n;
 					neighbor.visited=true;
 					nodesToVisit.offer(neighbor);
-
 				}
 			}
 		}
