@@ -112,6 +112,7 @@ public class Graph<T> {
 		}
 		return false;
 	}
+
 	public List<T> BFS(T start,T target){
 		Queue<Vertex<T>> nodesToVisit = new LinkedList<>();
 		for(Vertex<T> v: vertices.values()) {
@@ -170,8 +171,11 @@ public class Graph<T> {
 				Edge temp = itr.next();
 				var neighbor = temp.getOtherVertex();
 				neighbor.decrementInDegree();
-				if(neighbor.getInDegree()==0)
+				if(neighbor.getInDegree()==0) {
 					doableTasks.offer(neighbor);
+				} else {
+					itr=neighbor.edges();
+				}
 			}
 		}
 		return output;

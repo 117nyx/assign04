@@ -1,53 +1,77 @@
 package assign07;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class GraphTester {
-Graph<Integer> sample;
-List<Integer> sources = new ArrayList<Integer>();
-    List<Integer> destinations = new ArrayList<Integer>();
+Graph sample;
+List<Vertex> vertices = new ArrayList<Vertex>();
+
 
 
     @BeforeEach
     public void before(){
-        for(int i = 0; i < 6; i++){
+        Graph sample = new Graph();
+        sample.addEdge("a", "b");
+        sample.addEdge("b", "c");
+        sample.addEdge("c", "d");
+        sample.addEdge("b", "d");
+        sample.addEdge("d", "a");
 
-            sources.add(i);
-            destinations.add(i+6);
+        Graph ints = new Graph();
+
+
+    }
+    @Test
+    public void DFSTestSmallGraphTrue(){
+        Graph sample = new Graph();
+        sample.addEdge("a", "b");
+        sample.addEdge("b", "c");
+        sample.addEdge("c", "d");
+        sample.addEdge("b", "d");
+        sample.addEdge("d", "a");
+        sample.addEdge("d","e");
+        assertTrue(sample.DFS("a","c"));
+        assertTrue(sample.DFS("a","b"));
+        assertTrue(sample.DFS("a","d"));
+        assertTrue(sample.DFS("c","b"));
+        assertTrue(sample.DFS("b","c"));
+        assertFalse(sample.DFS("e","a"));
+        assertFalse(sample.DFS("e","b"));
+        assertFalse(sample.DFS("e","c"));
+        assertFalse(sample.DFS("e","d"));
+    }
+    @Test
+    public void TopoSort() {
+        List int1 = new ArrayList<>();
+        int1.add(45);
+        int1.add(0);
+        int1.add(1);
+        int1.add(1);
+        int1.add(3);
+        int1.add(2);
+
+
+
+        List int2 = new ArrayList<>();
+        int2.add(1);
+        int2.add(1);
+        int2.add(2);
+        int2.add(3);
+        int2.add(4);
+        int2.add(3);
+
+
+        Graph ints = new Graph(int1, int2);
+        System.out.println(ints.generateDot());
+        List actual = ints.topoSort();
+        for (var v : actual) {
+            System.out.println(v.toString());
         }
-
-        sample = new Graph<>();
-        sample.addEdge(0, 1);
-        sample.addEdge(1, 2);
-        sample.addEdge(1, 3);
-        sample.addEdge(4, 5);
-        sample.addEdge(2, 6);
-        sample.addEdge(6, 8);
-        sample.addEdge(5, 8);
-        sample.addEdge(3, 4);
-
     }
-
-    @Test
-    public void areConnectedTest(){
-        System.out.println(sample.generateDot());
-        assertTrue(sample.DFS(0,8));
-        assertFalse(sample.DFS(2,3));
-    }
-
-    @Test
-    public void BFSTest(){
-        Object[] exp = new Object[]{0,1,2,6,8};
-        Object[] act = sample.BFS(0,8).toArray();
-        assertArrayEquals(exp,act);
-    }
-    // test constructor- lists of ints
-    //test methods once constructor works
-    //
 }
