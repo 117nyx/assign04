@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added necessary exception checks to shortestPath">
+      <change afterPath="$PROJECT_DIR$/src/assign07/BFSTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign07/DFSTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/GraphTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/GraphTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/GraphUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/GraphUtility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +90,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jkerr\Documents\GitHub\assign04\src\assign06" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="assign07" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.Unnamed">
+  <component name="RunManager">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
