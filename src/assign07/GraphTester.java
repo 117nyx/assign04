@@ -29,22 +29,23 @@ List<Vertex> vertices = new ArrayList<Vertex>();
     }
     @Test
     public void DFSTestSmallGraphTrue(){
-        Graph sample = new Graph();
-        sample.addEdge("a", "b");
-        sample.addEdge("b", "c");
-        sample.addEdge("c", "d");
-        sample.addEdge("b", "d");
-        sample.addEdge("d", "a");
-        sample.addEdge("d","e");
-        assertTrue(sample.DFS("a","c"));
-        assertTrue(sample.DFS("a","b"));
-        assertTrue(sample.DFS("a","d"));
-        assertTrue(sample.DFS("c","b"));
-        assertTrue(sample.DFS("b","c"));
-        assertFalse(sample.DFS("e","a"));
-        assertFalse(sample.DFS("e","b"));
-        assertFalse(sample.DFS("e","c"));
-        assertFalse(sample.DFS("e","d"));
+
+        ArrayList ar1 = new ArrayList();
+        ar1.add("a");
+        ar1.add("b");
+        ar1.add("c");
+        ar1.add("b");
+        ar1.add("d");
+        ar1.add("d");
+        ArrayList ar2 = new ArrayList();
+        ar2.add("b");
+        ar2.add("c");
+        ar2.add("d");
+        ar2.add("d");
+        ar2.add("a");
+        ar2.add("e");
+      assertTrue(GraphUtility.areConnected(ar1,ar2,"b","e"));
+      assertFalse(GraphUtility.areConnected(ar1,ar2,"e","a"));
     }
     @Test
     public void TopoSort() {

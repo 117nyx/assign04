@@ -35,15 +35,13 @@ public class GraphUtility {
 			throw new IllegalArgumentException();
 		}
 		for(int i=0;i<sources.size();i++){
-			if(srcData.equals(sources.get(i))){
+			if(srcData.equals(sources.get(i))|| srcData.equals(destinations.get(i))){
 				srcExists=true;
 			}
-		}
-		for(int i=0;i<destinations.size();i++){
-			if(dstData.equals(destinations.get(i))){
+			if(dstData.equals(sources.get(i))||dstData.equals(destinations.get(i)))
 				dstExists=true;
-			}
 		}
+
 		if(!dstExists||!srcExists){
 			throw new IllegalArgumentException();
 		}

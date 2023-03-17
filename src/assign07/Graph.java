@@ -14,6 +14,7 @@ public class Graph<T> {
 
 	// the graph -- a set of vertices (String name mapped to Vertex instance)
 	private HashMap<T, Vertex<T>> vertices;
+	private boolean tf;
 
 	/**
 	 * Constructs an empty graph.
@@ -93,25 +94,29 @@ public class Graph<T> {
 		
 		return result.toString();
 	}
-
-	public boolean DFS(T start,T target) {
+	public boolean DFS(T start,T target){
+		tf=false;
 		for(Vertex<T> v: vertices.values()){
 			v.visited = false;
 			v.cameFrom = null;
 		}
+		DFSUtil(start,target);
+		return tf;
+	}
+	public void DFSUtil(T start,T target) {
+
 		Vertex<T> startVert =  vertices.get(start);
 		Vertex<T> tarVert = vertices.get(target);
 		startVert.visited = true;
 		Iterator<Edge> itr = startVert.edges();
 		if(startVert.getName().equals(tarVert.getName()))
-			return true;
+			tf=true;
 		while(itr.hasNext()) {
-			if (!((Edge) itr.next()).getOtherVertex().visited) {
-				  return DFS((T)((Edge) itr.next()).getOtherVertex().getName(), target);
-
+			Vertex<T> n = itr.next().getOtherVertex();
+			if(!n.visited){
+				  DFSUtil(n.getName(), target);
 			}
 		}
-		return false;
 	}
 
 	public List<T> BFS(T start,T target){
