@@ -102,11 +102,12 @@ public class Graph<T> {
 		Vertex<T> startVert =  vertices.get(start);
 		Vertex<T> tarVert = vertices.get(target);
 		startVert.visited = true;
+		Iterator<Edge> itr = startVert.edges();
 		if(startVert.getName().equals(tarVert.getName()))
 			return true;
-		while(startVert.edges().hasNext()) {
-			if (!((Edge) startVert.edges().next()).getOtherVertex().visited) {
-				  return DFS((T)((Edge) startVert.edges().next()).getOtherVertex().getName(), target);
+		while(itr.hasNext()) {
+			if (!((Edge) itr.next()).getOtherVertex().visited) {
+				  return DFS((T)((Edge) itr.next()).getOtherVertex().getName(), target);
 
 			}
 		}
