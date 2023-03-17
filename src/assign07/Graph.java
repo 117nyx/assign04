@@ -138,13 +138,16 @@ public class Graph<T> {
 				}
 			}
 		}
-		return null;
+		throw new IllegalArgumentException();
 	}
 	private List<T> reconstructPath(T start, T target){
 		Stack<T> path = new Stack<>();
 		Vertex<T> startVert = vertices.get(start);
 		Vertex<T> tarVert = vertices.get(target);
 		for(Vertex<T> node=tarVert;node!=startVert;node=node.cameFrom){
+			if(node==null){
+				throw new IllegalArgumentException();
+			}
 			path.push(node.getName());
 		}
 		path.push(startVert.getName());

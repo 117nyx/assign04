@@ -92,11 +92,8 @@ public class GraphUtility {
 		} //exception checks
 		Graph g = new Graph(sources,destinations);
 		var ret=g.BFS(srcData,dstData);
-		if(ret==null){
-			throw new IllegalArgumentException();
-		} else {
 			return ret;
-		}
+
 
 	}
 
