@@ -7,7 +7,7 @@ public class DFSTimer {
         int timesToLoop=10000;
         Graph g = new Graph<>();
         for (int n = 1000; n <= 10000; n+=1000) {
-            g = generateRandomGraph(g,n);
+            g = generateRandomGraph(g,n,n);
             long startTime, midpointTime, stopTime;
 
 
@@ -22,7 +22,7 @@ public class DFSTimer {
             startTime = System.nanoTime();
 
             for (int i = 0; i < timesToLoop; i++) {
-                g.DFS("v10","v100");
+                g.DFS("v1" ,"v100");
             }
 
             midpointTime = System.nanoTime();
@@ -30,7 +30,6 @@ public class DFSTimer {
             // Run an empty loop to capture the cost of running the loop.
 
             for (int i = 0; i < timesToLoop; i++) { // empty block
-
             }
 
             stopTime = System.nanoTime();
@@ -45,8 +44,8 @@ public class DFSTimer {
             System.out.println(n + "\t" + averageTime);
         }
     }
-    public static Graph generateRandomGraph( Graph g, int vertexCount) {
-        Random rng = new Random();
+    public static Graph generateRandomGraph( Graph g, int vertexCount, int seed) {
+        Random rng = new Random(seed);
         g = new Graph();
         // generate a list of vertices
         String[] vertex = new String[vertexCount];
