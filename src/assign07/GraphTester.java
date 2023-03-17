@@ -73,6 +73,19 @@ List<Vertex> vertices = new ArrayList<Vertex>();
         for (var v : actual) {
             System.out.println(v.toString());
         }
+
+    }
+    @Test
+    public void topoSortExceptionCheck(){
+        List int1 = new ArrayList<>();
+        int1.add(1);
+        int1.add(2);
+
+        List int2 = new ArrayList<>();
+        int2.add(2);
+        int2.add(1);
+
+        assertThrows(IllegalArgumentException.class,()->GraphUtility.sort(int1,int2));
     }
     @Test
     public void BFSTest(){

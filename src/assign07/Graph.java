@@ -179,4 +179,24 @@ public class Graph<T> {
 		}
 		return output;
 	}
+	public boolean isCyclic(T start){
+		vertices.get(start);
+		for (Vertex v: vertices.values()) {
+			v.visited=false;
+		}
+		return cyclicUtil(vertices.get(start));
+
+	}
+	private boolean cyclicUtil(Vertex v){
+		if(v.visited=true){
+			return true;
+		} else {
+			v.visited=true;
+			Iterator itr = v.edges();
+			while(itr.hasNext()){
+				return cyclicUtil(((Edge)itr.next()).getOtherVertex());
+			}
+		}
+		return false;
+	}
 }

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="timer">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Fixed topoSort (needs further testing)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign07/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign07/GraphTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/GraphTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign07/GraphUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/GraphUtility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
       <recent name="C:\Users\jkerr\Documents\GitHub\assign04\src\assign06" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Unnamed">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -187,6 +188,7 @@
       <workItem from="1677267051244" duration="38000" />
       <workItem from="1677525286990" duration="2368000" />
       <workItem from="1678913561278" duration="2594000" />
+      <workItem from="1679005622207" duration="2782000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -363,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678922370079</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fixed topoSort (needs further testing)">
+      <created>1678958070672</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1678958070672</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +406,8 @@
     <MESSAGE value="added array generation tests" />
     <MESSAGE value="new assignment start" />
     <MESSAGE value="timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="timer" />
+    <MESSAGE value="Fixed topoSort (needs further testing)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed topoSort (needs further testing)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -470,6 +480,9 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign07/GraphTester.java</url>
           <line>87</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

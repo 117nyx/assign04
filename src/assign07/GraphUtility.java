@@ -91,7 +91,13 @@ public class GraphUtility {
 			}
 		} //exception checks
 		Graph g = new Graph(sources,destinations);
-		return g.BFS(srcData,dstData);
+		var ret=g.BFS(srcData,dstData);
+		if(ret==null){
+			throw new IllegalArgumentException();
+		} else {
+			return ret;
+		}
+
 	}
 
 	/**
@@ -108,6 +114,9 @@ public class GraphUtility {
 	public static <Type> List<Type> sort(List<Type> sources, List<Type> destinations) throws IllegalArgumentException {
 		//TODO check for cycle
 		Graph g = new Graph(sources,destinations);
+		if(g.isCyclic(sources.get(1))){
+			throw new IllegalArgumentException();
+		}
 		return g.topoSort();
 	}
 
