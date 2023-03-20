@@ -1,13 +1,17 @@
 package assign07;
 
-import java.util.Random;
 
-public class BFSTimer {
+
+
+
+
+import java.util.Random;
+public class Toposort {
     public static void main(String args[]){
-        int timesToLoop=10000;
+        int timesToLoop=100;
         Graph g = new Graph<>();
         for (int n = 1000; n <= 10000; n+=1000) {
-            g = generateRandomGraph(g,n,n);
+            g = generateRandomGraph(g,n);
             long startTime, midpointTime, stopTime;
 
 
@@ -23,9 +27,8 @@ public class BFSTimer {
 
             for (int i = 0; i < timesToLoop; i++) {
                 try {
-                    g.DFS("v10", "v48");
-                }
-                catch(Exception e){
+                    g.topoSort();
+                } catch(Exception e){
 
                 }
             }
@@ -35,6 +38,7 @@ public class BFSTimer {
             // Run an empty loop to capture the cost of running the loop.
 
             for (int i = 0; i < timesToLoop; i++) { // empty block
+
             }
 
             stopTime = System.nanoTime();
@@ -49,8 +53,8 @@ public class BFSTimer {
             System.out.println(n + "\t" + averageTime);
         }
     }
-    public static Graph generateRandomGraph( Graph g, int vertexCount, int seed) {
-        Random rng = new Random(seed);
+    public static Graph generateRandomGraph(Graph g, int vertexCount) {
+        Random rng = new Random();
         g = new Graph();
         // generate a list of vertices
         String[] vertex = new String[vertexCount];
@@ -58,9 +62,8 @@ public class BFSTimer {
             vertex[i] = "v" + i;
 
         // randomly connect the vertices using 2 * |V| edges
-        for(int i = 0; i < 2 * vertexCount; i++)
+        for(int i = 0; i < vertexCount-1; i++)
             g.addEdge(vertex[rng.nextInt(vertexCount)],vertex[i + 1 + rng.nextInt(vertexCount - (i + 1))]);
-//vertex[i + 1 + rng.nextInt(vertexCount - (i + 1))]
         return g;
 
 

@@ -109,7 +109,7 @@ public class GraphUtility {
 	public static <Type> List<Type> sort(List<Type> sources, List<Type> destinations) throws IllegalArgumentException {
 		//TODO check for cycle
 		Graph g = new Graph(sources,destinations);
-		if(g.isCyclic(sources.get(1))){
+		if(g.isCyclic(sources.get(0))){
 			throw new IllegalArgumentException();
 		}
 		return g.topoSort();

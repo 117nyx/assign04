@@ -7,7 +7,7 @@ import java.util.*;
  * Represents a sparse, unweighted, directed graph (a set of vertices and a set of edges). 
  * The graph is not generic and assumes that a string name is stored at each vertex.
  * 
- * @author Erin Parker
+ * @author Erin Parker Jonathan Kerr and Eden Harvey
  * @version March 3, 2022
  */
 public class Graph<T> {
@@ -103,6 +103,12 @@ public class Graph<T> {
 		DFSUtil(start,target);
 		return tf;
 	}
+
+	/**
+	 * Recursively checks all edges from a vertex, skipping ones that have been visited
+	 * @param start start data
+	 * @param target target data
+	 */
 	public void DFSUtil(T start,T target) {
 
 		Vertex<T> startVert =  vertices.get(start);
@@ -119,6 +125,13 @@ public class Graph<T> {
 		}
 	}
 
+	/**
+	 * Returns a list of T that represents the shortest path between start and target
+	 * tries a different path between each line
+	 * @param start start data
+	 * @param target start data
+	 * @return List of T
+	 */
 	public List<T> BFS(T start,T target){
 		Queue<Vertex<T>> nodesToVisit = new LinkedList<>();
 		for(Vertex<T> v: vertices.values()) {
@@ -146,6 +159,14 @@ public class Graph<T> {
 		}
 		throw new IllegalArgumentException();
 	}
+
+	/**
+	 * Generates a list of T that represents the path from start to target, using the cameFrom field in the
+	 * Vertex class
+	 * @param start starting data
+	 * @param target target data
+	 * @return
+	 */
 	private List<T> reconstructPath(T start, T target){
 		Stack<T> path = new Stack<>();
 		Vertex<T> startVert = vertices.get(start);
@@ -164,16 +185,20 @@ public class Graph<T> {
 		return ret;
 	}
 
-	public List<Vertex<T>> topoSort(){
+	/**
+	 * Generates a list of Vertices that are in order of inDegree
+	 * @return List<T>
+	 */
+	public List<T> topoSort(){
 		Queue<Vertex<T>> doableTasks = new LinkedList<>();
-		List<Vertex<T>> output = new ArrayList<>();
+		List<T> output = new ArrayList<>();
 		for(Vertex<T> task: vertices.values()){
 			if(task.getInDegree()==0)
 				doableTasks.offer(task);
 		}
 		while(!doableTasks.isEmpty()){
 			var task = doableTasks.poll();
-			output.add(task);
+			output.add(task.getName());
 			Iterator<Edge> itr= task.edges();
 			while(itr.hasNext()){
 				Edge temp = itr.next();
@@ -197,7 +222,7 @@ public class Graph<T> {
 
 	}
 	private boolean cyclicUtil(Vertex v){
-		if(v.visited=true){
+		if(v.visited==true){
 			return true;
 		} else {
 			v.visited=true;
