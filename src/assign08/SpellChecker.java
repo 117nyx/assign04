@@ -51,7 +51,7 @@ public class SpellChecker {
 	 * @param word - the String to be added to the dictionary
 	 */
 	public void addToDictionary(String word) {
-		// FILL IN
+		dictionary.add(word);
 	}
 
 	/**
@@ -60,23 +60,25 @@ public class SpellChecker {
 	 * @param word - the String to be removed from the dictionary
 	 */
 	public void removeFromDictionary(String word) {
-		// FILL IN
+		dictionary.remove(word);
 	}
 
 	/**
 	 * Spell-checks a document against the dictionary.
 	 * 
-	 * @param document_file - the File that contains Strings to be looked up in the
+	 * @param documentFile - the File that contains Strings to be looked up in the
 	 *                      dictionary
 	 * @return a List of misspelled words
 	 */
 	public List<String> spellCheck(File documentFile) {
 
 		List<String> wordsToCheck = readFromFile(documentFile);
-
-		// FILL IN -- do not return null
-
-		return null;
+		ArrayList mispelled = new ArrayList();
+		for(String s:wordsToCheck){
+			if(!dictionary.contains(s))
+				mispelled.add(s);
+		}
+		return mispelled;
 	}
 
 	/**

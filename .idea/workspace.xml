@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="timer">
-      <change afterPath="$PROJECT_DIR$/src/assign07/Toposort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/SortedSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/SpellChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/SpellCheckerDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/dictionary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/good_luck.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/hello_world.txt" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added files to assign08">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/BFSTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/BFSTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/GraphUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/GraphUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/SpellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/SpellChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +87,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assign08" />
       <recent name="C:\Users\jkerr\Documents\GitHub\assign04\src\assign06" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -413,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679026794559</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added files to assign08">
+      <created>1679283958336</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1679283958336</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +447,8 @@
     <MESSAGE value="added" />
     <MESSAGE value="added necessary exception checks to shortestPath" />
     <MESSAGE value="timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="timer" />
+    <MESSAGE value="added files to assign08" />
+    <option name="LAST_COMMIT_MESSAGE" value="added files to assign08" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
