@@ -2,10 +2,11 @@ package assign08;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class BinarySearchTree <Type extends Comparable<? super Type>> implements SortedSet {
-
+public class BinarySearchTree <T extends Comparable<? super T>> implements SortedSet {
+private Node head;
     /**
      * Ensures that this set contains the specified item.
      *
@@ -15,7 +16,10 @@ public class BinarySearchTree <Type extends Comparable<? super Type>> implements
      */
     @Override
     public boolean add(Comparable item) {
-        return false;
+        if(head==null){
+            head=new Node(item);
+        }
+
     }
 
     /**
@@ -135,5 +139,34 @@ public class BinarySearchTree <Type extends Comparable<? super Type>> implements
     @Override
     public ArrayList toArrayList() {
         return null;
+    }
+    private class Iterator() implements java.util.Iterator {
+        Node current;
+        /**
+         * Returns {@code true} if the iteration has more elements.
+         * (In other words, returns {@code true} if {@link #next} would
+         * return an element rather than throwing an exception.)
+         *
+         * @return {@code true} if the iteration has more elements
+         */
+        @Override
+        public boolean hasNext() {
+            if(current.getGreater()!=null||current.getLesser()!=null){
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /**
+         * Returns the next element in the iteration.
+         *
+         * @return the next element in the iteration
+         * @throws NoSuchElementException if the iteration has no more elements
+         */
+        @Override
+        public Node next() {
+            return null;
+        }
     }
 }
