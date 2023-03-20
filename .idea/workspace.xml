@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added buildDictionary method">
-      <change afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added iterator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -425,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679284492573</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added iterator">
+      <created>1679350897088</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1679350897088</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +472,8 @@
     <MESSAGE value="added files to assign08" />
     <MESSAGE value="implemented spellCheck method" />
     <MESSAGE value="added buildDictionary method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added buildDictionary method" />
+    <MESSAGE value="added iterator" />
+    <option name="LAST_COMMIT_MESSAGE" value="added iterator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

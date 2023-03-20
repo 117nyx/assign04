@@ -22,5 +22,12 @@ public class Node <T extends Comparable<? super T>> {
     public Node getLesser(){
         return lesser;
     }
+    public boolean hasBothChildren(){
+        if(lesser!=null&&greater!=null){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

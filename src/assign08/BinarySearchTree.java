@@ -1,8 +1,9 @@
 package assign08;
 
+import org.junit.jupiter.params.shadow.com.univocity.parsers.common.CommonParserSettings;
+
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class BinarySearchTree <T extends Comparable<? super T>> implements SortedSet {
@@ -18,8 +19,31 @@ private Node head;
     public boolean add(Comparable item) {
         if(head==null){
             head=new Node(item);
+            return true;
         }
+        return addUtil(item,head);
 
+
+    }
+    public boolean addUtil(Comparable item,Node head){
+        int val = item.compareTo(head.key);
+        if (val == 0) {
+            return false;
+        } else if (val > 0) {
+            if(head.getGreater()==null){
+                head.setGreater(new Node(item));
+                return true;
+            }
+            head = head.getGreater();
+            return addUtil(item,head);
+        } else {
+            if(head.getLesser()==null){
+                head.setLesser(new Node(item));
+                return true;
+            }
+            head = head.getLesser();
+            return addUtil(item,head);
+        }
     }
 
     /**
@@ -32,7 +56,13 @@ private Node head;
      */
     @Override
     public boolean addAll(Collection items) {
-        return false;
+        boolean ret=false;
+        for(Object o:items){
+            if(add((Comparable)o))
+                ret = true;
+
+        }
+        return ret;
     }
 
     /**
@@ -41,7 +71,7 @@ private Node head;
      */
     @Override
     public void clear() {
-
+        head=null;
     }
 
     /**
@@ -54,7 +84,28 @@ private Node head;
      */
     @Override
     public boolean contains(Comparable item) {
-        return false;
+        if(head==null){
+            return false;
+        }
+        return containsUtil(item,head);
+    }
+    public boolean containsUtil(Comparable item,Node head){
+        int val = item.compareTo(head.key);
+        if (val == 0) {
+            return true;
+        } else if (val > 0) {
+            if(head.getGreater()==null){
+                return false;
+            }
+            head = head.getGreater();
+            return containsUtil(item,head);
+        } else {
+            if(head.getLesser()==null){
+                return false;
+            }
+            head = head.getLesser();
+            return containsUtil(item,head);
+        }
     }
 
     /**
@@ -67,7 +118,11 @@ private Node head;
      */
     @Override
     public boolean containsAll(Collection items) {
-        return false;
+        for(Object i:items){
+            if(!contains((Comparable) i))
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -77,8 +132,16 @@ private Node head;
      */
     @Override
     public Comparable first() throws NoSuchElementException {
-        return null;
+        if(head == null)
+            throw new NoSuchElementException();
+        Node start = head;
+        while(start.getLesser()!=null)
+        {
+            start = start.getLesser();
+        }
+        return start.key;
     }
+
 
     /**
      * Returns true if this set contains no items.
@@ -95,7 +158,14 @@ private Node head;
      */
     @Override
     public Comparable last() throws NoSuchElementException {
-        return null;
+        if(head == null)
+            throw new NoSuchElementException();
+        Node start = head;
+        while(start.getGreater()!=null)
+        {
+            start = start.getGreater();
+        }
+        return start.key;
     }
 
     /**
@@ -107,8 +177,10 @@ private Node head;
      */
     @Override
     public boolean remove(Comparable item) {
-        return false;
+
     }
+
+
 
     /**
      * Ensures that this set does not contain any of the items in the specified
@@ -140,33 +212,5 @@ private Node head;
     public ArrayList toArrayList() {
         return null;
     }
-    private class Iterator() implements java.util.Iterator {
-        Node current;
-        /**
-         * Returns {@code true} if the iteration has more elements.
-         * (In other words, returns {@code true} if {@link #next} would
-         * return an element rather than throwing an exception.)
-         *
-         * @return {@code true} if the iteration has more elements
-         */
-        @Override
-        public boolean hasNext() {
-            if(current.getGreater()!=null||current.getLesser()!=null){
-                return true;
-            } else {
-                return false;
-            }
-        }
 
-        /**
-         * Returns the next element in the iteration.
-         *
-         * @return the next element in the iteration
-         * @throws NoSuchElementException if the iteration has no more elements
-         */
-        @Override
-        public Node next() {
-            return null;
-        }
-    }
 }
