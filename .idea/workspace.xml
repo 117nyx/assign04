@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added first,last,add,addall methods">
-      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added iterator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />

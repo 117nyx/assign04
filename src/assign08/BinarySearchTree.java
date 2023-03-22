@@ -1,7 +1,5 @@
 package assign08;
 
-import org.junit.jupiter.params.shadow.com.univocity.parsers.common.CommonParserSettings;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.NoSuchElementException;
@@ -181,7 +179,79 @@ private Node head;
      */
     @Override
     public boolean remove(Comparable item) {
-        return true;
+        if(head==null){
+            return false;
+        }
+        return removeUtil(item,head);
+    }
+
+    /**
+     * Recursive method for remove
+     * @param item- item to be compared
+     * @param start- node to start at
+     * @return true if node gets removed, false if node doesnt exist
+     */
+    public boolean removeUtil(Comparable item, Node start){
+        // keep track of parent
+        // root has multiple different cases-
+        int val = item.compareTo(start.key);
+        // trying to remove root
+        if(start == head && val ==0){
+
+        }
+        if (val == 0) {
+            //two children- go left, then rightmost, swap parent with rightmost,
+            // then call removeUtil again to get rid of it.
+            if(start.hasBothChildren())
+            {
+                //get to right node to swap
+                Node<T> temp = start;
+                temp = temp.getLesser();
+                temp = temp.rightMost();
+                //swap
+                Node<T> swap = start;
+                start = temp;
+                temp = swap;
+                //run remove on new node that could be a leaf or have a left child
+                return removeUtil(item,temp);
+            }
+            //one child
+            else if(start.hasAChild()) {
+                //only right child- swap child with node, make child null
+                if (start.getGreater() != null) {
+                    start = start.getGreater();
+                    start.setGreater(null);
+                    return true;
+                }
+                //only left child- swap child with node, make child null
+                else{
+                    start = start.getLesser();
+                    start.setLesser(null);
+                    return true;
+                }
+                }
+            else{
+                // leaf node
+                start = null;
+            }
+
+
+        }
+        // item is greater than start
+        else if (val > 0) {
+            if(start.getGreater()==null)
+                return false;
+            start = start.getGreater();
+            return removeUtil(item,start);
+        }
+        //item less than start
+        else {
+            if(start.getLesser()==null)
+                return false;
+            start = start.getLesser();
+            return removeUtil(item,start);
+        }
+        return false;
     }
 
 
