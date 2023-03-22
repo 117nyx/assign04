@@ -61,7 +61,7 @@ public class BinarySearchTreeTester {
         assertFalse(emptyInt.add(75));
     }
     @Test
-    void removeAllTest() {
+    void removeTest() {
         ArrayList expected = new ArrayList();
         expected.add(50);
         expected.add(25);
@@ -78,6 +78,10 @@ public class BinarySearchTreeTester {
         assertEquals(test,emptyInt.toArrayList());
         assertTrue(emptyInt.contains(50));
         assertFalse(emptyInt.contains(75));
+    }
+    @Test
+    void removeAllTest(){
+
     }
     @Test
     void isEmptyTest(){

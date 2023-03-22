@@ -24,7 +24,7 @@ private Node head;
 
     }
     public boolean addUtil(Comparable item,Node head){
-        int val = item.compareTo(head.key);
+        int val = item.compareTo(head.getItem());
         if (val == 0) {
             return false;
         } else if (val > 0) {
@@ -88,7 +88,7 @@ private Node head;
         return containsUtil(item,head);
     }
     public boolean containsUtil(Comparable item,Node head){
-        int val = item.compareTo(head.key);
+        int val = item.compareTo(head.getItem());
         if (val == 0) {
             return true;
         } else if (val > 0) {
@@ -129,7 +129,7 @@ private Node head;
      * @throws NoSuchElementException if the set is empty
      */
     @Override
-    public Comparable first() throws NoSuchElementException {
+    public T first() throws NoSuchElementException {
         if(head == null)
             throw new NoSuchElementException();
         Node start = head;
@@ -137,7 +137,7 @@ private Node head;
         {
             start = start.getLesser();
         }
-        return start.key;
+        return (T)start.getItem();
     }
 
 
@@ -159,7 +159,7 @@ private Node head;
      * @throws NoSuchElementException if the set is empty
      */
     @Override
-    public Comparable last() throws NoSuchElementException {
+    public T last() throws NoSuchElementException {
         if(head == null)
             throw new NoSuchElementException();
         Node start = head;
@@ -167,7 +167,7 @@ private Node head;
         {
             start = start.getGreater();
         }
-        return start.key;
+        return (T)start.getItem();
     }
 
     /**
@@ -194,7 +194,7 @@ private Node head;
      */
     public boolean removeUtil(Comparable item, Node<T> start){
         // root has multiple different cases-
-        int val = item.compareTo(start.key);
+        int val = item.compareTo(start.getItem());
         // keep track of parent
         if((start == head.getLesser()|| start == head.getGreater()) && val !=0)
             start.setParent(head);
@@ -327,7 +327,7 @@ private Node head;
         if (n == null)
             return;
         toArrayList(ret,n.getLesser());
-        ret.add(n.key);
+        ret.add(n.getItem());
         toArrayList(ret,n.getGreater());
     }
 

@@ -6,7 +6,7 @@ package assign08;
  * @param <T>
  */
 public class Node <T extends Comparable<? super T>> {
-   public T key;
+    private T item;
    private Node greater, lesser, parent;
 
     /**
@@ -14,7 +14,7 @@ public class Node <T extends Comparable<? super T>> {
      * @param key- value stored in node
      */
     public Node(T key){
-        this.key=key;
+        this.item=key;
         greater=lesser=parent=null;
     }
     // setters and getters for different nodes
@@ -61,6 +61,9 @@ public class Node <T extends Comparable<? super T>> {
             return t;
         t.rightMost();
         return null;
+    }
+    public T getItem(){
+        return item;
     }
 
 }
