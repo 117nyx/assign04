@@ -3,7 +3,7 @@ package assign08;
 public class Node <T extends Comparable<? super T>> {
    public T key;
    private Node greater, lesser;
-
+   boolean visited;
 
     public Node(T key){
         this.key=key;
@@ -11,10 +11,10 @@ public class Node <T extends Comparable<? super T>> {
     }
 
     public void setGreater(Node n){
-        n=greater;
+        greater=n;
     }
     public void setLesser(Node n){
-        n=lesser;
+        lesser=n;
     }
     public Node getGreater(){
         return greater;

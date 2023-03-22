@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added iterator">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added first,last,add,addall methods">
+      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />
@@ -95,7 +96,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.InsertionSortTimer">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -432,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679350897088</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added first,last,add,addall methods">
+      <created>1679354595612</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1679354595612</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +481,8 @@
     <MESSAGE value="implemented spellCheck method" />
     <MESSAGE value="added buildDictionary method" />
     <MESSAGE value="added iterator" />
-    <option name="LAST_COMMIT_MESSAGE" value="added iterator" />
+    <MESSAGE value="added first,last,add,addall methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added first,last,add,addall methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -547,6 +556,11 @@
           <url>file://$PROJECT_DIR$/src/assign07/Graph.java</url>
           <line>98</line>
           <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />

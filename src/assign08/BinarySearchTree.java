@@ -148,7 +148,11 @@ private Node head;
      */
     @Override
     public boolean isEmpty() {
-        return false;
+        if(head!=null){
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -177,7 +181,7 @@ private Node head;
      */
     @Override
     public boolean remove(Comparable item) {
-
+        return true;
     }
 
 
@@ -199,10 +203,20 @@ private Node head;
     /**
      * Returns the number of items in this set.
      */
-    @Override
     public int size() {
-        return 0;
+       return size(head);
     }
+
+    public int size(Node root) {
+        if (root == null)
+            return 0;
+        int l = size(root.getLesser());
+        int r = size(root.getGreater());
+
+        return 1 + l + r;
+    }
+
+
 
     /**
      * Returns an ArrayList containing all of the items in this set, in sorted
@@ -210,7 +224,18 @@ private Node head;
      */
     @Override
     public ArrayList toArrayList() {
-        return null;
+        ArrayList ret = new ArrayList();
+        toArrayList(ret,head);
+        return ret;
     }
+    private void toArrayList(ArrayList ret, Node n) {
+        if (n == null)
+            return;
+        toArrayList(ret,n.getLesser());
+        ret.add(n);
+        toArrayList(ret,n.getGreater());
+    }
+
+
 
 }
