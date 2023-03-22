@@ -302,7 +302,7 @@ private Node head;
         if (n == null)
             return;
         toArrayList(ret,n.getLesser());
-        ret.add(n);
+        ret.add(n.key);
         toArrayList(ret,n.getGreater());
     }
 

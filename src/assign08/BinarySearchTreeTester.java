@@ -36,6 +36,58 @@ public class BinarySearchTreeTester {
         expected.add(75);
         expected.add(100);
         assertEquals(expected,emptyInt.toArrayList());
-
+    }
+    @Test
+    void addAllTest(){
+        ArrayList expected = new ArrayList();
+        expected.add(50);
+        expected.add(25);
+        expected.add(75);
+        expected.add(0);
+        expected.add(100);
+        emptyInt.addAll(expected);
+        assertTrue(emptyInt.containsAll(expected));
+    }
+    @Test
+    void addReturnFalseTest() {
+        ArrayList expected = new ArrayList();
+        expected.add(50);
+        expected.add(25);
+        expected.add(75);
+        expected.add(0);
+        expected.add(100);
+        emptyInt.addAll(expected);
+        assertFalse(emptyInt.add(75));
+    }
+    @Test
+    void removeAllTest() {
+        ArrayList expected = new ArrayList();
+        expected.add(50);
+        expected.add(25);
+        expected.add(75);
+        expected.add(0);
+        expected.add(100);
+        emptyInt.addAll(expected);
+        emptyInt.removeAll(expected);
+        assertTrue(emptyInt.isEmpty());
+    }
+    @Test
+    void isEmptyTest(){
+        assertTrue(emptyInt.isEmpty());
+        emptyInt.add(50);
+        assertFalse(emptyInt.isEmpty());
+    }
+    @Test
+    void clearTest(){
+        ArrayList expected = new ArrayList();
+        expected.add(50);
+        expected.add(25);
+        expected.add(75);
+        expected.add(0);
+        expected.add(100);
+        emptyInt.addAll(expected);
+        assertFalse(emptyInt.isEmpty());
+        emptyInt.clear();
+        assertTrue(emptyInt.isEmpty());
     }
 }

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added iterator">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added testing methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InsertionSortTimer">
+  <component name="RunManager">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -193,6 +193,7 @@
       <workItem from="1677525286990" duration="2368000" />
       <workItem from="1678913561278" duration="2594000" />
       <workItem from="1679005622207" duration="9746000" />
+      <workItem from="1679449228123" duration="3923000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -439,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679354595612</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added testing methods">
+      <created>1679449438244</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1679449438244</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +489,8 @@
     <MESSAGE value="added buildDictionary method" />
     <MESSAGE value="added iterator" />
     <MESSAGE value="added first,last,add,addall methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added first,last,add,addall methods" />
+    <MESSAGE value="added testing methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added testing methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
