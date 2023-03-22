@@ -68,8 +68,15 @@ public class BinarySearchTreeTester {
         expected.add(0);
         expected.add(100);
         emptyInt.addAll(expected);
-        emptyInt.removeAll(expected);
-        assertTrue(emptyInt.isEmpty());
+        emptyInt.remove(25);
+        emptyInt.remove(75);
+        emptyInt.remove(0);
+        emptyInt.remove(100);
+        ArrayList test = new ArrayList();
+        test.add(50);
+        assertEquals(test,emptyInt.toArrayList());
+        assertTrue(emptyInt.contains(50));
+        assertFalse(emptyInt.contains(75));
     }
     @Test
     void isEmptyTest(){

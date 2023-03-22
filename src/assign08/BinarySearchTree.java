@@ -182,6 +182,7 @@ private Node head;
         if(head==null){
             return false;
         }
+
         return removeUtil(item,head);
     }
 
@@ -191,10 +192,12 @@ private Node head;
      * @param start- node to start at
      * @return true if node gets removed, false if node doesnt exist
      */
-    public boolean removeUtil(Comparable item, Node start){
-        // keep track of parent
+    public boolean removeUtil(Comparable item, Node<T> start){
         // root has multiple different cases-
         int val = item.compareTo(start.key);
+        // keep track of parent
+        if((start == head.getLesser()|| start == head.getGreater()) && val !=0)
+            start.setParent(head);
         // trying to remove root
         if(start == head && val ==0){
 
@@ -205,6 +208,7 @@ private Node head;
             if(start.hasBothChildren())
             {
                 //get to right node to swap
+                Node<T> parent = start.getParent();
                 Node<T> temp = start;
                 temp = temp.getLesser();
                 temp = temp.rightMost();
@@ -212,6 +216,8 @@ private Node head;
                 Node<T> swap = start;
                 start = temp;
                 temp = swap;
+                // make sure parent is now equal to original parent
+                temp.setParent(parent);
                 //run remove on new node that could be a leaf or have a left child
                 return removeUtil(item,temp);
             }
@@ -219,20 +225,29 @@ private Node head;
             else if(start.hasAChild()) {
                 //only right child- swap child with node, make child null
                 if (start.getGreater() != null) {
+                    Node<T> parent = start.getParent();
                     start = start.getGreater();
                     start.setGreater(null);
+                    start.setParent(parent);
+                    start.getParent().setGreater(start);
                     return true;
                 }
                 //only left child- swap child with node, make child null
                 else{
+                    Node<T> parent = start.getParent();
                     start = start.getLesser();
                     start.setLesser(null);
+                    start.setParent(parent);
+                    start.getParent().setLesser(start);
                     return true;
                 }
                 }
             else{
                 // leaf node
+                start.getParent().setGreater(null);
+                start.getParent().setLesser(null);
                 start = null;
+                return true;
             }
 
 
@@ -241,17 +256,21 @@ private Node head;
         else if (val > 0) {
             if(start.getGreater()==null)
                 return false;
+            Node<T> parent = start;
             start = start.getGreater();
+            start.setParent(parent);
+
             return removeUtil(item,start);
         }
         //item less than start
         else {
             if(start.getLesser()==null)
                 return false;
+            Node<T> parent = start;
             start = start.getLesser();
+            start.setParent(parent);
             return removeUtil(item,start);
         }
-        return false;
     }
 
 
@@ -267,7 +286,13 @@ private Node head;
      */
     @Override
     public boolean removeAll(Collection items) {
-        return false;
+        boolean ret=false;
+        for(Object o:items){
+            if(remove((Comparable)o))
+                ret = true;
+
+        }
+        return ret;
     }
 
     /**

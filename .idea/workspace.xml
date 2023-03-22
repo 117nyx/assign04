@@ -567,8 +567,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="88" />
+          <line>73</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
