@@ -56,9 +56,9 @@ private Node head;
     public boolean addAll(Collection items) {
         boolean ret=false;
         for(Object o:items){
-            if(add((Comparable)o))
+            if(add((Comparable)o)) {
                 ret = true;
-
+            }
         }
         return ret;
     }
@@ -302,7 +302,7 @@ private Node head;
        return size(head);
     }
 
-    public int size(Node root) {
+    private int size(Node root) {
         if (root == null)
             return 0;
         int l = size(root.getLesser());

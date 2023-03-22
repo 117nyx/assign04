@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BinarySearchTreeTester {
     BinarySearchTree<Integer> emptyInt;
@@ -96,5 +97,36 @@ public class BinarySearchTreeTester {
         assertFalse(emptyInt.isEmpty());
         emptyInt.clear();
         assertTrue(emptyInt.isEmpty());
+    }
+    @Test
+    void sizeTest(){
+        assertEquals(0,emptyInt.size());
+        emptyInt.add(5);
+        assertEquals(1,emptyInt.size());
+        emptyInt.add(2);
+        assertEquals(2,emptyInt.size());
+        emptyInt.add(7);
+        assertEquals(3,emptyInt.size());
+        emptyInt.add(1);
+        assertEquals(4,emptyInt.size());
+    }
+    @Test
+    void sizeLeftLean(){
+        ArrayList arr = new ArrayList();
+        for(int i = 100;i>0;i--){
+            arr.add(i);
+        }
+        emptyInt.addAll(arr);
+        assertEquals(100,emptyInt.size());
+    }
+    @Test
+    void sizeRandomLargeSize(){
+        Random rand = new Random(1);
+        ArrayList arr = new ArrayList();
+        for(int i = 100000;i>0;i--){
+            arr.add(rand.nextInt());
+        }
+        emptyInt.addAll(arr);
+        assertEquals(100000,emptyInt.size(),10);
     }
 }
