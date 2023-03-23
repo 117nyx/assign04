@@ -133,4 +133,13 @@ public class BinarySearchTreeTester {
         emptyInt.addAll(arr);
         assertEquals(100000,emptyInt.size(),10);
     }
+    @Test
+    void size2RemoveTest(){
+        emptyInt.add(2);
+        emptyInt.add(1);
+        emptyInt.remove(1);
+        emptyInt.remove(2);
+
+
+    }
 }

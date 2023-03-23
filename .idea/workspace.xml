@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added testing methods">
+      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeContainsTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/SpellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/SpellChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +196,7 @@
       <workItem from="1677525286990" duration="2368000" />
       <workItem from="1678913561278" duration="2594000" />
       <workItem from="1679005622207" duration="9746000" />
-      <workItem from="1679449228123" duration="16056000" />
+      <workItem from="1679449228123" duration="29431000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -464,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679460635735</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added testing methods">
+      <created>1679467833294</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1679467833294</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,6 +593,16 @@
           <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java</url>
           <line>17</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />

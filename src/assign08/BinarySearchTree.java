@@ -244,8 +244,6 @@ private Node head;
                 }
             else{
                 // leaf node
-                start.getParent().setGreater(null);
-                start.getParent().setLesser(null);
                 start = null;
                 return true;
             }
