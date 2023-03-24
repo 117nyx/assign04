@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 
 public class BinarySearchTree <T extends Comparable<? super T>> implements SortedSet {
 private Node head;
+private boolean retBool;
     /**
      * Ensures that this set contains the specified item.
      *
@@ -179,96 +180,47 @@ private Node head;
      */
     @Override
     public boolean remove(Comparable item) {
+        retBool=false;
         if(head==null){
             return false;
         }
 
-        return removeUtil(item,head);
+        head = removeUtil(item,head);
+        return retBool;
     }
 
     /**
      * Recursive method for remove
      * @param item- item to be compared
-     * @param start- node to start at
+     * @param root- node to start at
      * @return true if node gets removed, false if node doesnt exist
      */
-    public boolean removeUtil(Comparable item, Node<T> start){
-        // root has multiple different cases-
-        int val = item.compareTo(start.getItem());
-        // keep track of parent
-        if((start == head.getLesser()|| start == head.getGreater()) && val !=0)
-            start.setParent(head);
-        // trying to remove root
-        if(start == head && val ==0){
-
-        }
-        if (val == 0) {
-            //two children- go left, then rightmost, swap parent with rightmost,
-            // then call removeUtil again to get rid of it.
-            if(start.hasBothChildren())
-            {
-                //get to right node to swap
-                Node<T> parent = start.getParent();
-                Node<T> temp = start;
-                temp = temp.getLesser();
-                temp = temp.rightMost();
-                //swap
-                Node<T> swap = start;
-                start = temp;
-                temp = swap;
-                // make sure parent is now equal to original parent
-                temp.setParent(parent);
-                //run remove on new node that could be a leaf or have a left child
-                return removeUtil(item,temp);
+    public Node removeUtil(Comparable item, Node<T> root){
+        //stop case
+        if (root == null)
+            return root;
+        //if less than root
+        if(item.compareTo(root.getItem())<0)
+            root.setLesser(removeUtil(item,root.getLesser()));
+        //if greater than root
+        else if(item.compareTo(root.getItem())>0)
+            root.setGreater(removeUtil(item,root.getGreater()));
+        else { //equal
+            if(root.getGreater()==null){
+                retBool=true;
+                return root.getLesser();
             }
-            //one child
-            else if(start.hasAChild()) {
-                //only right child- swap child with node, make child null
-                if (start.getGreater() != null) {
-                    Node<T> parent = start.getParent();
-                    start = start.getGreater();
-                    start.setGreater(null);
-                    start.setParent(parent);
-                    start.getParent().setGreater(start);
-                    return true;
-                }
-                //only left child- swap child with node, make child null
-                else{
-                    Node<T> parent = start.getParent();
-                    start = start.getLesser();
-                    start.setLesser(null);
-                    start.setParent(parent);
-                    start.getParent().setLesser(start);
-                    return true;
-                }
-                }
-            else{
-                // leaf node
-                start = null;
-                return true;
+            if(root.getLesser()==null){
+                retBool=true;
+                return root.getGreater();
             }
+            root.setItem((T)root.getGreater().leftMost().getItem());
 
+            root.setGreater(removeUtil(root.getItem(),root.getGreater()));
+            retBool=true;
+        }
 
-        }
-        // item is greater than start
-        else if (val > 0) {
-            if(start.getGreater()==null)
-                return false;
-            Node<T> parent = start;
-            start = start.getGreater();
-            start.setParent(parent);
-
-            return removeUtil(item,start);
-        }
-        //item less than start
-        else {
-            if(start.getLesser()==null)
-                return false;
-            Node<T> parent = start;
-            start = start.getLesser();
-            start.setParent(parent);
-            return removeUtil(item,start);
-        }
+        return root;
     }
 
 

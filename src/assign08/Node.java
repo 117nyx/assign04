@@ -7,7 +7,7 @@ package assign08;
  */
 public class Node <T extends Comparable<? super T>> {
     private T item;
-   private Node greater, lesser, parent;
+   private Node greater, lesser;
 
     /**
      * constructor
@@ -15,7 +15,7 @@ public class Node <T extends Comparable<? super T>> {
      */
     public Node(T key){
         this.item=key;
-        greater=lesser=parent=null;
+        greater=lesser=null;
     }
     // setters and getters for different nodes
     public void setGreater(Node n){
@@ -31,8 +31,7 @@ public class Node <T extends Comparable<? super T>> {
         return lesser;
     }
 
-    public Node getParent(){return parent;};
-    public void setParent(Node n){parent = n;};
+
 
     /**
      * checks if theres two children for the selected node
@@ -56,14 +55,30 @@ public class Node <T extends Comparable<? super T>> {
             return false;
     }
     public Node rightMost(){
+        if(this.getGreater()==null){
+            return this;
+        }
         Node<T> t = getGreater();
         if(t.getGreater()== null)
             return t;
         t.rightMost();
         return null;
     }
+    public Node leftMost(){
+        if(this.getLesser()==null){
+            return this;
+        }
+        Node<T> t = getLesser();
+        if(t.getLesser() == null)
+            return t;
+        t.leftMost();
+        return null;
+    }
     public T getItem(){
         return item;
+    }
+    public void setItem(T item){
+        this.item=item;
     }
 
 }

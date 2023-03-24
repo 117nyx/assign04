@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added testing methods">
-      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeContainsTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="added Timing classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BinarySearchTreeTester.removeAllRandom">
+  <component name="RunManager">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -214,7 +212,7 @@
       <workItem from="1677525286990" duration="2368000" />
       <workItem from="1678913561278" duration="2594000" />
       <workItem from="1679005622207" duration="9746000" />
-      <workItem from="1679449228123" duration="29431000" />
+      <workItem from="1679449228123" duration="35656000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -489,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679467833294</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="added Timing classes">
+      <created>1679610230189</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1679610230189</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +537,8 @@
     <MESSAGE value="added iterator" />
     <MESSAGE value="added first,last,add,addall methods" />
     <MESSAGE value="added testing methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added testing methods" />
+    <MESSAGE value="added Timing classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Timing classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -618,14 +624,19 @@
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java</url>
           <line>48</line>
           <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTree.java</url>
+          <line>223</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign08/BinarySearchTreeTester.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
