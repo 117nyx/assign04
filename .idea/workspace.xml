@@ -96,7 +96,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.InsertionSortTimer">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
