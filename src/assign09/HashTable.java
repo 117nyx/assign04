@@ -1,10 +1,23 @@
 package assign09;
 
+import java.nio.channels.FileChannel;
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-public class HashTable implements Map{
-    ArrayList<MapEntry> backingArr = new ArrayList();
+public class HashTable<K,V> implements Map{
+    K k;
+    V v;
+    private int size=10;
+    private int mappings=0;
+
+    ArrayList<LinkedList<MapEntry>> backingArr = new ArrayList(size);
+    public HashTable(){
+        for(int i=0;i<size;i++){
+            backingArr.add(new LinkedList<MapEntry>());
+        }
+    }
     /**
      * Removes all mappings from this map.
      * <p>
@@ -13,6 +26,8 @@ public class HashTable implements Map{
     @Override
     public void clear() {
         backingArr.clear();
+        size = 10;
+        backingArr= new ArrayList<>(size);
     }
 
     /**
@@ -25,11 +40,7 @@ public class HashTable implements Map{
      */
     @Override
     public boolean containsKey(Object key) {
-        for (MapEntry m: backingArr) {
-            if(m.getKey().equals(key))
-                return true;
-        }
-        return false;
+        return get(key) != null;
     }
 
     /**
@@ -44,8 +55,9 @@ public class HashTable implements Map{
      */
     @Override
     public boolean containsValue(Object value) {
-        for (MapEntry m: backingArr) {
-            if(m.getValue().equals(value)){
+        for (List<MapEntry> m: backingArr) {
+            for(MapEntry me: m)
+                if(me.getValue().equals(value)){
                 return true;
             }
         }
@@ -63,7 +75,14 @@ public class HashTable implements Map{
      */
     @Override
     public List<MapEntry> entries() {
-        return this.backingArr;
+        ArrayList<MapEntry> ret = new ArrayList();
+        for (LinkedList<MapEntry> m: backingArr) {
+            for(MapEntry me: m)
+                if(me.getValue()!=null){
+                    ret.add((MapEntry) me.getValue());
+                }
+        }
+        return ret;
     }
 
     /**
@@ -77,7 +96,12 @@ public class HashTable implements Map{
      */
     @Override
     public Object get(Object key) {
-        return
+        int index = compressor(key.hashCode());
+        var temp = backingArr.get(index);
+        for(MapEntry mp: temp)
+            if(mp.getKey().equals(key))
+                return mp.getValue();
+        return null;
     }
 
     /**
@@ -89,7 +113,7 @@ public class HashTable implements Map{
      */
     @Override
     public boolean isEmpty() {
-        return false;
+        return getLoad()==0;
     }
 
     /**
@@ -106,7 +130,33 @@ public class HashTable implements Map{
      */
     @Override
     public Object put(Object key, Object value) {
-        return null;
+        if(getLoad()>2.5){
+            reHash();
+        }
+        Object retVal=null;
+        int index=compressor(key.hashCode());
+        var temp=backingArr.get(index);
+        MapEntry<Object,Object> add = new MapEntry<>(key,value);
+        //linked list at spot is empty
+        if(temp.isEmpty()) {
+            var tempList = new LinkedList<MapEntry>();
+            tempList.add(add);
+            mappings++;
+            backingArr.set(index,tempList);
+        }
+        else {// linked list already there
+            for(MapEntry mp: temp){
+                if (mp.getKey().equals(key)) {
+                    retVal = mp.getValue();
+                    mp.setValue(add.getValue());
+
+                    return retVal;
+                }
+            }
+            temp.add(add);
+            mappings++;
+        }
+        return retVal;
     }
 
     /**
@@ -120,6 +170,17 @@ public class HashTable implements Map{
      */
     @Override
     public Object remove(Object key) {
+        int index = compressor(key.hashCode());
+        LinkedList<MapEntry> temp=backingArr.get(index);
+        for(MapEntry m:temp){
+            if(m.getKey().equals(key)){
+                var retVal = m.getValue();
+                temp.remove(m);
+                mappings--;
+                return retVal;
+            }
+
+        }
         return null;
     }
 
@@ -132,6 +193,22 @@ public class HashTable implements Map{
      */
     @Override
     public int size() {
-        return 0;
+        return size;
     }
+
+    private void reHash(){
+        var temp=this.entries();
+        size*=2;
+        backingArr = new ArrayList<LinkedList<MapEntry>>(size);
+        for(MapEntry m:temp){
+            put(m.getKey(),m.getValue());
+        }
+    }
+    private int compressor(int hashCode){
+        return Math.abs(hashCode%size);
+    }
+    public float getLoad(){
+        return mappings/size;
+    }
+
 }

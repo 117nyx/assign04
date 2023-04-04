@@ -92,13 +92,8 @@ List<Vertex> vertices = new ArrayList<Vertex>();
     public void BFSTest(){
         Graph ints = new Graph();
         ints.addEdge(0,1);
-        ints.addEdge(1,2);
-        ints.addEdge(1,3);
-        ints.addEdge(2,6);
-        ints.addEdge(3,4);
-        ints.addEdge(4,5);
-        ints.addEdge(6,7);
-        ints.addEdge(5,7);
-        System.out.println(ints.BFS(0,7).toString());
+
+        System.out.println(ints.BFS(1,0).toString());
     }
+
 }
