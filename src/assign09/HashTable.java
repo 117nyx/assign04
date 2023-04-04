@@ -25,8 +25,9 @@ public class HashTable<K,V> implements Map{
      */
     @Override
     public void clear() {
-        backingArr.clear();
+        //backingArr.clear();
         size = 10;
+        mappings=0;
         backingArr= new ArrayList<>(size);
     }
 
@@ -77,10 +78,11 @@ public class HashTable<K,V> implements Map{
     public List<MapEntry> entries() {
         ArrayList<MapEntry> ret = new ArrayList();
         for (LinkedList<MapEntry> m: backingArr) {
-            for(MapEntry me: m)
-                if(me.getValue()!=null){
-                    ret.add((MapEntry) me.getValue());
+            for (MapEntry me : m){
+                if (me.getValue() != null) {
+                    ret.add(me);
                 }
+        }
         }
         return ret;
     }
@@ -113,7 +115,8 @@ public class HashTable<K,V> implements Map{
      */
     @Override
     public boolean isEmpty() {
-        return getLoad()==0;
+        var val=getLoad();
+        return val==(float)0.0;
     }
 
     /**
@@ -200,6 +203,9 @@ public class HashTable<K,V> implements Map{
         var temp=this.entries();
         size*=2;
         backingArr = new ArrayList<LinkedList<MapEntry>>(size);
+        for(int i=0;i<size;i++){
+            backingArr.add(new LinkedList<>());
+        }
         for(MapEntry m:temp){
             put(m.getKey(),m.getValue());
         }
@@ -208,7 +214,7 @@ public class HashTable<K,V> implements Map{
         return Math.abs(hashCode%size);
     }
     public float getLoad(){
-        return mappings/size;
+        return ((float)mappings/(float)size);
     }
 
 }

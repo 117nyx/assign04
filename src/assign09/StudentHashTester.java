@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class StudentHashTester {
     ArrayList bigArr=new ArrayList<>();
@@ -50,6 +51,36 @@ public class StudentHashTester {
         assertEquals(studentGpaTable.remove(grace),4.0);
         assertFalse(studentGpaTable.containsKey(grace));
         assertTrue(studentGpaTable.isEmpty());
+
+    }
+    @Test
+    void clearTest(){
+        HashTable<StudentBadHash, Double> studentGpaTable = new HashTable<StudentBadHash, Double>();
+        studentGpaTable.put(alan, 3.2);
+        studentGpaTable.put(ada, 3.5);
+        studentGpaTable.put(edsger, 3.8);
+        studentGpaTable.put(grace, 4.0);
+        assertFalse(studentGpaTable.isEmpty());
+        studentGpaTable.clear();
+        assertTrue(studentGpaTable.isEmpty());
+    }
+    @Test
+    void entriesTest(){
+        HashTable<StudentBadHash, Double> studentGpaTable = new HashTable<StudentBadHash, Double>();
+        studentGpaTable.put(alan, 3.2);
+        studentGpaTable.put(ada, 3.5);
+        studentGpaTable.put(edsger, 3.8);
+        studentGpaTable.put(grace, 4.0);
+       var v= studentGpaTable.entries();
+    }
+    @Test
+    void reHashTest(){
+        HashTable<Integer,Integer> hashTable = new HashTable<>();
+        Random r = new Random();
+        for(int i =0; i< 100;i++){
+            hashTable.put(r.nextInt(),r.nextInt());
+        }
+        assertFalse(hashTable.isEmpty());
 
     }
 }

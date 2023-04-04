@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="changed remove method">
-      <change afterPath="$PROJECT_DIR$/src/assign09/StudentHashTester.java" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="hash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign07/GraphTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign07/GraphTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assign09/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign09/HashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign09/StudentBadHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign09/StudentBadHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign09/StudentHashDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign09/StudentHashDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign09/StudentHashTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign09/StudentHashTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +234,7 @@
       <workItem from="1679005622207" duration="9746000" />
       <workItem from="1679449228123" duration="40950000" />
       <workItem from="1679970004525" duration="829000" />
-      <workItem from="1679976584687" duration="22920000" />
+      <workItem from="1679976584687" duration="25210000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -533,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679970179223</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="hash">
+      <created>1680636389343</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1680636389343</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +556,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added custom comparator, added KTinyData test, &#10;modified to correctly clone" />
     <MESSAGE value="-added beginning logic for mergesort" />
     <MESSAGE value="-added beginning logic for mergesort&#10;-splits arr in 1/2" />
     <MESSAGE value="added helper method to for mergesort to split the dataset into smaller pieces" />
@@ -577,7 +580,8 @@
     <MESSAGE value="added testing methods" />
     <MESSAGE value="added Timing classes" />
     <MESSAGE value="changed remove method" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed remove method" />
+    <MESSAGE value="hash" />
+    <option name="LAST_COMMIT_MESSAGE" value="hash" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -679,8 +683,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assign09/StudentHashTester.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="106" />
+          <line>77</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign09/StudentHashTester.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign09/StudentHashTester.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
