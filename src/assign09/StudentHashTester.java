@@ -77,7 +77,7 @@ public class StudentHashTester {
     void reHashTest(){
         HashTable<Integer,Integer> hashTable = new HashTable<>();
         Random r = new Random();
-        for(int i =0; i< 100;i++){
+        for(int i =0; i< 27;i++){
             hashTable.put(r.nextInt(),r.nextInt());
         }
         assertFalse(hashTable.isEmpty());

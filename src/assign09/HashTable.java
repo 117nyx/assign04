@@ -1,7 +1,5 @@
 package assign09;
 
-import java.nio.channels.FileChannel;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,10 +10,10 @@ public class HashTable<K,V> implements Map{
     private int size=10;
     private int mappings=0;
 
-    ArrayList<LinkedList<MapEntry>> backingArr = new ArrayList(size);
+    ArrayList<LinkedList<MapEntry<K,V>>> backingArr = new ArrayList(size);
     public HashTable(){
         for(int i=0;i<size;i++){
-            backingArr.add(new LinkedList<MapEntry>());
+            backingArr.add(new LinkedList<MapEntry<K,V>>());
         }
     }
     /**
@@ -56,7 +54,7 @@ public class HashTable<K,V> implements Map{
      */
     @Override
     public boolean containsValue(Object value) {
-        for (List<MapEntry> m: backingArr) {
+        for (List<MapEntry<K,V>> m: backingArr) {
             for(MapEntry me: m)
                 if(me.getValue().equals(value)){
                 return true;
@@ -75,10 +73,10 @@ public class HashTable<K,V> implements Map{
      * @return a List object containing all mapping (i.e., entries) in this map
      */
     @Override
-    public List<MapEntry> entries() {
-        ArrayList<MapEntry> ret = new ArrayList();
-        for (LinkedList<MapEntry> m: backingArr) {
-            for (MapEntry me : m){
+    public List<MapEntry<K,V>> entries() {
+        ArrayList<MapEntry<K,V>> ret = new ArrayList();
+        for (LinkedList<MapEntry<K,V>> m: backingArr) {
+            for (MapEntry<K,V> me : m){
                 if (me.getValue() != null) {
                     ret.add(me);
                 }
@@ -139,10 +137,10 @@ public class HashTable<K,V> implements Map{
         Object retVal=null;
         int index=compressor(key.hashCode());
         var temp=backingArr.get(index);
-        MapEntry<Object,Object> add = new MapEntry<>(key,value);
+        MapEntry<K,V> add = new MapEntry<>((K)key,(V)value);
         //linked list at spot is empty
         if(temp.isEmpty()) {
-            var tempList = new LinkedList<MapEntry>();
+            var tempList = new LinkedList<MapEntry<K,V>>();
             tempList.add(add);
             mappings++;
             backingArr.set(index,tempList);
@@ -174,7 +172,7 @@ public class HashTable<K,V> implements Map{
     @Override
     public Object remove(Object key) {
         int index = compressor(key.hashCode());
-        LinkedList<MapEntry> temp=backingArr.get(index);
+        LinkedList<MapEntry<K,V>> temp=backingArr.get(index);
         for(MapEntry m:temp){
             if(m.getKey().equals(key)){
                 var retVal = m.getValue();
@@ -196,16 +194,17 @@ public class HashTable<K,V> implements Map{
      */
     @Override
     public int size() {
-        return size;
+        return mappings;
     }
 
     private void reHash(){
         var temp=this.entries();
         size*=2;
-        backingArr = new ArrayList<LinkedList<MapEntry>>(size);
+        this.backingArr = new ArrayList<LinkedList<MapEntry<K,V>>>(size);
         for(int i=0;i<size;i++){
-            backingArr.add(new LinkedList<>());
+            this.backingArr.add(new LinkedList<>());
         }
+        mappings=0;
         for(MapEntry m:temp){
             put(m.getKey(),m.getValue());
         }
