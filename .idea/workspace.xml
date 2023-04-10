@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="hash">
-      <change afterPath="$PROJECT_DIR$/src/assign09/StudentGoodHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign09/StudentMediumHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign09/HashTableTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign09/HashTableVsHashMapTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign10/FindKLargest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assign10/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign09/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign09/HashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign09/StudentHashTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign09/StudentHashTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +94,8 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assign10" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/assign09" />
       <recent name="$PROJECT_DIR$/src/assign08" />
       <recent name="C:\Users\jkerr\Documents\GitHub\assign04\src\assign06" />
@@ -100,7 +104,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Tester">
+  <component name="RunManager" selected="Application.InsertionSortTimer">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -236,7 +240,8 @@
       <workItem from="1679005622207" duration="9746000" />
       <workItem from="1679449228123" duration="40950000" />
       <workItem from="1679970004525" duration="829000" />
-      <workItem from="1679976584687" duration="32196000" />
+      <workItem from="1679976584687" duration="43972000" />
+      <workItem from="1681164780516" duration="5767000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit 2/9/23">
       <created>1675984623537</created>
@@ -546,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680638619732</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="hash">
+      <created>1680749691721</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1680749691721</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
