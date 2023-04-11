@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="hash">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeContainsTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeContainsTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign08/SpellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/SpellChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="compare updates">
+      <change afterPath="$PROJECT_DIR$/src/assign10/BinaryHeapTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -556,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680749691721</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="compare updates">
+      <created>1681171638649</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1681171638649</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +578,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="-added beginning logic for mergesort" />
     <MESSAGE value="-added beginning logic for mergesort&#10;-splits arr in 1/2" />
     <MESSAGE value="added helper method to for mergesort to split the dataset into smaller pieces" />
     <MESSAGE value="Added InsertionSort class, which sorts comparable objects" />
@@ -600,7 +602,8 @@
     <MESSAGE value="added Timing classes" />
     <MESSAGE value="changed remove method" />
     <MESSAGE value="hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="hash" />
+    <MESSAGE value="compare updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="compare updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
