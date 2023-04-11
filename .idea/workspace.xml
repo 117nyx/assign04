@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="hash">
-      <change afterPath="$PROJECT_DIR$/src/assign09/HashTableTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign09/HashTableVsHashMapTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign10/FindKLargest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assign10/PriorityQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeContainsTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeContainsTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/BinarySearchTreeTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign08/SpellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign08/SpellChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

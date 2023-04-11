@@ -4,31 +4,32 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+/**
+ * This class represents a binary max heap data structure using array backed implementation
+ * Authors: Jonathan Kerr and Eden Harvey
+ * @param <E>
+ */
 public class BinaryMaxHeap<E> implements PriorityQueue {
 
-    private int size;
-    private Comparator compare;
+    private Comparator<? super E> compare;
     private E[] arr = (E[]) new Object[8];
     private int addIndex=0;
 
     public BinaryMaxHeap(){
         compare=null;
-        size=0;
     }
     public BinaryMaxHeap(Comparator<? super E> c){
         compare=c;
-        size=0;
+
 
     }
     public BinaryMaxHeap(List<E> l){
         compare=null;
-        size=0;
-
+        buildHeap(l);
     }
     public BinaryMaxHeap(List<? extends E> l, Comparator<? super E> c){
         compare=c;
-        size=0;
-
+        buildHeap(l);
     }
 
     /**
@@ -118,13 +119,14 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
     public Object[] toArray() {
         return arr;
     }
-    private void buildHeap(List<E> l){
+    private void buildHeap(List l){
         arr=(E[])l.toArray();
         for(int i=arr.length/2;i>=0;i--){
             percolateDown(i);
         }
     }
     private void percolateUp(int index){
+        //left child
         if(index%2>0){
             int parent=(index-1)/2;
             if(innerCompare(arr[index],arr[parent])>0){
@@ -134,6 +136,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
                 percolateUp(parent);
             }
         }
+        //right child
         if(index%2==0){
             int parent=(index-2)/2;
             if(innerCompare(arr[index],arr[parent])>0){
@@ -145,17 +148,20 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
         }
     }
     private void percolateDown(int index) {
+        //left child is null, so both children null, no right child handled by compare
         if (arr[index * 2 + 1] == null) {
             return;
         }
-        if (innerCompare(arr[index * 2 + 2], arr[index * 2 + 1]) < 0) {
+        // left child greater than right
+        if (innerCompare(arr[index * 2 + 1],arr[index * 2 + 2]) > 0) {
             if (innerCompare(arr[index], arr[index * 2 + 1]) < 0) {
                 E temp = arr[index];
                 arr[index] = arr[index * 2 + 1];
                 arr[index * 2 + 1] = temp;
                 percolateDown(index * 2 + 1);
             }
-        } else if (innerCompare(arr[index * 2 + 2], arr[index * 2 + 1]) > 0) {
+            //right child greater than left
+        } else if (innerCompare(arr[index * 2 + 1],arr[index * 2 + 2]) < 0) {
             if (innerCompare(arr[index], arr[index * 2 + 2]) < 0) {
                 E temp = arr[index];
                 arr[index] = arr[index * 2 + 2];
@@ -166,8 +172,17 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
         }
     }
     private int innerCompare(E o1,E o2){
-        //TODO logic
-        return 0;
+        //if right child is null, then use left child.
+        if(o2 == null)
+            return 1;
+        // check comparator object, if null, use compareTo and cast to comparable otherwise use comparator
+        if(compare==null)
+        {
+            return ((Comparable<? super E>)o1).compareTo(o2);
+        }
+        else
+            return compare.compare(o1,o2);
+
     }
 
 }
