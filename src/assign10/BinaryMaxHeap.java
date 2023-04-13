@@ -40,6 +40,13 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      */
     @Override
     public void add(Object item) {
+        if(arr.length<=addIndex){
+            E[] temp = (E[]) new Object[arr.length*2];
+            for(int i=0;i<arr.length;i++){
+                temp[i]=arr[i];
+            }
+            arr=temp;
+        }
         if(addIndex==0) {
             arr[0] = (E) item;
             addIndex++;

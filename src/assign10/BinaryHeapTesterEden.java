@@ -3,7 +3,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class BinaryHeapTesterEden {
@@ -122,8 +124,24 @@ public class BinaryHeapTesterEden {
     }
     @Test
     void comparatorConstructor(){
-       BinaryMaxHeap minHeap = new BinaryMaxHeap(Comparator.reverseOrder());
-       minHeap.add(123);
+        BinaryMaxHeap minHeap = new BinaryMaxHeap(Comparator.reverseOrder());
+
+    }
+    @Test
+    void comparatorAdd(){
+        BinaryMaxHeap minHeap = new BinaryMaxHeap(Comparator.reverseOrder());
+        minHeap.add(123);
+        minHeap.add(1);
+        minHeap.add(14);
+        minHeap.add(20);
+        minHeap.add(12);
+        minHeap.add(-23);
+
+    }
+    @Test
+    void comparatorExtractMax(){
+        BinaryMaxHeap minHeap = new BinaryMaxHeap(Comparator.reverseOrder());
+        minHeap.add(123);
         minHeap.add(1);
         minHeap.add(14);
         minHeap.add(20);
@@ -138,15 +156,50 @@ public class BinaryHeapTesterEden {
         assertEquals(minHeap.extractMax(),123);
     }
     @Test
-    void comparatorAdd(){
-
-    }
-    @Test
-    void comparatorExtractMax(){
-
-    }
-    @Test
     void peekTest(){
+        BinaryMaxHeap minHeap = new BinaryMaxHeap(Comparator.reverseOrder());
+        minHeap.add(123);
+        minHeap.add(1);
+        minHeap.add(14);
+        minHeap.add(20);
+        minHeap.add(12);
+        minHeap.add(-23);
+
+        var temp = minHeap.toArray();
+        minHeap.peek();
+        minHeap.peek();
+        minHeap.peek();
+        minHeap.peek();
+        minHeap.peek();
+        minHeap.peek();
+
+        assertArrayEquals(minHeap.toArray(),temp);
+
+    }
+    @Test 
+    void heapSortWithVariableSize(){
+        for(int i=4;i<100;i++){
+            
+            ArrayList arr = new ArrayList();
+            ArrayList heapArr = new ArrayList();
+            for(int j=0;j<i;j++){
+                arr.add(j);
+                heapArr.add(j);
+            }
+            Collections.shuffle(heapArr);
+            Collections.reverse(arr);
+            BinaryMaxHeap bmh = new BinaryMaxHeap(heapArr);
+
+            for (Object k: arr) {
+                assertEquals(k,bmh.extractMax());
+            }
+        }
+    }
+    @Test
+    void exceptionTest(){
+        BinaryMaxHeap bmh = new BinaryMaxHeap();
+        assertThrows(NoSuchElementException.class,()->bmh.peek());
+        assertThrows(NoSuchElementException.class,()->bmh.extractMax());
 
     }
 }
