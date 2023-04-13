@@ -3,9 +3,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.*;
-public class BinaryHeapTester {
+public class BinaryHeapTesterEden {
     @BeforeEach
     void setup(){
         int[] arr = new int[8];
@@ -121,7 +122,20 @@ public class BinaryHeapTester {
     }
     @Test
     void comparatorConstructor(){
+       BinaryMaxHeap minHeap = new BinaryMaxHeap(Comparator.reverseOrder());
+       minHeap.add(123);
+        minHeap.add(1);
+        minHeap.add(14);
+        minHeap.add(20);
+        minHeap.add(12);
+        minHeap.add(-23);
 
+        assertEquals(minHeap.extractMax(),-23);
+        assertEquals(minHeap.extractMax(),1);
+        assertEquals(minHeap.extractMax(),12);
+        assertEquals(minHeap.extractMax(),14);
+        assertEquals(minHeap.extractMax(),20);
+        assertEquals(minHeap.extractMax(),123);
     }
     @Test
     void comparatorAdd(){

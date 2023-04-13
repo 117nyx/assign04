@@ -76,7 +76,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
         if(arr[1]!=null) {
             E ret = arr[1];
             arr[1] = arr[addIndex-1];
-            arr[addIndex] = null;
+            arr[addIndex-1] = null;
             addIndex--;
             percolateDown(1);
             return ret;
