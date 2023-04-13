@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="compare updates">
-      <change afterPath="$PROJECT_DIR$/src/assign10/BinaryHeapTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign10/BinaryHeapTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign10/BinaryHeapTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign10/BinaryMaxHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assign10/FindKLargest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign10/FindKLargest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -98,7 +100,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InsertionSortTimer">
+  <component name="RunManager">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -207,8 +209,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Tester" />
         <item itemvalue="Application.InsertionSortTimer" />
+        <item itemvalue="JUnit.Tester" />
         <item itemvalue="JUnit.BinarySearchTreeTester.removeAllRandom" />
         <item itemvalue="JUnit.ArrayListSorterTester.quicksortTest" />
         <item itemvalue="JUnit.ArrayListSorterTester.mergesortTest" />
@@ -717,6 +719,11 @@
           <url>file://$PROJECT_DIR$/src/assign09/HashTable.java</url>
           <line>160</line>
           <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assign10/BinaryHeapTester.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="126" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />

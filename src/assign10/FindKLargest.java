@@ -1,5 +1,7 @@
 package assign10;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -21,7 +23,14 @@ public class FindKLargest {
 	 * @throws IllegalArgumentException if k is negative or larger than the size of the given list
 	 */
 	public static <E extends Comparable<? super E>> List<E> findKLargestHeap(List<E> items, int k) throws IllegalArgumentException {
-		return null;
+		if(k<0||k>items.size())
+			throw new IllegalArgumentException("k is too large or negative");
+		BinaryMaxHeap heap= new BinaryMaxHeap(items);
+		ArrayList ret = new ArrayList();
+		for(int i=0;i<k;i++){
+			ret.add(heap.extractMax());
+		}
+		return ret;
 	}
 
 	/**
@@ -34,7 +43,14 @@ public class FindKLargest {
 	 * @throws IllegalArgumentException if k is negative or larger than the size of the given list
 	 */
 	public static <E> List<E> findKLargestHeap(List<E> items, int k, Comparator<? super E> cmp) throws IllegalArgumentException {
-		return null;
+		if(k<0||k>items.size())
+			throw new IllegalArgumentException("k is too large or negative");
+		BinaryMaxHeap heap= new BinaryMaxHeap(items,cmp);
+		ArrayList ret = new ArrayList();
+		for(int i=0;i<k;i++){
+			ret.add(heap.extractMax());
+		}
+		return ret;
 	}
 
 	/**
@@ -47,7 +63,14 @@ public class FindKLargest {
 	 * @throws IllegalArgumentException if k is negative or larger than the size of the given list
 	 */
 	public static <E extends Comparable<? super E>> List<E> findKLargestSort(List<E> items, int k) throws IllegalArgumentException {
-		return null;
+		if(k<0||k>items.size())
+			throw new IllegalArgumentException("k is too large or negative");
+		Collections.sort(items);
+		ArrayList ret = new ArrayList();
+		for(int i=0;i<k;i++){
+			ret.add(items.get(i));
+		}
+		return ret;
 	}
 
 	/**
@@ -60,6 +83,13 @@ public class FindKLargest {
 	 * @throws IllegalArgumentException if k is negative or larger than the size of the given list
 	 */
 	public static <E> List<E> findKLargestSort(List<E> items, int k, Comparator<? super E> cmp) throws IllegalArgumentException {
-		return null;
+		if(k<0||k>items.size())
+			throw new IllegalArgumentException("k is too large or negative");
+		Collections.sort(items,cmp);
+		ArrayList ret = new ArrayList();
+		for(int i=0;i<k;i++){
+			ret.add(items.get(i));
+		}
+		return ret;
 	}
 }

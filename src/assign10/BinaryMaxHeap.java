@@ -13,7 +13,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
 
     private Comparator<? super E> compare;
     private E[] arr = (E[]) new Object[8];
-    private int addIndex=0;
+    private int addIndex=1;
 
     public BinaryMaxHeap(){
         compare=null;
@@ -40,6 +40,11 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      */
     @Override
     public void add(Object item) {
+        if(addIndex==0) {
+            arr[0] = (E) item;
+            addIndex++;
+            return;
+        }
         arr[addIndex]=(E)item;
         percolateUp(addIndex);
         addIndex++;
@@ -126,9 +131,12 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
         }
     }
     private void percolateUp(int index){
+        if(index==1){
+            return;
+        }
         //left child
         if(index%2>0){
-            int parent=(index-1)/2;
+            int parent=(index)/2;
             if(innerCompare(arr[index],arr[parent])>0){
                 E temp = arr[parent];
                 arr[parent]=arr[index];
@@ -138,7 +146,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
         }
         //right child
         if(index%2==0){
-            int parent=(index-2)/2;
+            int parent=(index)/2;
             if(innerCompare(arr[index],arr[parent])>0){
                 E temp = arr[parent];
                 arr[parent]=arr[index];

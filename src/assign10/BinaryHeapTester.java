@@ -9,6 +9,13 @@ public class BinaryHeapTester {
     }
     @Test
     void insertTest(){
+        BinaryMaxHeap bmh = new BinaryMaxHeap();
+        bmh.add(2);
+        bmh.add(5);
+        bmh.add(10);
+        bmh.add(23);
+        bmh.add(120);
+        bmh.add(0);
 
     }
     @Test
