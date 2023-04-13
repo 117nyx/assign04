@@ -58,9 +58,9 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      * @throws NoSuchElementException if this priority queue is empty
      */
     @Override
-    public Object peek() throws NoSuchElementException {
-        if(arr[0]!=null)
-            return arr[0];
+    public E peek() throws NoSuchElementException {
+        if(arr[1]!=null)
+            return arr[1];
         throw new NoSuchElementException("this BinaryMaxHeap is empty!");
     }
 
@@ -72,13 +72,13 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      * @throws NoSuchElementException if this priority queue is empty
      */
     @Override
-    public Object extractMax() throws NoSuchElementException {
-        if(arr[0]!=null) {
-            Object ret = arr[0];
-            arr[0] = arr[addIndex - 1];
-            arr[addIndex - 1] = null;
+    public E extractMax() throws NoSuchElementException {
+        if(arr[1]!=null) {
+            E ret = arr[1];
+            arr[1] = arr[addIndex-1];
+            arr[addIndex] = null;
             addIndex--;
-            percolateDown(0);
+            percolateDown(1);
             return ret;
         }
         throw new NoSuchElementException("this BinaryMaxHeap is empty!");
@@ -90,7 +90,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      */
     @Override
     public int size() {
-        return addIndex-1;
+        return (addIndex-1);
     }
 
     /**
@@ -99,7 +99,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      */
     @Override
     public boolean isEmpty() {
-        return arr[0]!=null;
+        return arr[1]==null;
     }
 
     /**
@@ -109,6 +109,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
     @Override
     public void clear() {
         arr = (E[]) new Object[8];
+        addIndex=1;
     }
 
     /**
@@ -122,11 +123,25 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      */
     @Override
     public Object[] toArray() {
-        return arr;
+        E[] ret= (E[])new Object[addIndex-1];
+        for(int i=1;i<addIndex;i++){
+            ret[i-1]=arr[i];
+        }
+        return ret;
     }
     private void buildHeap(List l){
-        arr=(E[])l.toArray();
-        for(int i=arr.length/2;i>=0;i--){
+        int num = 1;
+        int timesMoment = 1;
+        while(num<=l.size()+1){
+            num=(int)Math.pow(2,timesMoment);
+            timesMoment++;
+        }
+        arr = (E[])new Object[num];
+        for(int i = 1;i<l.size()+1;i++){
+            arr[i]=(E)l.get(i-1);
+            addIndex++;
+        }
+        for(int i=arr.length/2;i>0;i--){
             percolateDown(i);
         }
     }
@@ -157,29 +172,32 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
     }
     private void percolateDown(int index) {
         //left child is null, so both children null, no right child handled by compare
-        if (arr[index * 2 + 1] == null) {
+        if ((index*2)+1>(arr.length-1)||arr[index * 2] == null) {
             return;
         }
+
         // left child greater than right
-        if (innerCompare(arr[index * 2 + 1],arr[index * 2 + 2]) > 0) {
+        if (innerCompare(arr[index * 2],arr[index * 2 + 1]) > 0) {
+            if (innerCompare(arr[index], arr[index * 2]) < 0) {
+                E temp = arr[index];
+                arr[index] = arr[index * 2];
+                arr[index * 2] = temp;
+                percolateDown(index * 2);
+            }
+            //right child greater than left
+        } else if (innerCompare(arr[index * 2],arr[index * 2 + 1]) < 0) {
             if (innerCompare(arr[index], arr[index * 2 + 1]) < 0) {
                 E temp = arr[index];
                 arr[index] = arr[index * 2 + 1];
                 arr[index * 2 + 1] = temp;
                 percolateDown(index * 2 + 1);
             }
-            //right child greater than left
-        } else if (innerCompare(arr[index * 2 + 1],arr[index * 2 + 2]) < 0) {
-            if (innerCompare(arr[index], arr[index * 2 + 2]) < 0) {
-                E temp = arr[index];
-                arr[index] = arr[index * 2 + 2];
-                arr[index * 2 + 2] = temp;
-                percolateDown(index * 2 + 2);
-            }
 
         }
     }
     private int innerCompare(E o1,E o2){
+        if(o1 == null)
+            return -1;
         //if right child is null, then use left child.
         if(o2 == null)
             return 1;
