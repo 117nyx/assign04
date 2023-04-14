@@ -8,8 +8,8 @@ import java.util.List;
 /**
  * This class contains generic static methods for finding the k largest items in a list.
  * 
- * @author Erin Parker and ??
- * @version ??
+ * @author Erin Parker and Eden Harvey/Jonathan Kerr
+ * @version
  */
 public class FindKLargest {
 	

@@ -15,18 +15,38 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
     private E[] arr = (E[]) new Object[8];
     private int addIndex=1;
 
+    /**
+     * Base constructor, sets the comparator field to null - uses natural ordering.
+     */
     public BinaryMaxHeap(){
         compare=null;
     }
+
+    /**
+     * Creates an empty BinaryMaxHeap that uses the given comparator for its comparisons.
+     * @param c - Comparator to be used.
+     */
     public BinaryMaxHeap(Comparator<? super E> c){
         compare=c;
 
 
     }
+
+    /**
+     * Constructs a heap using the natural ordering of the objects that are passed in as a list.
+     * @param l - List of objects to build the heap from.
+     */
     public BinaryMaxHeap(List<E> l){
         compare=null;
         buildHeap(l);
     }
+
+    /**
+     * Constructs a new heap using the given list of objects, and using the given comparator to make
+     * comparisons.
+     * @param l - List of objects to build the heap from.
+     * @param c - Comparator to be used to make comparisons.
+     */
     public BinaryMaxHeap(List<? extends E> l, Comparator<? super E> c){
         compare=c;
         buildHeap(l);
@@ -40,6 +60,7 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
      */
     @Override
     public void add(Object item) {
+        //resizes array as needed
         if(arr.length<=addIndex){
             E[] temp = (E[]) new Object[arr.length*2];
             for(int i=0;i<arr.length;i++){
@@ -136,6 +157,11 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
         }
         return ret;
     }
+
+    /**
+     * Builds a heap with a size that is a multiple of 2 using the elements in the provided list
+     * @param l - List to be inserted into the array
+     */
     private void buildHeap(List l){
         int num = 1;
         int timesMoment = 1;
@@ -152,6 +178,12 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
             percolateDown(i);
         }
     }
+
+    /**
+     * Beginning at starting index, this method recursively locates the parent objects and performs switches
+     * as necessary to ensure the rules of the data structure are kept.
+     * @param index - the starting index
+     */
     private void percolateUp(int index){
         if(index==1){
             return;
@@ -177,6 +209,12 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
             }
         }
     }
+
+    /**
+     * Beginning at an index, this method recursively locates the two children of the given index,
+     * compares the greater of the two children to the given index and performs switches as necessary.
+     * @param index - The index to begin recursion at.
+     */
     private void percolateDown(int index) {
         //left child is null, so both children null, no right child handled by compare
         if ((index*2)+1>(arr.length-1)||arr[index * 2] == null) {
@@ -202,6 +240,13 @@ public class BinaryMaxHeap<E> implements PriorityQueue {
 
         }
     }
+
+    /**
+     * Compares two objects, either using a comparator if the cmp field is populated, or natural ordering.
+     * @param o1 - First object to be compared
+     * @param o2 - Second object to be compared
+     * @return - an int value representing the result of the comparision
+     */
     private int innerCompare(E o1,E o2){
         if(o1 == null)
             return -1;

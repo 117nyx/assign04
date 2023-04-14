@@ -8,15 +8,16 @@ import java.util.Random;
 
 public class BinaryMaxHeapTimer {
     public static void main(String args[]) {
-        int timesToLoop = 1000;
+        int timesToLoop = 100;
 
         ArrayList arr = new ArrayList();
-        for (int n = 10000; n <= 100000; n += 10000) {
+        for (int n = 100; n <= 10000; n += 100) {
+            BinaryMaxHeap bmh = new BinaryMaxHeap();
             Random rand = new Random(n);
-            for(int i = 0;i<100_000;i++){
+            for(int i = 0;i<n;i++){
                 arr.add(i);
             }
-            //Collections.shuffle(arr,rand);
+            Collections.shuffle(arr,rand);
 
 
             long startTime, midpointTime, stopTime;
@@ -33,8 +34,10 @@ public class BinaryMaxHeapTimer {
             startTime = System.nanoTime();
 
             for (int i = 0; i < timesToLoop; i++) {
-                    Collections.shuffle(arr, new Random(i));
-                    FindKLargest.findKLargestSort(arr,n);
+                for(Object x: arr){
+                    bmh.add(x);
+                }
+
             }
 
             midpointTime = System.nanoTime();
@@ -42,7 +45,8 @@ public class BinaryMaxHeapTimer {
             // Run an empty loop to capture the cost of running the loop.
 
             for (int i = 0; i < timesToLoop; i++) { // empty block
-                Collections.shuffle(arr, new Random(i));
+                for(Object x: arr){
+                }
             }
 
             stopTime = System.nanoTime();
