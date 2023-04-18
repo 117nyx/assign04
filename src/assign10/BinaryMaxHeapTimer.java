@@ -11,7 +11,7 @@ public class BinaryMaxHeapTimer {
         int timesToLoop = 100;
 
         ArrayList arr = new ArrayList();
-        for (int n = 100; n <= 10000; n += 100) {
+        for (int n = 1000; n <= 10000; n += 1000) {
             BinaryMaxHeap bmh = new BinaryMaxHeap();
             Random rand = new Random(n);
             for(int i = 0;i<n;i++){
