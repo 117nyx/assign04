@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added method header comments">
-      <change afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/comprehensive/Othertest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assign10/BinaryMaxHeapTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assign10/BinaryMaxHeapTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Driver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +103,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Foresttest.unionMultipleTest">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -110,38 +113,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayListSorterTester.mergesortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CS2420Shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assign05.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assign05" />
-      <option name="MAIN_CLASS_NAME" value="assign05.ArrayListSorterTester" />
-      <option name="METHOD_NAME" value="mergesortTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayListSorterTester.quicksortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CS2420Shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assign05.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assign05" />
-      <option name="MAIN_CLASS_NAME" value="assign05.ArrayListSorterTester" />
-      <option name="METHOD_NAME" value="quicksortTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,34 +127,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinarySearchTreeTester.removeAllRandom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Foresttest.makeSetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CS2420Shared" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assign08.*" />
+          <option name="PATTERN" value="comprehensive.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assign08" />
-      <option name="MAIN_CLASS_NAME" value="assign08.BinarySearchTreeTester" />
-      <option name="METHOD_NAME" value="removeAllRandom" />
+      <option name="PACKAGE_NAME" value="comprehensive" />
+      <option name="MAIN_CLASS_NAME" value="comprehensive.Foresttest" />
+      <option name="METHOD_NAME" value="makeSetTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tester" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration name="Foresttest.unionDuplicateDoNothing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CS2420Shared" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assign07.*" />
+          <option name="PATTERN" value="comprehensive.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assign09" />
-      <option name="MAIN_CLASS_NAME" value="assign09.StudentHashTester" />
-      <option name="METHOD_NAME" value="BFSTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="comprehensive" />
+      <option name="MAIN_CLASS_NAME" value="comprehensive.Foresttest" />
+      <option name="METHOD_NAME" value="unionDuplicateDoNothing" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Foresttest.unionMultipleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS2420Shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comprehensive.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="comprehensive" />
+      <option name="MAIN_CLASS_NAME" value="comprehensive.Foresttest" />
+      <option name="METHOD_NAME" value="unionMultipleTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Foresttest.unionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS2420Shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comprehensive.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="comprehensive" />
+      <option name="MAIN_CLASS_NAME" value="comprehensive.Foresttest" />
+      <option name="METHOD_NAME" value="unionTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,18 +205,18 @@
       <item itemvalue="Application.InsertionSortTimer" />
       <item itemvalue="JUnit.Unnamed" />
       <item itemvalue="JUnit.ArrayTester" />
-      <item itemvalue="JUnit.Tester" />
-      <item itemvalue="JUnit.BinarySearchTreeTester.removeAllRandom" />
-      <item itemvalue="JUnit.ArrayListSorterTester.mergesortTest" />
-      <item itemvalue="JUnit.ArrayListSorterTester.quicksortTest" />
+      <item itemvalue="JUnit.Foresttest.makeSetTest" />
+      <item itemvalue="JUnit.Foresttest.unionDuplicateDoNothing" />
+      <item itemvalue="JUnit.Foresttest.unionMultipleTest" />
+      <item itemvalue="JUnit.Foresttest.unionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Foresttest.unionMultipleTest" />
+        <item itemvalue="JUnit.Foresttest.unionDuplicateDoNothing" />
+        <item itemvalue="JUnit.Foresttest.unionTest" />
+        <item itemvalue="JUnit.Foresttest.makeSetTest" />
         <item itemvalue="Application.InsertionSortTimer" />
-        <item itemvalue="JUnit.Tester" />
-        <item itemvalue="JUnit.BinarySearchTreeTester.removeAllRandom" />
-        <item itemvalue="JUnit.ArrayListSorterTester.quicksortTest" />
-        <item itemvalue="JUnit.ArrayListSorterTester.mergesortTest" />
       </list>
     </recent_temporary>
   </component>
