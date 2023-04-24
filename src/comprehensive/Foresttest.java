@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class Foresttest {
     char[] vertices = new char[10];
-    DisjointSetForest dsf = new DisjointSetForest<>();
+    DisjointSetForest<Integer> dsf = new DisjointSetForest<>();
     @BeforeEach
     void setup(){
         for(int i = 0; i <10; i++) {
@@ -58,8 +58,8 @@ public class Foresttest {
 
     @Test
     void testCompression(){
-
-        dsf.makeSet();
+        //make large set of sets, union them, check height
+        dsf.makeSet(4);
     }
 
 }

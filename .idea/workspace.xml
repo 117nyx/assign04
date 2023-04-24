@@ -7,10 +7,12 @@
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added shell classes and Interface">
       <change afterPath="$PROJECT_DIR$/comprehensiveTestText.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/Othertest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Othertest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.comprehensive with args">
+  <component name="RunManager">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
