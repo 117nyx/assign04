@@ -56,4 +56,10 @@ public class Foresttest {
         assertEquals(1,dsf.getRepresentative(2));
     }
 
+    @Test
+    void testCompression(){
+
+        dsf.makeSet();
+    }
+
 }

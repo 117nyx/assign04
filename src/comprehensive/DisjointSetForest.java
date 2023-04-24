@@ -28,7 +28,7 @@ public class DisjointSetForest<E> implements DisjointSet<E> {
             return null;
         }
         if (node.parent != node) {
-            node.parent = getRepresentative(node.parent.data); // path compression
+            node.parent.data = getRepresentative(node.parent.data); // path compression
         }
         return node.parent.data;
     }

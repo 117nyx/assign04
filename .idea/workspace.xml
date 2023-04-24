@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added method header comments">
-      <change afterPath="$PROJECT_DIR$/src/comprehensive/Node.java" afterDir="false" />
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added shell classes and Interface">
+      <change afterPath="$PROJECT_DIR$/comprehensiveTestText.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/Node.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +102,7 @@
       <recent name="assign07" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Foresttest.unionMultipleTest">
+  <component name="RunManager" selected="Application.comprehensive with args">
     <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
       <module name="CS2420Shared" />
@@ -109,6 +112,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="comprehensive with args" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comprehensive.Driver" />
+      <module name="CS2420Shared" />
+      <option name="PROGRAM_PARAMETERS" value="comprehensiveTestText.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,6 +209,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.comprehensive with args" />
       <item itemvalue="Application.InsertionSortTimer" />
       <item itemvalue="JUnit.Unnamed" />
       <item itemvalue="JUnit.ArrayTester" />
@@ -237,13 +249,6 @@
       <workItem from="1679970004525" duration="829000" />
       <workItem from="1679976584687" duration="43972000" />
       <workItem from="1681164780516" duration="5767000" />
-    </task>
-    <task id="LOCAL-00003" summary="Added custom comparator, added KTinyData test, &#10;modified to correctly clone">
-      <created>1675999223223</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1675999223223</updated>
     </task>
     <task id="LOCAL-00004" summary="-added beginning logic for mergesort">
       <created>1676352310604</created>
@@ -581,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681436038438</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added shell classes and Interface">
+      <created>1682361203666</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1682361203666</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +612,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Mergesort working with arrayList of ArrayLists, need to adjust to not use 2d arrayList" />
     <MESSAGE value="Splitting mergesort into driver and passenger methods" />
     <MESSAGE value="Changed to only use temp array and standard array, still need to implement driver/passenger methods" />
     <MESSAGE value="MergeSort is now a driver/passenger program&#10; added testing for mutators and accessor methods for sizeToSwitch&#10;added functionality to switch to insertionSort" />
@@ -625,7 +636,8 @@
     <MESSAGE value="fixed error that would cause the last element in the heap to be duplicated" />
     <MESSAGE value="timer" />
     <MESSAGE value="Added method header comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added method header comments" />
+    <MESSAGE value="Added shell classes and Interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added shell classes and Interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,6 +751,26 @@
           <url>file://$PROJECT_DIR$/src/assign09/HashTable.java</url>
           <line>160</line>
           <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/comprehensive/Driver.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/comprehensive/Driver.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/comprehensive/Driver.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/comprehensive/Driver.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />

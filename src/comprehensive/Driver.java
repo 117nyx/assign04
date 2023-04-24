@@ -15,35 +15,44 @@ public class Driver {
             File input = new File(args[0]);
             Scanner out = new Scanner(input);
             String next;
-            next = out.next();
+            next = out.nextLine();
             while(!next.equals("")){
-                String add = out.next();
+                String add = next;
                 dsf.makeSet(add);
-                out.nextLine();
+                next=out.nextLine();
             }
-            next = out.next();
+            next = out.nextLine();
 
             //make edges by unioning vertices
-            while(next.equals("")){
-                dsf.union(dsf.getRepresentative(out.next()),dsf.getRepresentative(out.next()));
-                out.nextLine();
+            while(!next.equals("")){
+                var temp = next.split("\\s+");
+                dsf.union(dsf.getRepresentative(temp[0]),dsf.getRepresentative(temp[1]));
+                next=out.nextLine();
             }
-            out.nextLine();
-
+            next = out.nextLine();
             // check if they are connected using get representative
-            while(out.hasNextLine()){
-                if(dsf.getRepresentative(out.next()).equals(dsf.getRepresentative(out.next()))) {
+            while(out.hasNext()){
+
+                var temp = next.split("\\s+");
+                if(dsf.getRepresentative(temp[0]).equals(dsf.getRepresentative(temp[1]))) {
                     System.out.println("connected");
-                    out.nextLine();
+                        next=out.nextLine();
                 }
                 else {
                     System.out.println("not connected");
-                    out.nextLine();
+                        next=out.nextLine();
                 }
+            }
+            var temp = next.split("\\s+");
+            if(dsf.getRepresentative(temp[0]).equals(dsf.getRepresentative(temp[1]))) {
+                System.out.println("connected");
+            }
+            else {
+                System.out.println("not connected");
             }
         }
         catch (Exception e) {
-            System.out.println("File not found");
+            System.out.println("File not found "+e);
         }
     }
 
