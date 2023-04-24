@@ -8,58 +8,41 @@ import java.util.Map;
  * @param <E>
  */
 public class DisjointOther<E> implements DisjointSet<E>{
-    //backing map for elements and representatives
-    private Map<E, E> parent;
-    // map for storing height of set
-    private Map<E, Integer> height;
+    private Map<E, E> parent; // parent[i] stores the parent of element i
+    private Map<E, Integer> rank; // rank[i] stores the height of the subtree rooted at i
     public DisjointOther() {
         parent = new HashMap<>();
-        height = new HashMap<>();
+        rank = new HashMap<>();
     }
 
-    /**
-     * Creates a set containing one element, assumes element is not a duplicate of another
-     * @param element
-     */
     @Override
     public void makeSet(E element) {
         parent.put(element,element);
-        height.put(element, 0);
+        rank.put(element, 0);
     }
 
-    /**
-     * Returns representative element of set containing param element
-     * @param element
-     * @return
-     */
     @Override
     public E getRepresentative(E element) {
-        if (parent.get(element) !=  element){
-            return getRepresentative(parent.get(element));
+        if (parent.get( element) !=  element) {
+            return getRepresentative(parent.get(element)); // path compression
         }
         return parent.get(element);
     }
 
-    /**
-     * Combines the sets containing the 2 elements if they are not already in the same set
-     * assumes elements exist already
-     * @param e1
-     * @param e2
-     */
     @Override
     public void union(E e1, E e2) {
         E rootX = getRepresentative(e1);
         E rootY = getRepresentative(e2);
         // if they are  not in the same set,
         if (rootX != rootY) {
-            // union by height
-            if (height.get(rootX) < height.get(rootY))
+            // union by rank
+            if (rank.get(rootX) < rank.get(rootY)) {
                 parent.put(rootX, rootY);
-            else if (height.get(rootX) > height.get(rootY))
+            } else if (rank.get(rootX) > rank.get(rootY)) {
                 parent.put(rootY, rootX);
-            else {
+            } else {
                 parent.put(rootY, rootX);
-                height.put(rootX, height.get(rootX) + 1);
+                rank.put(rootX, rank.get(rootX) + 1);
             }
         }
     }

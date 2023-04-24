@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added shell classes and Interface">
+      <change afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +96,7 @@
       <recent name="C:\Users\jkerr\Documents\GitHub\assign04\src\assign06" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="comprehensive" />
       <recent name="assign07" />
     </key>
   </component>
@@ -245,13 +247,6 @@
       <workItem from="1679970004525" duration="829000" />
       <workItem from="1679976584687" duration="43972000" />
       <workItem from="1681164780516" duration="5767000" />
-    </task>
-    <task id="LOCAL-00005" summary="-added beginning logic for mergesort&#10;-splits arr in 1/2">
-      <created>1676401658494</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1676401658494</updated>
     </task>
     <task id="LOCAL-00006" summary="added helper method to for mergesort to split the dataset into smaller pieces">
       <created>1676411692481</created>
@@ -589,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682370359835</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added shell classes and Interface">
+      <created>1682372925005</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1682372925005</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
