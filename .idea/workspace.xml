@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added method header comments">
-      <change afterPath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/comprehensive/Othertest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/comprehensive/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Driver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

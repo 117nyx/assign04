@@ -14,15 +14,17 @@ public class Driver {
             // Make set with the vertices
             File input = new File(args[0]);
             Scanner out = new Scanner(input);
-            while(out.hasNextLine()){
+            String next;
+            next = out.next();
+            while(!next.equals("")){
                 String add = out.next();
                 dsf.makeSet(add);
                 out.nextLine();
             }
-            out.nextLine();
+            next = out.next();
 
             //make edges by unioning vertices
-            while(out.hasNextLine()){
+            while(next.equals("")){
                 dsf.union(dsf.getRepresentative(out.next()),dsf.getRepresentative(out.next()));
                 out.nextLine();
             }
