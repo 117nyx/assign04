@@ -30,9 +30,6 @@ public class DisjointSetForest<E> implements DisjointSet<E> {
     @Override
     public E getRepresentative(E element) {
         Node<E> node = nodes.get(element);
-        if (node == null) {
-            return null;
-        }
         if (node.parent != node) {
             node.parent.data = getRepresentative(node.parent.data); // path compression
         }
