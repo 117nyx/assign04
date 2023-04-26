@@ -1,14 +1,13 @@
 package comprehensive;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This class represents a disjoint set forest implementation using trees
  */
 public class DisjointSetForest<E> implements DisjointSet<E> {
     //backing map
-    private Map<E, Node<E>> nodes;
+    private HashMap<E, Node<E>> nodes;
 
     public DisjointSetForest() {
         nodes = new HashMap<>();
@@ -30,8 +29,9 @@ public class DisjointSetForest<E> implements DisjointSet<E> {
     @Override
     public E getRepresentative(E element) {
         Node<E> node = nodes.get(element);
+        // path compression
         if (node.parent != node) {
-            node.parent.data = getRepresentative(node.parent.data); // path compression
+            node.parent.data = getRepresentative(node.parent.data);
         }
         return node.parent.data;
     }
@@ -73,11 +73,12 @@ public class DisjointSetForest<E> implements DisjointSet<E> {
         }
     }
     /**
-     *Find the root node of the given node and perform path compression
+     *Get representative but returns a node which is easier to use in union
      */
     private Node<E> findNode(Node<E> node) {
+        // path compression
         if (node.parent != node) {
-            node.parent = findNode(node.parent); // path compression
+            node.parent = findNode(node.parent);
         }
         return node.parent;
     }

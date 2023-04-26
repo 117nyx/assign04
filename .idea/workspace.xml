@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added method header comments">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Foresttest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/Othertest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Othertest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,13 +252,6 @@
       <workItem from="1679970004525" duration="829000" />
       <workItem from="1679976584687" duration="43972000" />
       <workItem from="1681164780516" duration="5767000" />
-    </task>
-    <task id="LOCAL-00008" summary="Logic done for mergesort, need to implement driver methods">
-      <created>1676423833146</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1676423833146</updated>
     </task>
     <task id="LOCAL-00009" summary="Mergesort working with arrayList of ArrayLists, need to adjust to not use 2d arrayList">
       <created>1676485751816</created>
@@ -596,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682455744915</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added method header comments">
+      <created>1682487803932</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1682487803932</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
