@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added shell classes and Interface">
+    <list default="true" id="bd81f9cb-a46a-404c-b6d7-50c7278bb79b" name="Changes" comment="Added method header comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointOther.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetForest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comprehensive/DisjointSetTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/DisjointSetTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comprehensive/Othertest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comprehensive/Othertest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,19 +103,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="InsertionSortTimer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assign05.InsertionSortTimer" />
-      <module name="CS2420Shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assign05.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="comprehensive with args" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="comprehensive.Driver" />
       <module name="CS2420Shared" />
@@ -198,6 +185,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Othertest.largeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CS2420Shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comprehensive.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="comprehensive" />
+      <option name="MAIN_CLASS_NAME" value="comprehensive.Othertest" />
+      <option name="METHOD_NAME" value="largeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="CS2420Shared" />
       <option name="PACKAGE_NAME" value="assign07" />
@@ -210,9 +213,9 @@
     </configuration>
     <list>
       <item itemvalue="Application.comprehensive with args" />
-      <item itemvalue="Application.InsertionSortTimer" />
       <item itemvalue="JUnit.Unnamed" />
       <item itemvalue="JUnit.ArrayTester" />
+      <item itemvalue="JUnit.Othertest.largeTest" />
       <item itemvalue="JUnit.Foresttest.makeSetTest" />
       <item itemvalue="JUnit.Foresttest.unionDuplicateDoNothing" />
       <item itemvalue="JUnit.Foresttest.unionMultipleTest" />
@@ -220,11 +223,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Othertest.largeTest" />
         <item itemvalue="JUnit.Foresttest.unionMultipleTest" />
         <item itemvalue="JUnit.Foresttest.unionDuplicateDoNothing" />
         <item itemvalue="JUnit.Foresttest.unionTest" />
         <item itemvalue="JUnit.Foresttest.makeSetTest" />
-        <item itemvalue="Application.InsertionSortTimer" />
       </list>
     </recent_temporary>
   </component>
@@ -249,13 +252,6 @@
       <workItem from="1679970004525" duration="829000" />
       <workItem from="1679976584687" duration="43972000" />
       <workItem from="1681164780516" duration="5767000" />
-    </task>
-    <task id="LOCAL-00007" summary="Added InsertionSort class, which sorts comparable objects">
-      <created>1676414118171</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1676414118171</updated>
     </task>
     <task id="LOCAL-00008" summary="Logic done for mergesort, need to implement driver methods">
       <created>1676423833146</created>
@@ -593,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682379713674</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Added method header comments">
+      <created>1682455744915</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1682455744915</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,9 +638,9 @@
     <MESSAGE value="I fixied the things that were broken 100% yay" />
     <MESSAGE value="fixed error that would cause the last element in the heap to be duplicated" />
     <MESSAGE value="timer" />
-    <MESSAGE value="Added method header comments" />
     <MESSAGE value="Added shell classes and Interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added shell classes and Interface" />
+    <MESSAGE value="Added method header comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added method header comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

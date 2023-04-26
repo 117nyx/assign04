@@ -43,15 +43,15 @@ public class DisjointSetForest<E> implements DisjointSet<E> {
     public void union(E e1, E e2) {
         Node<E> root1 = findNode(nodes.get(e1));
         Node<E> root2 = findNode(nodes.get(e2));
-        // check for same set or not existing
-        if (root1 == null || root2 == null || root1 == root2) {
+        // check for same set
+        if (root1 == root2) {
             return;
         }
         // union by rank
-        if (root1.rank < root2.rank) {
-            root1.parent = root2;
-        } else if (root1.rank > root2.rank) {
+        if (root1.rank > root2.rank) {
             root2.parent = root1;
+        } else if (root1.rank < root2.rank) {
+            root1.parent = root2;
         } else {
             root2.parent = root1;
             root1.rank++;
@@ -76,9 +76,6 @@ public class DisjointSetForest<E> implements DisjointSet<E> {
      *Find the root node of the given node and perform path compression
      */
     private Node<E> findNode(Node<E> node) {
-        if (node == null) {
-            return null;
-        }
         if (node.parent != node) {
             node.parent = findNode(node.parent); // path compression
         }
